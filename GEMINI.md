@@ -68,12 +68,12 @@ Synthesize the results into a final report for the user:
 
 ## Technical Specifications
 For detailed specifications of each role, refer to:
-- `orchestrator.md`: Flow management and conflict resolution.
-- `strategy_agent.md`: Topology deconstruction and path matrices.
-- `adversary_agent.md`: Logical deconstruction and ruthless questioning.
-- `risk_agent.md`: Pricing, purity filters, and trading protocols.
-- `monitor_agent.md`: Post-execution monitoring (optional extension).
-- `execution_agent.md`: Trading parameter translation (optional extension).
+- `agents/orchestrator.md`: Flow management and conflict resolution.
+- `agents/strategy_agent.md`: Topology deconstruction and path matrices.
+- `agents/adversary_agent.md`: Logical deconstruction and ruthless questioning.
+- `agents/risk_agent.md`: Pricing, purity filters, and trading protocols.
+- `agents/monitor_agent.md`: Post-execution monitoring (optional extension).
+- `agents/execution_agent.md`: Trading parameter translation (optional extension).
 
 ## Operational Rules
 - Never use conversational filler like "Here is your report."
