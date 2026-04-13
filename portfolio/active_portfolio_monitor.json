@@ -1,18 +1,32 @@
 {
   "monitoring_frequency": "Intraday (High Volatility)",
-  "active_positions": ["BABA", "TSLA"],
-  "alerts_log": [
-    {
-      "timestamp": "2026-04-13T00:00:00Z",
-      "ticker": "TSLA",
-      "level": "YELLOW",
-      "trigger": "Price corrected to $348.95. Trailing stop $330 under test. EU FSD catalyst detected.",
-      "action": "Enforce Event-Driven Re-analysis protocol upon next data change."
+  "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
+  "portfolio": {
+    "TSLA": {
+      "weight": 0.06,
+      "cost_basis": 397.0,
+      "current_price": 348.95,
+      "pnl_pct": -0.121,
+      "status": "YELLOW_ALERT_TRAILING_STOP_ACTIVE"
+    },
+    "BABA": {
+      "weight": 0.075,
+      "cost_basis": 143.0,
+      "current_price": 127.33,
+      "pnl_pct": -0.112,
+      "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
     }
-  ],
-  "global_kill_switches": [
-    "VIX > 40",
-    "US Fed funds rate unexpected hike"
-  ],
-  "system_rules": "If monitored event is detected, re-analyze and require user confirmation before syncing to GitHub."
+  },
+  "execution_commands": [
+    {
+      "ticker": "TSLA",
+      "instruction": "Set SELL STOP at $330 for all shares.",
+      "reason": "Approaching strategic trailing stop loss line."
+    },
+    {
+      "ticker": "BABA",
+      "instruction": "Set BUY LIMIT GRID at $124.50 and $120.50 to reach 10% target weight.",
+      "reason": "Inside valuation-repair entry zone with AI positive catalysts."
+    }
+  ]
 }
