@@ -6,12 +6,13 @@
       "timestamp": "2026-04-13T00:00:00Z",
       "ticker": "TSLA",
       "level": "YELLOW",
-      "trigger": "Price reached $390. Target $280 TP breached. Transitioned to Trailing Stop mode ($330).",
-      "action": "Disable Buy rules. Activate Momentum TP rules."
+      "trigger": "Price corrected to $348.95. Trailing stop $330 under test. EU FSD catalyst detected.",
+      "action": "Enforce Event-Driven Re-analysis protocol upon next data change."
     }
   ],
   "global_kill_switches": [
     "VIX > 40",
     "US Fed funds rate unexpected hike"
-  ]
+  ],
+  "system_rules": "If monitored event is detected, re-analyze and require user confirmation before syncing to GitHub."
 }

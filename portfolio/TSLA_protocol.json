@@ -1,20 +1,24 @@
 {
   "ticker": "TSLA",
   "name": "Tesla",
-  "status": "active_momentum",
+  "status": "active_momentum_rebalance",
   "last_updated": "2026-04-13T00:00:00Z",
   "strategy": {
-    "topology_core": "FSD Platformization + Robotaxi regulatory breakthrough",
-    "current_price_reference": 390.0,
-    "action_required": "Halt buying (over-extended). Shift to Trailing Stop logic.",
-    "take_profit_target": [400, 420],
+    "topology_core": "FSD Global Expansion + Low-cost Platform + Robotaxi Pivot",
+    "current_price_reference": 348.95,
+    "action_required": "Hold & Monitor $330 support. Trailing Stop active.",
+    "take_profit_target": [420, 500],
     "trailing_stop_loss": 330,
     "hard_stop_loss": 140,
-    "kill_switch": "Elon Musk steps down or massive forced share pledging"
+    "event_triggers": [
+      "FSD approval in additional EU countries",
+      "Giga Shanghai Model 2 production milestones",
+      "Elon Musk's active involvement shift"
+    ]
   },
   "monitor_nodes": {
-    "FSD_Licensing": "Confirm official FSD licensing contract with major OEM",
-    "NextGen_Vehicle": "Track production timeline of $25k Model 2/Robotaxi",
-    "Energy_Purity": "Megapack operating profit contribution > 20%"
+    "FSD_EU_Adoption": "Track RDW approval spillover to DE/FR",
+    "Model_2_BOM": "Monitor supplier contracts for $25k platform",
+    "Institutional_Flows": "Track Cathie Wood vs. Sumitomo divergence"
   }
 }
