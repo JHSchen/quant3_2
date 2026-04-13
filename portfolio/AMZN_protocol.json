@@ -1,0 +1,37 @@
+{
+  "ticker": "AMZN",
+  "name": "Amazon.com, Inc.",
+  "status": "INITIALIZING",
+  "strategy_snapshot": {
+    "topology": "AWS Cloud + GenAI Layer (Bedrock/OpenAI) + Custom Silicon (Trainium 3)",
+    "primary_vector": "Cost-per-inference reduction via internal silicon vs Nvidia Blackwell",
+    "fragile_point": "$200B Capex vs AWS Growth Margin"
+  },
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_pct": 0.30,
+      "limit_price": 235.00,
+      "confirmation_event": "Q1 2026 Earnings (2026-04-23)",
+      "target_op_income_floor": 19000000000.0
+    },
+    "add_rules": {
+      "catalyst": "Bedrock OpenAI API volume > 15% share or Trainium 3 external client adoption",
+      "limit": "Max total weight 0.50"
+    },
+    "take_profit_rules": {
+      "fundamental_tp": 310.00,
+      "trailing_stop_pct": 0.10
+    },
+    "stop_loss_rules": {
+      "earnings_melt_down": "Op. Income < 16.5B or AWS growth < 18%",
+      "technical_sl": "Single day drop > 7% with > 2x average volume",
+      "macro_kill_switch": "10Y Treasury Yield > 5% for 14 days"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 0.025,
+    "capex_risk": "HIGH ($200B/year)",
+    "valuation_anchor": "PE 25.4 (Current) -> 35.0 (Target)"
+  },
+  "last_updated": "2026-04-13T16:05:00Z"
+}
