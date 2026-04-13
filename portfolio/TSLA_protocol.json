@@ -1,0 +1,20 @@
+{
+  "ticker": "TSLA",
+  "name": "Tesla",
+  "status": "active_momentum",
+  "last_updated": "2026-04-13T00:00:00Z",
+  "strategy": {
+    "topology_core": "FSD Platformization + Robotaxi regulatory breakthrough",
+    "current_price_reference": 390.0,
+    "action_required": "Halt buying (over-extended). Shift to Trailing Stop logic.",
+    "take_profit_target": [400, 420],
+    "trailing_stop_loss": 330,
+    "hard_stop_loss": 140,
+    "kill_switch": "Elon Musk steps down or massive forced share pledging"
+  },
+  "monitor_nodes": {
+    "FSD_Licensing": "Confirm official FSD licensing contract with major OEM",
+    "NextGen_Vehicle": "Track production timeline of $25k Model 2/Robotaxi",
+    "Energy_Purity": "Megapack operating profit contribution > 20%"
+  }
+}

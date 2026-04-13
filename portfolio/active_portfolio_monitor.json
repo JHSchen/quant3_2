@@ -1,0 +1,17 @@
+{
+  "monitoring_frequency": "Intraday (High Volatility)",
+  "active_positions": ["BABA", "TSLA"],
+  "alerts_log": [
+    {
+      "timestamp": "2026-04-13T00:00:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "Price reached $390. Target $280 TP breached. Transitioned to Trailing Stop mode ($330).",
+      "action": "Disable Buy rules. Activate Momentum TP rules."
+    }
+  ],
+  "global_kill_switches": [
+    "VIX > 40",
+    "US Fed funds rate unexpected hike"
+  ]
+}
