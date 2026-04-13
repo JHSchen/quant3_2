@@ -2,18 +2,18 @@
   "ticker": "TSLA",
   "name": "Tesla",
   "status": "active_momentum_rebalance",
-  "last_updated": "2026-04-13T00:00:00Z",
+  "last_updated": "2026-04-13T14:30:00Z",
   "strategy": {
-    "topology_core": "FSD Global Expansion + Low-cost Platform + Robotaxi Pivot",
-    "current_price_reference": 348.95,
-    "action_required": "Hold & Monitor $330 support. Trailing Stop active.",
+    "topology_core": "FSD Global Expansion vs Delivery Miss (358k) + Geopolitical Risk",
+    "current_price_reference": 346.0,
+    "action_required": "Tighten Trailing Stop to $334.80. Monitor $338.27 Support.",
     "take_profit_target": [420, 500],
-    "trailing_stop_loss": 330,
+    "trailing_stop_loss": 334.8,
     "hard_stop_loss": 140,
     "event_triggers": [
       "FSD approval in additional EU countries",
-      "Giga Shanghai Model 2 production milestones",
-      "Elon Musk's active involvement shift"
+      "Model 2 production milestones",
+      "US-Iran peace talk results"
     ]
   },
   "monitor_nodes": {

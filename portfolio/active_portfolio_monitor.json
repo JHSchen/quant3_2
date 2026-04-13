@@ -5,9 +5,9 @@
     "TSLA": {
       "weight": 0.06,
       "cost_basis": 397.0,
-      "current_price": 348.95,
-      "pnl_pct": -0.121,
-      "status": "YELLOW_ALERT_TRAILING_STOP_ACTIVE"
+      "current_price": 346.0,
+      "pnl_pct": -0.128,
+      "status": "YELLOW_ALERT_TIGHTENING_STOP_LOSS"
     },
     "BABA": {
       "weight": 0.075,
@@ -17,16 +17,25 @@
       "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
     }
   },
+  "alerts_log": [
+    {
+      "timestamp": "2026-04-13T14:30:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "Intraday price $346.0. Below consensus delivery (358k) + Geopolitical friction.",
+      "action": "Tighten trailing stop to $334.80 to protect capital. Monitor $338.27 closely."
+    }
+  ],
   "execution_commands": [
     {
       "ticker": "TSLA",
-      "instruction": "Set SELL STOP at $330 for all shares.",
-      "reason": "Approaching strategic trailing stop loss line."
+      "instruction": "UPGRADE SELL STOP to $334.80.",
+      "reason": "Technical breakdown risk if $338.27 fails."
     },
     {
       "ticker": "BABA",
-      "instruction": "Set BUY LIMIT GRID at $124.50 and $120.50 to reach 10% target weight.",
-      "reason": "Inside valuation-repair entry zone with AI positive catalysts."
+      "instruction": "Maintain BUY LIMIT GRID at $124.50 and $120.50.",
+      "reason": "Bullish AI developments vs Low valuation."
     }
   ]
 }
