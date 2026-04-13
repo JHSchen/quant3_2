@@ -26,6 +26,12 @@ You MUST use these tags for every agent's output:
 
 When a user provides an investment target or strategy to analyze, follow these phases:
 
+### Phase -1: Empirical Grounding (Orchestrator Mandate)
+**CRITICAL: This phase must be executed BEFORE any Agent speaks.**
+- **Price Fetching**: Invoke `run_shell_command` with `python3 scripts/get_latest_market_data.py <TICKER>` to get the absolute current price and metrics.
+- **News Verification**: Use `google_web_search` or `web_fetch` to find the 3 most recent Tier 1/Tier 2 news items (per `docs/data_verification.md`).
+- **Context Locking**: Inject the retrieved data as "Impediment Constants" into the system instruction for Strategy, Adversary, and Risk agents.
+
 ### Phase 0: Input Validation
 - Check if the target is clear. If ambiguous, ask for clarification.
 - If the input is contradictory, flag the conflict.
