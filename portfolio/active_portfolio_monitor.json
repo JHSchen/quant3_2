@@ -15,9 +15,29 @@
       "current_price": 127.33,
       "pnl_pct": -0.112,
       "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
+    },
+    "AMZN": {
+      "weight": 0.0,
+      "cost_basis": 238.65,
+      "current_price": 238.65,
+      "pnl_pct": 0.0,
+      "status": "GREEN_PENDING_EARNINGS",
+      "rules": {
+        "stop_loss_op_income": 16500000000.0,
+        "stop_loss_aws_growth": 0.18,
+        "take_profit_target": 310.0,
+        "hard_stop_loss_pct": 0.07
+      }
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-13T15:55:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Strategy initialized. Waiting for Q1 Earnings (April 23) for confirmation.",
+      "action": "Observe $235-$240 range for 30% entry. DO NOT chase above $245."
+    },
     {
       "timestamp": "2026-04-13T14:30:00Z",
       "ticker": "TSLA",
@@ -27,6 +47,11 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "AMZN",
+      "instruction": "SET BUY LIMIT at $235.00 for 30% allocation. SET ALERTS for Q1 Earnings release.",
+      "reason": "Wait for Op. Income confirmation (> $19B suggested)."
+    },
     {
       "ticker": "TSLA",
       "instruction": "UPGRADE SELL STOP to $334.80.",
