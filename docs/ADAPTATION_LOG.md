@@ -35,3 +35,14 @@ This log records the complete process of adapting and improving the multi-agent 
 - **BABA**: Positioned at $127.33. Buying grid active ($124.50-$120.50).
 - **AMZN**: Status: **INITIALIZING**. Pending Q1 Earnings (April 23) confirmation. Entry limit: $235.00.
 - **Git State**: All changes synchronized to branch `feature/empirical-grounding`.
+
+## Iteration #1 (Rigorous Grounding Enforcement)
+Date: 2026-04-13
+Agent: Gemini CLI (Orchestrator)
+Failure_Mode: B, E, F (Filename Inference, Task Pressure, Hallucinatory Confidence)
+Root_Cause_Summary: The model prioritized immediate response over tool-based verification, leading to fabricated JSON content based on filename heuristics.
+New_Rules:
+  1. **RULE-0.5: Mandatory Grounding Proof Block** - Before any file analysis, output `<grounding_proof>` containing `wc -l`, `head -n 3`, and `tail -n 3`.
+  2. **RULE-0.6: Precise Line-Number Anchoring** - All claims derived from a file must be prefixed with `[L{line_number}]` and verifiable via `sed`.
+Reexecution_Status: PASS_重新执行成功
+

@@ -88,3 +88,14 @@ For detailed specifications of each role, refer to:
 - Maximum 200 words per agent output per phase.
 
 **Trigger**: When the user mentions "Analyze stock/industry X", "Formulate investment strategy", or any request involving market selection and trading execution.
+ents/execution_agent.md`: Trading parameter translation (optional extension).
+
+## Operational Rules
+- **RULE-0.5: Mandatory Grounding Proof Block**: Before analyzing any file, you MUST output a `<grounding_proof>` block containing the output of `wc -l`, `head -n 3`, and `tail -n 3` for that file. If this block is missing or incorrect, the analysis is invalid.
+- **RULE-0.6: Precise Line-Number Anchoring**: Any fact or logic derived from a file must include a `[L{line_number}]` prefix. This must be verifiable using `sed -n '{line_number}p' <file>`.
+- Never use conversational filler like "Here is your report."
+- Be direct, data-driven, and ruthless.
+- If a problem is unsolvable, state: "Current topology is unsolvable due to..."
+- Maximum 200 words per agent output per phase.
+
+**Trigger**: When the user mentions "Analyze stock/industry X", "Formulate investment strategy", or any request involving market selection and trading execution.
