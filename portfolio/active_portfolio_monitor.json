@@ -43,10 +43,10 @@
       }
     },
     "AMZN": {
-      "weight": 0.073,
-      "cost_basis": 212.0,
+      "weight": 0.30,
+      "cost_basis": 233.1,
       "current_price": 239.89,
-      "pnl_pct": 0.1315,
+      "pnl_pct": 0.029,
       "status": "ACTIVE_MONITORING",
       "rules": {
         "limit_buy": 225.00,
@@ -73,6 +73,13 @@
     }
     },
     "alerts_log": [
+    {
+      "timestamp": "2026-04-14T12:00:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Execution confirmed. Added 22.7% weight at $239.89 to reach 30% target.",
+      "action": "Monitoring active. Avg cost $233.10. Wait for Q1 earnings."
+    },
     {
       "timestamp": "2026-04-14T11:45:00Z",
       "ticker": "AMZN",
