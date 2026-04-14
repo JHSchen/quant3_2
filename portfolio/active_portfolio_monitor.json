@@ -2,12 +2,25 @@
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
+    "AVGO": {
+      "weight": 0.04,
+      "cost_basis": 379.75,
+      "current_price": 379.75,
+      "pnl_pct": 0.0,
+      "status": "ACTIVE_MONITORING",
+      "rules": {
+        "entry_range": [370.00, 380.00],
+        "take_profit": 450.00,
+        "stop_loss": 328.00,
+        "kill_switch": "Google TPU partnership shift or Power grid delays"
+      }
+    },
     "TSLA": {
       "weight": 0.06,
       "cost_basis": 397.0,
-      "current_price": 346.0,
-      "pnl_pct": -0.128,
-      "status": "YELLOW_ALERT_TIGHTENING_STOP_LOSS"
+      "current_price": 352.42,
+      "pnl_pct": -0.1123,
+      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_334.80"
     },
     "BABA": {
       "weight": 0.075,
@@ -17,11 +30,11 @@
       "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
     },
     "02675.HK": {
-      "weight": 0.0,
-      "cost_basis": 0.0,
+      "weight": 0.025,
+      "cost_basis": 53.80,
       "current_price": 53.80,
       "pnl_pct": 0.0,
-      "status": "GREEN_PENDING_ENTRY",
+      "status": "ACTIVE_MONITORING",
       "rules": {
         "entry_range": [52.0, 54.5],
         "take_profit": 72.0,
@@ -30,13 +43,13 @@
       }
     },
     "AMZN": {
-      "weight": 0.0,
-      "cost_basis": 0.0,
+      "weight": 0.073,
+      "cost_basis": 212.0,
       "current_price": 239.89,
-      "pnl_pct": 0.0,
-      "status": "GREEN_MONITOR_ENTRY",
+      "pnl_pct": 0.1315,
+      "status": "ACTIVE_MONITORING",
       "rules": {
-        "limit_buy": 235.00,
+        "limit_buy": 225.00,
         "op_income_target": 19500000000.0,
         "aws_growth_target": 0.25,
         "take_profit_target": 315.0,
@@ -44,9 +57,70 @@
         "stop_loss_aws_growth": 0.18,
         "kill_switch": "CEO revision of AI run-rate or Yield > 5.2%"
       }
+    },
+    "002179.SZ": {
+      "weight": 0.03,
+      "cost_basis": 34.00,
+      "current_price": 36.51,
+      "pnl_pct": 0.073,
+      "status": "ACTIVE_MONITORING",
+      "rules": {
+        "entry_range": [35.00, 36.50],
+        "take_profit": 45.00,
+        "stop_loss": 34.20,
+        "kill_switch": "2026 Q1 profit growth < 10% or Major audit"
+      }
     }
-  },
-  "alerts_log": [
+    },
+    "alerts_log": [
+    {
+      "timestamp": "2026-04-14T12:15:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Strategy confirmed (Phase 1-6). Delta +22.7% identified to reach 30% target weight.",
+      "action": "Tranches [7.7%, 7.5%, 7.5%] added to execution_commands. Waiting for proceed."
+    },
+    {
+      "timestamp": "2026-04-14T12:05:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Execution cancelled. Record reverted to original 7.3% base at $212.00.",
+      "action": "Maintain limit buy for target 30% weight at $235.00/re-evaluation."
+    },
+    {
+      "timestamp": "2026-04-14T11:45:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Position updated. Cost basis $212.00 (7.3% weight). Floating P/L +13.15%.",
+      "action": "Tighten trailing stop to $218.00. Monitor Q1 earnings April 23."
+    },
+    {
+      "timestamp": "2026-04-14T11:35:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "Price $352.42. Trailing stop tightened to $334.80 (5.2% cushion).",
+      "action": "Maintain position. Monitoring Q1 Earnings (April 22) and NHTSA probe."
+    },
+    {
+      "timestamp": "2026-04-14T11:20:00Z",
+      "ticker": "AVGO",
+      "level": "GREEN",
+      "trigger": "Execution confirmed. Initial 40% tranche (4% weight) bought at $379.75.",
+      "action": "Monitoring active. Entry within target zone [370-380]."
+    },
+    {
+      "timestamp": "2026-04-14T11:20:00Z",
+      "ticker": "002179.SZ",
+      "level": "GREEN",
+      "trigger": "Record corrected. Current base is 3% at 34.00 RMB. 10% limit buy pending at 36.50.",
+      "action": "Set buy limit alert for 10% tranche at 36.50 RMB."
+    },
+    {
+      "timestamp": "2026-04-14T11:00:00Z",      "ticker": "002179.SZ",
+      "level": "GREEN",
+      "trigger": "Strategy confirmed. Price 36.68 RMB. Waiting for entry zone 35.00-36.50.",
+      "action": "Set buy grid alert at 36.50 RMB."
+    },
     {
       "timestamp": "2026-04-14T10:15:00Z",
       "ticker": "AMZN",
@@ -60,16 +134,14 @@
       "level": "GREEN",
       "trigger": "Price 53.80 HKD within entry range (52.0-54.5). Strategy confirmed.",
       "action": "Initiate first 1/3 position at current level."
-    },
-    {
-      "timestamp": "2026-04-13T14:30:00Z",
-      "ticker": "TSLA",
-      "level": "YELLOW",
-      "trigger": "Intraday price $346.0. Below consensus delivery (358k) + Geopolitical friction.",
-      "action": "Tighten trailing stop to $334.80 to protect capital. Monitor $338.27 closely."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "002179.SZ",
+      "instruction": "SET BUY LIMIT GRID at 36.50 and 35.50 for initial 20% position.",
+      "reason": "Wait for technical bottoming within the 35.00-36.50 buy zone."
+    },
     {
       "ticker": "AMZN",
       "instruction": "SET BUY LIMIT at $235.00 for initial 30% position. SET ALERTS for Q1 Earnings on 2026-04-23.",
@@ -79,11 +151,6 @@
       "ticker": "02675.HK",
       "instruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
       "reason": "Price in optimal entry zone. Verification passed."
-    },
-    {
-      "ticker": "TSLA",
-      "instruction": "UPGRADE SELL STOP to $334.80.",
-      "reason": "Technical breakdown risk if $338.27 fails."
     }
   ]
 }

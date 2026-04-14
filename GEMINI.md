@@ -34,6 +34,7 @@ When a user provides an investment target or strategy to analyze, follow these p
 **CRITICAL: This phase must be executed BEFORE any Agent speaks.**
 - **Price Fetching**: Invoke `run_shell_command` with `python3 scripts/get_latest_market_data.py <TICKER>` to get the absolute current price and metrics.
 - **News Verification**: Use `google_web_search` or `web_fetch` to find the 3 most recent Tier 1/Tier 2 news items (per `docs/data_verification.md`).
+- **Portfolio State Retrieval**: Read `active_portfolio_monitor.json` to extract `current_weight`, `cost_basis`, `current_price` (to compute `floating_pnl_pct`), and designated `stop_loss_threshold`.
 - **Context Locking**: Inject the retrieved data as "Impediment Constants" into the system instruction for Strategy, Adversary, and Risk agents.
 
 ### Phase 0: Input Validation
@@ -66,13 +67,37 @@ When a user provides an investment target or strategy to analyze, follow these p
 - **Final Protocol**: Define Entry, Add, Take-Profit, Stop-Loss, and Kill Switch parameters.
 - **Output**: Use `<thinking>` and `<speaking>`.
 
-### Phase 4: Final Synthesis (Orchestrator)
+### Phase 4: Delta Calculation & Adversary Checkpoint (Orchestrator & Adversary)
+*This phase calculates the required position change and gates execution.*
+- **Delta Calculation**: Orchestrator calculates `Delta = Target Weight - Current Weight`.
+- **Adversary Gating**: The Adversary Agent reviews the Delta. It must output `APPROVE`, `MODIFY_TARGET`, or `VETO`. The Orchestrator is blocked from proceeding until `APPROVE` is received. *(Bypassed if Absolute Override in Phase 5 is triggered).*
+
+### Phase 5: Execution Planning (Execution Agent)
+*Act as the Execution Agent.*
+- **Generate Tranches**: If Approved (or if Absolute Override is active), calculate the exact order parameters based on Delta.
+- **Delta < 0 (Trim) Constraints**: Ensure mandatory Second-Derivative check (growth metric acceleration) is performed to choose between Trailing Stop vs. Limit Trim.
+- **Absolute Override**: If `floating_pnl_pct < stop_loss_threshold`, immediately bypass Adversary Gating and Second-Derivative checks to issue a **stop-market** execution plan.
+- **Validation**: Output must be a valid JSON Schema where the sum of tranches exactly equals the absolute delta (tolerance ±0.001). Failures trigger a 3-strike fallback to a single limit order.
+- **Output**: Use `<thinking>` and `<speaking>`.
+
+### Phase 6: Final Synthesis & Confirmation Gating (Orchestrator)
 Synthesize the results into a final report for the user:
 1. **Topological Conclusion** (Verified Strategy)
 2. **Adversarial Summary** (Key attacks and survival logic)
 3. **Risk Pricing & Execution Matrix** (Concrete trading rules)
-4. **Invalidation Conditions** (When the whole strategy collapses)
-5. **Next Steps**
+4. **Execution Deployment Plan** (Concrete JSON order tranches from Phase 5)
+5. **Invalidation Conditions** (When the whole strategy collapses)
+6. **Next Steps** (Prompt user for confirmation: "Confirm strategy" or "Proceed")
+
+- **Trigger Phase 7**: If the user provides confirmation (e.g., "Confirm", "OK", "Proceed", "确认策略"), the Orchestrator **MUST** automatically proceed to **Phase 7**.
+
+### Phase 7: State Persistence & Atomic Synchronization (Orchestrator)
+*This phase ensures the analytical results are persisted to the project files.*
+- **Action**: Orchestrator MUST invoke `write_file` to update the specific `<TICKER>_protocol.json` and `replace` to update `active_portfolio_monitor.json` in a single turn.
+- **Data Persistence**: Ensure the `cost_basis`, `current_weight`, `target_weight`, and `tranches` are consistent across files.
+- **Logging**: Append a "STRATEGY_CONFIRMED" entry to the `alerts_log` in `active_portfolio_monitor.json`.
+- **Git Sync**: Immediately stage and commit the updated JSON files to the current branch.
+- **Completion**: Notify the user that the system state is now synchronized.
 
 ---
 

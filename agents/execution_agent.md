@@ -15,36 +15,53 @@
 
 ```yaml
 agent_id: "execution_agent"
-role: "将交易协议翻译为券商条件单参数"
+role: "将交易协议翻译为券商条件单参数及仓位部署计划"
 input_contract:
-  receives_from: ["orchestrator", "monitor_agent"]
+  receives_from: ["orchestrator", "monitor_agent", "adversary_agent"]
   visible_fields:
     - final_protocol           # 完整的执行矩阵
     - monitor_alerts           # 监控预警信号
     - current_price            # 当前价格
     - daily_volume             # 日均成交量
-    - position_size            # 当前持仓
+    - current_weight           # 当前持仓比例
+    - cost_basis               # 持仓成本价
+    - floating_pnl_pct         # 浮动盈亏比例
+    - stop_loss_threshold      # 止损线（绝对不可修改）
+    - adversary_approval       # 必须为 APPROVE (除非触发Absolute Override)
   hidden_fields:
     - strategy_reasoning       # 策略推理
     - adversary_debate         # 对抗辩论
     - user_preferences         # 用户偏好
 output_contract:
-  format: "xml_tagged"
-  required_sections:
-    - order_type               # 条件单类型
-    - trigger_price            # 触发价
-    - order_price              # 委托价
-    - quantity                 # 委托数量
-    - validity                 # 有效期
-    - slippage_plan            # 滑点管理方案
+  format: "json_schema"
+  schema:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        size: {type: "number", description: "该笔订单的仓位比例"}
+        type: {type: "string", enum: ["limit_buy", "limit_sell", "trailing_stop", "stop_market"]}
+        price: {type: "number"}
+  validation: "sum(tranche.size) 必须严格等于 absolute(Target_Weight - current_weight)。误差±0.001。失败3次则触发Orchestrator强制接管为单笔限价单。"
 trigger_conditions:
   activated_by: "orchestrator"
-  phase: "post_risk_assessment"
+  phase: "post_adversary_gating"
 escalation:
   on_conflict: "escalate_to_orchestrator"
 ```
 
 ## 条件单翻译规则
+
+### 仓位差额计算 (Position Delta) 与修剪逻辑
+- 计算公式：`Delta = Target_Weight_Limit - current_weight`
+- **若 Delta > 0 (加仓/建仓)**：按网格或一次性买入生成 `limit_buy` 订单。
+- **若 Delta < 0 (减仓/修剪)**：禁止直接市价卖出。必须经过以下严格校验：
+  1. **Absolute Override (止损短路)**: 如果 `floating_pnl_pct < stop_loss_threshold`，立即跳过所有其他检查和Adversary Gating。直接生成 `stop_market` 订单。接受滑点。
+  2. **Mandatory Second-Derivative Check**: 如果未触发止损短路，必须评估标的核心增长指标的二阶导数（加速度）：
+     - 若加速度为**正**：将减仓单替换为 **Trailing Stop**。不要立即卖出。
+     - 若加速度连续两期**负向拐点**：执行 **Limit Sell**。
+  3. **主动降级**: 如果Delta<0是因为策略文档主动调降了评级（Rebalance），不属于止损，按 Limit Sell 走。
+- **Cost Basis 约束**: `floating_pnl_pct > 0` 时，只允许 Trailing Stop 或 Limit Sell（容忍度极低）。
 
 ### 建仓翻译（Entry）
 
