@@ -1,0 +1,37 @@
+{
+  "ticker": "002179.SZ",
+  "name": "中航光电",
+  "status": "ACTIVE_MONITORING",
+  "strategy_snapshot": {
+    "topology": "Aerospace/Defense Bottoming + AI Server Localization (224G) + Commercial Space Alpha",
+    "primary_vector": "Recovery of military procurement normalization + Substitution of high-end interconnects in domestic AI clusters",
+    "fragile_point": "Raw material (Gold/Copper) cost push + Defense recovery volatility"
+  },
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_pct": 0.20,
+      "price_range": [35.00, 36.50],
+      "current_execution_price": 36.68
+    },
+    "scaling": {
+      "confirmation_event": "224G volume orders or satellite network expansion (Thousand Sails launch)",
+      "add_condition": "2026 Q1 Net Profit growth > 15% confirmed"
+    },
+    "exit": {
+      "take_profit": 45.00,
+      "stop_loss": 34.20,
+      "trailing_stop_pct": 0.08
+    },
+    "kill_switch": [
+      "2026 Q1 profit growth misses recovery target (<10%)",
+      "Major corruption audit in aerospace division",
+      "Gold/Copper prices surge > 20% from April 2026 baseline"
+    ]
+  },
+  "risk_metrics": {
+    "purity_score": "High (Defense/Aerospace > 60% of NP)",
+    "valuation_anchor": "PE 31.0 (Forward 2026) -> 40.0 (Target)",
+    "material_exposure": "High (Gold/Copper-sensitive)"
+  },
+  "last_updated": "2026-04-14T10:45:00Z"
+}

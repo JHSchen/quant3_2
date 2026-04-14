@@ -44,9 +44,29 @@
         "stop_loss_aws_growth": 0.18,
         "kill_switch": "CEO revision of AI run-rate or Yield > 5.2%"
       }
+    },
+    "002179.SZ": {
+      "weight": 0.0,
+      "cost_basis": 0.0,
+      "current_price": 36.68,
+      "pnl_pct": 0.0,
+      "status": "GREEN_PENDING_ENTRY",
+      "rules": {
+        "entry_range": [35.0, 36.5],
+        "take_profit": 45.0,
+        "stop_loss": 34.2,
+        "kill_switch": "2026 Q1 profit growth < 10% or Major audit"
+      }
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-14T10:45:00Z",
+      "ticker": "002179.SZ",
+      "level": "GREEN",
+      "trigger": "Strategy confirmed. Price 36.68 RMB. Waiting for entry zone 35.00-36.50.",
+      "action": "Set buy grid alert at 36.50 RMB."
+    },
     {
       "timestamp": "2026-04-14T10:15:00Z",
       "ticker": "AMZN",
@@ -60,16 +80,14 @@
       "level": "GREEN",
       "trigger": "Price 53.80 HKD within entry range (52.0-54.5). Strategy confirmed.",
       "action": "Initiate first 1/3 position at current level."
-    },
-    {
-      "timestamp": "2026-04-13T14:30:00Z",
-      "ticker": "TSLA",
-      "level": "YELLOW",
-      "trigger": "Intraday price $346.0. Below consensus delivery (358k) + Geopolitical friction.",
-      "action": "Tighten trailing stop to $334.80 to protect capital. Monitor $338.27 closely."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "002179.SZ",
+      "instruction": "SET BUY LIMIT GRID at 36.50 and 35.50 for initial 20% position.",
+      "reason": "Wait for technical bottoming within the 35.00-36.50 buy zone."
+    },
     {
       "ticker": "AMZN",
       "instruction": "SET BUY LIMIT at $235.00 for initial 30% position. SET ALERTS for Q1 Earnings on 2026-04-23.",
@@ -79,11 +97,6 @@
       "ticker": "02675.HK",
       "instruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
       "reason": "Price in optimal entry zone. Verification passed."
-    },
-    {
-      "ticker": "TSLA",
-      "instruction": "UPGRADE SELL STOP to $334.80.",
-      "reason": "Technical breakdown risk if $338.27 fails."
     }
   ]
 }
