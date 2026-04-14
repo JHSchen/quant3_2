@@ -16,6 +16,19 @@
       "pnl_pct": -0.112,
       "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
     },
+    "02675.HK": {
+      "weight": 0.0,
+      "cost_basis": 0.0,
+      "current_price": 53.80,
+      "pnl_pct": 0.0,
+      "status": "GREEN_PENDING_ENTRY",
+      "rules": {
+        "entry_range": [52.0, 54.5],
+        "take_profit": 72.0,
+        "stop_loss": 46.0,
+        "kill_switch": "Major safety accident or overseas patent injunction"
+      }
+    },
     "AMZN": {
       "weight": 0.0,
       "cost_basis": 238.65,
@@ -32,6 +45,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-14T09:45:00Z",
+      "ticker": "02675.HK",
+      "level": "GREEN",
+      "trigger": "Price 53.80 HKD within entry range (52.0-54.5). Strategy confirmed.",
+      "action": "Initiate first 1/3 position at current level."
+    },
+    {
       "timestamp": "2026-04-13T15:55:00Z",
       "ticker": "AMZN",
       "level": "GREEN",
@@ -47,6 +67,11 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "02675.HK",
+      "instruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
+      "reason": "Price in optimal entry zone. Verification passed."
+    },
     {
       "ticker": "AMZN",
       "instruction": "SET BUY LIMIT at $235.00 for 30% allocation. SET ALERTS for Q1 Earnings release.",
