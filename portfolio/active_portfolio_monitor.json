@@ -31,32 +31,35 @@
     },
     "AMZN": {
       "weight": 0.0,
-      "cost_basis": 238.65,
-      "current_price": 238.65,
+      "cost_basis": 0.0,
+      "current_price": 239.89,
       "pnl_pct": 0.0,
-      "status": "GREEN_PENDING_EARNINGS",
+      "status": "GREEN_MONITOR_ENTRY",
       "rules": {
+        "limit_buy": 235.00,
+        "op_income_target": 19500000000.0,
+        "aws_growth_target": 0.25,
+        "take_profit_target": 315.0,
         "stop_loss_op_income": 16500000000.0,
         "stop_loss_aws_growth": 0.18,
-        "take_profit_target": 310.0,
-        "hard_stop_loss_pct": 0.07
+        "kill_switch": "CEO revision of AI run-rate or Yield > 5.2%"
       }
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-14T10:15:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Strategy confirmed. Current price $239.89. Entry alert set at $235.00.",
+      "action": "Observe Q1 Earnings (April 23) for Op. Income > $19.5B confirmation."
+    },
     {
       "timestamp": "2026-04-14T09:45:00Z",
       "ticker": "02675.HK",
       "level": "GREEN",
       "trigger": "Price 53.80 HKD within entry range (52.0-54.5). Strategy confirmed.",
       "action": "Initiate first 1/3 position at current level."
-    },
-    {
-      "timestamp": "2026-04-13T15:55:00Z",
-      "ticker": "AMZN",
-      "level": "GREEN",
-      "trigger": "Strategy initialized. Waiting for Q1 Earnings (April 23) for confirmation.",
-      "action": "Observe $235-$240 range for 30% entry. DO NOT chase above $245."
     },
     {
       "timestamp": "2026-04-13T14:30:00Z",
@@ -68,24 +71,19 @@
   ],
   "execution_commands": [
     {
+      "ticker": "AMZN",
+      "instruction": "SET BUY LIMIT at $235.00 for initial 30% position. SET ALERTS for Q1 Earnings on 2026-04-23.",
+      "reason": "Wait for technical pull-back and fundamental confirmation of AWS/AI growth."
+    },
+    {
       "ticker": "02675.HK",
       "instruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
       "reason": "Price in optimal entry zone. Verification passed."
     },
     {
-      "ticker": "AMZN",
-      "instruction": "SET BUY LIMIT at $235.00 for 30% allocation. SET ALERTS for Q1 Earnings release.",
-      "reason": "Wait for Op. Income confirmation (> $19B suggested)."
-    },
-    {
       "ticker": "TSLA",
       "instruction": "UPGRADE SELL STOP to $334.80.",
       "reason": "Technical breakdown risk if $338.27 fails."
-    },
-    {
-      "ticker": "BABA",
-      "instruction": "Maintain BUY LIMIT GRID at $124.50 and $120.50.",
-      "reason": "Bullish AI developments vs Low valuation."
     }
   ]
 }
