@@ -18,9 +18,9 @@
     "TSLA": {
       "weight": 0.06,
       "cost_basis": 397.0,
-      "current_price": 346.0,
-      "pnl_pct": -0.128,
-      "status": "YELLOW_ALERT_TIGHTENING_STOP_LOSS"
+      "current_price": 352.42,
+      "pnl_pct": -0.1123,
+      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_334.80"
     },
     "BABA": {
       "weight": 0.075,
@@ -74,7 +74,14 @@
     },
     "alerts_log": [
     {
-      "timestamp": "2026-04-14T11:05:00Z",
+      "timestamp": "2026-04-14T11:35:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "Price $352.42. Trailing stop tightened to $334.80 (5.2% cushion).",
+      "action": "Maintain position. Monitoring Q1 Earnings (April 22) and NHTSA probe."
+    },
+    {
+      "timestamp": "2026-04-14T11:20:00Z",
       "ticker": "AVGO",
       "level": "GREEN",
       "trigger": "Execution confirmed. Initial 40% tranche (4% weight) bought at $379.75.",
