@@ -43,13 +43,13 @@
       }
     },
     "AMZN": {
-      "weight": 0.0,
-      "cost_basis": 0.0,
+      "weight": 0.073,
+      "cost_basis": 212.0,
       "current_price": 239.89,
-      "pnl_pct": 0.0,
-      "status": "GREEN_MONITOR_ENTRY",
+      "pnl_pct": 0.1315,
+      "status": "ACTIVE_MONITORING",
       "rules": {
-        "limit_buy": 235.00,
+        "limit_buy": 225.00,
         "op_income_target": 19500000000.0,
         "aws_growth_target": 0.25,
         "take_profit_target": 315.0,
@@ -73,6 +73,13 @@
     }
     },
     "alerts_log": [
+    {
+      "timestamp": "2026-04-14T11:45:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Position updated. Cost basis $212.00 (7.3% weight). Floating P/L +13.15%.",
+      "action": "Tighten trailing stop to $218.00. Monitor Q1 earnings April 23."
+    },
     {
       "timestamp": "2026-04-14T11:35:00Z",
       "ticker": "TSLA",
