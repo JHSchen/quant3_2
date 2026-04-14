@@ -59,10 +59,10 @@
       }
     },
     "002179.SZ": {
-      "weight": 0.13,
-      "cost_basis": 35.93,
+      "weight": 0.03,
+      "cost_basis": 34.00,
       "current_price": 36.51,
-      "pnl_pct": 0.016,
+      "pnl_pct": 0.073,
       "status": "ACTIVE_MONITORING",
       "rules": {
         "entry_range": [35.00, 36.50],
@@ -74,15 +74,14 @@
     },
     "alerts_log": [
     {
-      "timestamp": "2026-04-14T11:15:00Z",
+      "timestamp": "2026-04-14T11:20:00Z",
       "ticker": "002179.SZ",
       "level": "GREEN",
-      "trigger": "Execution confirmed. 10% tranche bought at 36.51. Merged with existing 3% at 34.00.",
-      "action": "Maintain monitoring. Current weight 13%, avg cost 35.93."
+      "trigger": "Record corrected. Current base is 3% at 34.00 RMB. 10% limit buy pending at 36.50.",
+      "action": "Set buy limit alert for 10% tranche at 36.50 RMB."
     },
     {
-      "timestamp": "2026-04-14T11:00:00Z",
-      "ticker": "002179.SZ",
+      "timestamp": "2026-04-14T11:00:00Z",      "ticker": "002179.SZ",
       "level": "GREEN",
       "trigger": "Strategy confirmed. Price 36.68 RMB. Waiting for entry zone 35.00-36.50.",
       "action": "Set buy grid alert at 36.50 RMB."
