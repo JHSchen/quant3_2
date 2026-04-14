@@ -74,6 +74,13 @@
     },
     "alerts_log": [
     {
+      "timestamp": "2026-04-14T12:15:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "Strategy confirmed (Phase 1-6). Delta +22.7% identified to reach 30% target weight.",
+      "action": "Tranches [7.7%, 7.5%, 7.5%] added to execution_commands. Waiting for proceed."
+    },
+    {
       "timestamp": "2026-04-14T12:05:00Z",
       "ticker": "AMZN",
       "level": "GREEN",
