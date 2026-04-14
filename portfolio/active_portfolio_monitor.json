@@ -4,15 +4,16 @@
   "portfolio": {
     "AVGO": {
       "weight": 0.04,
+      "target_weight": 0.08,
       "cost_basis": 379.75,
       "current_price": 379.75,
       "pnl_pct": 0.0,
       "status": "ACTIVE_MONITORING",
       "rules": {
-        "entry_range": [370.00, 380.00],
+        "entry_range": [345.00, 355.00],
         "take_profit": 450.00,
         "stop_loss": 328.00,
-        "kill_switch": "Google TPU partnership shift or Power grid delays"
+        "kill_switch": "Google TPU partnership shift or >15% reduction in TPU CAPEX"
       }
     },
     "TSLA": {
@@ -150,6 +151,16 @@
     {
       "ticker": "02675.HK",
       "instruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
+      "reason": "Price in optimal entry zone. Verification passed."
+    }
+  ]
+}
+nstruction": "BUY LIMIT at 53.80 for initial 1/3 position. SET STOP LOSS at 46.00.",
+      "reason": "Price in optimal entry zone. Verification passed."
+    }
+  ]
+}
+ at 46.00.",
       "reason": "Price in optimal entry zone. Verification passed."
     }
   ]
