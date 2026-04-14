@@ -16,7 +16,19 @@
     },
     "add_rules": {
       "catalyst": "Anthropic/Frontier model diversification (Path 2) or TP > $345.00 support retest",
-      "limit": "Max total weight 0.50"
+      "limit": "Max total weight 0.08",
+      "tranches": [
+        {
+          "price": 355.00,
+          "weight_step": 0.02,
+          "priority": "MEDIUM"
+        },
+        {
+          "price": 345.00,
+          "weight_step": 0.02,
+          "priority": "HIGH"
+        }
+      ]
     },
     "take_profit_rules": {
       "fundamental_tp": 450.00,
@@ -31,7 +43,7 @@
   "risk_metrics": {
     "purity_score": 0.435,
     "concentration_risk": "HIGH (Google >75% of ASIC Rev)",
-    "valuation_anchor": "PE 21.2 (Current) -> 28.0 (Target)"
+    "valuation_anchor": "PE 21.2 (Current) -> 24.5 (Target)"
   },
-  "last_updated": "2026-04-14T11:00:00Z"
+  "last_updated": "2026-04-14T13:40:00Z"
 }
