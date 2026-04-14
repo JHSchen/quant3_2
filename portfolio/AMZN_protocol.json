@@ -9,8 +9,8 @@
   "status": "ACTIVE_MONITORING",
   "execution_protocol": {
     "entry_rules": {
-      "initial_tranche_pct": 0.30,
-      "limit_price": 233.10,
+      "initial_tranche_pct": 0.073,
+      "limit_price": 212.00,
       "current_price_baseline": 239.89,
       "confirmation_event": "Q1 2026 Earnings (2026-04-23)",
       "target_op_income_floor": 19500000000.0
