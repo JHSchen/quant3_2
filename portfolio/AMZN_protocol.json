@@ -4,35 +4,41 @@
   "status": "ACTIVE_MONITORING",
   "strategy_snapshot": {
     "topology": "AWS Cloud + GenAI Layer (Bedrock) + Custom Silicon (Trainium 3) + Project Leo (Satellite)",
-    "primary_vector": "AI Margin Expansion via internal silicon vs Nvidia Blackwell + Enterprise Cloud Reacceleration",
-    "fragile_point": "$200B Capex vs AWS Growth Margin & FCF Compression"
-  "status": "ACTIVE_MONITORING",
+    "primary_vector": "Vertical AI Utility (Silicon OEM) + Project Leo Connectivity vs Capex Burn",
+    "fragile_point": "$200B Capex vs AWS Growth Margin & FCF Compression",
+    "core_thesis": "Vertical integration (Trainium) decouples AI growth from Nvidia margin structure."
+  },
   "execution_protocol": {
-    "entry_rules": {
-      "initial_tranche_pct": 0.073,
-      "limit_price": 212.00,
+    "initial_state": {
+      "current_weight": 0.073,
+      "cost_basis": 212.00,
       "current_price_baseline": 239.89,
-      "confirmation_event": "Q1 2026 Earnings (2026-04-23)",
-      "target_op_income_floor": 19500000000.0
+      "floating_pnl_pct": 0.1315
     },
-    "add_rules": {
-      "catalyst": "AWS growth > 25% AND Operating Income > $19.5B",
-      "limit": "Max total weight 0.50"
+    "target_parameters": {
+      "target_weight_limit": 0.30,
+      "position_delta": 0.227
     },
+    "deployment_plan": [
+      {"size": 0.077, "type": "limit_buy", "price": 239.89, "comment": "Immediate deployment tranche"},
+      {"size": 0.075, "type": "limit_buy", "price": 235.00, "comment": "Support retest tranche"},
+      {"size": 0.075, "type": "limit_buy", "price": 228.00, "comment": "Gap fill tranche"}
+    ],
     "take_profit_rules": {
       "fundamental_tp": 315.00,
-      "trailing_stop_pct": 0.10
+      "trailing_stop_pct": 0.08
     },
     "stop_loss_rules": {
-      "earnings_melt_down": "Op. Income < 16.5B or AWS growth < 18%",
-      "technical_sl": "Single day drop > 7% with > 2x average volume",
-      "macro_kill_switch": "10Y Treasury Yield > 5.2% or CEO revises AI run-rate downwards"
+      "trailing_stop": 218.00,
+      "fundamental_melt_down": "AWS growth < 18% or CEO revises AI run-rate downwards",
+      "macro_kill_switch": "Project Leo delay beyond Q4 2026 or Yield > 5.2%"
     }
   },
   "risk_metrics": {
     "purity_score": 0.021,
     "capex_risk": "VERY HIGH ($200B/year)",
-    "valuation_anchor": "PE 25.5 (Current) -> 35.0 (Target)"
+    "valuation_anchor": "PE 25.6 (Current) -> 35.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-04-14)"
   },
-  "last_updated": "2026-04-14T10:15:00Z"
+  "last_updated": "2026-04-14T12:15:00Z"
 }
