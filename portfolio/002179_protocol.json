@@ -11,7 +11,8 @@
     "entry_rules": {
       "initial_tranche_pct": 0.20,
       "price_range": [35.00, 36.50],
-      "current_execution_price": 36.68
+      "current_execution_price": 35.93,
+      "current_weight": 0.13
     },
     "scaling": {
       "confirmation_event": "224G volume orders or satellite network expansion (Thousand Sails launch)",
