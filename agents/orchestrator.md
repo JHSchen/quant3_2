@@ -19,15 +19,21 @@ def validate_input(user_input):
     return "PASS: 分发至Strategy Agent"
 ```
 
-### 2. 信息路由（Information Routing）
+### 2. 信息路由与状态注入（Routing & State Injection）
+
+**Empirical Grounding (Phase -1) 注入**：
+Orchestrator 必须读取 `active_portfolio_monitor.json`，提取目标标的的 `current_weight`，`cost_basis`，`current_price` 和 `stop_loss_threshold`。将这些数据作为 "Initial State Constants" 注入所有下游 Agent 的 Prompt 中。
 
 | 源 → 目标 | 传递内容 | 屏蔽内容 |
 |-----------|---------|---------|
-| User → Strategy | 原始输入全量 | 无 |
+| User/System → Strategy | 原始输入全量 + Initial State Constants | 无 |
 | Strategy → Adversary | `<speaking>` only | `<thinking>`, 用户偏好 |
 | Adversary → Orchestrator | `<speaking>` + verdict | 无（Orchestrator全知） |
 | 合并结论 → Risk | 双方 `<speaking>` 合并 | 辩论中间推理 |
-| Risk → User | `<speaking>` 全量 | 内部置信度 |
+| Risk → Adversary (Phase 4) | Target Weight Delta | 无 |
+| Adversary → Execution | APPROVE 信号 | VETO 时的重构逻辑 |
+| Execution → Orchestrator | `<execution_plan>` JSON | 无 |
+| Orchestrator → User | Final Synthesis | 内部置信度 |
 
 ### 3. 收敛判断（Convergence Check）
 
@@ -53,41 +59,25 @@ def convergence_check(adversary_output, iteration_count):
 - **若Strategy重构后Adversary转为PROCEED**：正常进入Risk Agent
 - **若出现部分拓扑成立、部分被推翻**：标注"局部重构"，保留成立部分
 
-### 5. 最终报告合成
+### 5. 最终报告合成与确认门控 (Phase 6)
 
-将三方输出合成为用户可读的最终报告。格式：
+将三方输出合成为用户可读的最终报告。
+**关键规则**：Orchestrator 必须在报告末尾明确询问用户是否确认。
 
-```markdown
-## 最终投资协议
+### 6. 状态持久化与原子同步 (Phase 7)
 
-### 1. 拓扑结论
-[来自Strategy，标注经Adversary验证的修订痕迹]
-- 原始拓扑 → 修订后拓扑（如有重构）
+**触发条件**：用户回复 "确认"、"Confirm"、"Proceed" 或类似肯定表达。
 
-### 2. 对抗性验证摘要
-[Adversary的核心攻击点及Strategy的应对]
-- 被推翻的假设
-- 存活的核心逻辑
+**执行动作**：
+1. **更新 Protocol**：使用 `write_file` 覆写 `<TICKER>_protocol.json`，确保包含最新的 `target_parameters` 和 `deployment_plan`。
+2. **更新 Monitor**：使用 `replace` 修改 `active_portfolio_monitor.json`：
+   - 更新该标的的 `weight`, `cost_basis`, `status`, `rules`。
+   - 在 `alerts_log` 中追加一条类型为 `STRATEGY_CONFIRMED` 的日志。
+3. **Git 同步**：自动执行 `git add . && git commit -m "feat: persist confirmed strategy for <TICKER>" && git push`。
 
-### 3. 风险定价
-[来自Risk Agent]
-- 预期差测算结果
-- 纯度评分
-- 弹性稀释风险等级
-
-### 4. 执行矩阵
-[直接复制Risk Agent的Final Protocol]
-| 标的 | 仓位 | 建仓 | 加仓 | 止盈 | 止损 | Kill Switch |
-
-### 5. 失效条件清单
-[汇总所有Agent标注的失效条件]
-
-### 6. 待验证变量
-[Strategy Agent的Variable Inquiry中用户尚未回答的问题]
-
-### 7. 下一步行动项
-[明确的、可执行的下一步操作]
-```
+**数据一致性检查**：
+- `current_weight` 必须在两个文件中严格一致。
+- `deployment_plan` 的总量必须等于 `Position Delta`。
 
 ## 降级模式（单Agent运行）
 
