@@ -74,6 +74,13 @@
     },
     "alerts_log": [
     {
+      "timestamp": "2026-04-14T11:05:00Z",
+      "ticker": "AVGO",
+      "level": "GREEN",
+      "trigger": "Execution confirmed. Initial 40% tranche (4% weight) bought at $379.75.",
+      "action": "Monitoring active. Entry within target zone [370-380]."
+    },
+    {
       "timestamp": "2026-04-14T11:20:00Z",
       "ticker": "002179.SZ",
       "level": "GREEN",
