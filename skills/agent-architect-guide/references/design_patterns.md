@@ -17,8 +17,16 @@ To maintain the high quality of the Investment Agent Team, follow these architec
 
 ## 4. Execution Loop (执行闭环)
 - **Alert Logic**: Map logic states (GREEN/YELLOW/RED) to specific brokerage instructions.
-- **Persistence**: Every change to an agent's role or a target's protocol must be synced to structured JSON files (`portfolio/`) and pushed to Git.
+- **Atomic Persistence (原子持久化)**: Strategy confirmation triggers an atomic update of individual protocols and global monitor files in a single turn, followed by an immediate Git sync to prevent "state drift."
 
-## 5. Re-analysis Trigger (重构触发)
+## 5. Delta-Awareness (增量感知)
+- **Concept**: Agents must not assume a "zero-base" starting point.
+- **Implementation**: The Orchestrator must inject "Initial State Constants" (current_weight, cost_basis) into Phase -1. The Execution Agent calculates `Delta = Target - Current` to generate actionable tranches.
+
+## 6. Survival Short-circuits (生存短路机制)
+- **Stop-Loss Short-Circuit (Absolute Override)**: In emergency states (`pnl < stop_loss`), the system must bypass standard debate/gating phases to generate emergency execution plans immediately.
+- **Validation Fallback**: Critical calculations (like tranche summation) must have a retry limit (e.g., 3 strikes) before an Orchestrator-enforced single-order fallback is triggered.
+
+## 7. Re-analysis Trigger (重构触发)
 - **Automatic Invalidation**: If a monitored variable (like "Model 2 production delay") is detected, the Orchestrator MUST force a re-analysis cycle.
 - **User Confirmation**: No Git sync should occur for strategy updates without explicit user approval.
