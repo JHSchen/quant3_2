@@ -1,0 +1,23 @@
+{
+  "ticker": "09992.HK",
+  "name": "泡泡玛特 (Pop Mart)",
+  "strategy_type": "GLOBAL_IP_EXPANSION",
+  "topology": "Emotional asset distribution network",
+  "constants": {
+    "gross_margin": ">60%",
+    "overseas_efficiency": "Significant premium over domestic"
+  },
+  "risk_pricing": {
+    "target_weight": 0.06,
+    "entry_zones": [
+      {"price": 163.90, "tranche": 0.02, "logic": "Initial market entry"},
+      {"price": 158.50, "tranche": 0.02, "logic": "Technical support level"},
+      {"price": 152.00, "tranche": 0.02, "logic": "Extreme valuation support"}
+    ],
+    "take_profit": 225.00,
+    "stop_loss": 142.00,
+    "kill_switch": "Overseas SSS growth negative or core IP revenue share < 25%"
+  },
+  "status": "STRATEGY_CONFIRMED",
+  "last_audit": "2026-04-15T09:10:00Z"
+}
