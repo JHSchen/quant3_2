@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T07:20:00Z",
+  "last_sync": "2026-04-15T07:35:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -33,10 +33,17 @@
     },
     "02675.HK": {
       "weight": 0.025,
+      "target_weight": 0.08,
       "cost_basis": 53.80,
       "current_price": 53.80,
       "pnl_pct": 0.0,
-      "status": "ACTIVE_MONITORING"
+      "status": "ACTIVE_MONITORING",
+      "rules": {
+        "entry_range": [52.0, 54.5],
+        "take_profit": 72.0,
+        "stop_loss": 46.0,
+        "kill_switch": "Major safety accident or overseas patent injunction"
+      }
     },
     "AMZN": {
       "weight": 0.073,
@@ -55,21 +62,30 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-15T07:35:00Z",
+      "ticker": "02675.HK",
+      "level": "GREEN",
+      "trigger": "User request: Increase target weight to 8%. Delta +5.5% identified.",
+      "action": "Tranches [2.5%, 3.0%] added to execution_commands."
+    },
+    {
       "timestamp": "2026-04-15T07:20:00Z",
       "ticker": "GLOBAL",
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Portfolio state synchronized and prices updated.",
       "action": "Proceed to Phase 5 Execution Planning."
-    },
-    {
-      "timestamp": "2026-04-14T12:15:00Z",
-      "ticker": "AMZN",
-      "level": "GREEN",
-      "trigger": "Strategy confirmed (Phase 1-6). Delta +22.7% identified to reach 30% target weight.",
-      "action": "Tranches [7.7%, 7.5%, 7.5%] added to execution_commands."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "02675.HK",
+      "delta": 0.055,
+      "tranches": [
+        {"weight": 0.025, "type": "MARKET_BUY", "price": 53.80, "reason": "Immediate position building within zone"},
+        {"weight": 0.030, "type": "LIMIT_BUY", "price": 53.50, "reason": "Cost averaging at bottom of zone"}
+      ],
+      "validation_sum": 0.055
+    },
     {
       "ticker": "AMZN",
       "delta": 0.227,
@@ -88,14 +104,6 @@
         {"weight": 0.07, "type": "LIMIT_BUY", "price": 35.50, "reason": "Range low entry"}
       ],
       "validation_sum": 0.17
-    },
-    {
-      "ticker": "02675.HK",
-      "delta": 0.008,
-      "tranches": [
-        {"weight": 0.008, "type": "MARKET_BUY", "price": 53.80, "reason": "Immediate zone entry"}
-      ],
-      "validation_sum": 0.008
     }
   ]
 }
