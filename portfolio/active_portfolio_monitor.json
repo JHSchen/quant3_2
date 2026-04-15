@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T12:05:00Z",
+  "last_sync": "2026-04-15T12:15:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -87,9 +87,24 @@
       "current_price": 465.66,
       "pnl_pct": 0.3044,
       "status": "ACTIVE_MONITORING"
+    },
+    "GOOGL": {
+      "weight": 0.06,
+      "target_weight": 0.04,
+      "cost_basis": 255.00,
+      "current_price": 332.91,
+      "pnl_pct": 0.3055,
+      "status": "ACTIVE_MONITORING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T12:15:00Z",
+      "ticker": "GOOGL",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Target weight reduced to 4% (Trim 2%). Hedge Capex uncertainty & lock 30% gains.",
+      "action": "Execute 2% limit trim at $333.00. Set trailing stop at $298."
+    },
     {
       "timestamp": "2026-04-15T12:05:00Z",
       "ticker": "MU",
@@ -103,16 +118,17 @@
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Circular economy + RNG synergy logic verified.",
       "action": "Execute first 5% market buy in $225-$228 range. Set Q1 earnings alert."
-    },
-    {
-      "timestamp": "2026-04-15T09:30:00Z",
-      "ticker": "NVDA",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Initial 2% weight detected. Delta +8% tranches deployed.",
-      "action": "Set buy limits at $190.00, $182.00, $176.00."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "GOOGL",
+      "delta": -0.02,
+      "tranches": [
+        {"weight": 0.02, "type": "LIMIT_TRIM", "price": 333.00, "reason": "Second-derivative check: Capex growth outpaces revenue acceleration. Pre-earnings risk management."}
+      ],
+      "validation_sum": -0.02
+    },
     {
       "ticker": "MU",
       "delta": 0.05,
