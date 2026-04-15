@@ -1,0 +1,25 @@
+{
+  "ticker": "MU",
+  "name": "Micron Technology",
+  "status": "active_growth_rebalance",
+  "last_updated": "2026-04-15T12:05:00Z",
+  "strategy": {
+    "topology_core": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
+    "current_price_reference": 465.66,
+    "entry_range": [450, 465],
+    "take_profit_target": [600, 750],
+    "trailing_stop_loss": 418.0,
+    "hard_stop_loss": 380.0,
+    "purity_filter_status": "PASS (HBM/AI contribution > 20%)",
+    "kill_switch_conditions": [
+      "HBM4 yield drops below 40%",
+      "Spot prices decline > 10% for two consecutive weeks",
+      "NVIDIA data center guidance revision downward"
+    ]
+  },
+  "monitor_nodes": {
+    "HBM4_Ramp": "Track 15,000 wafer capacity expansion milestones",
+    "Spot_Contract_Spread": "Monitor potential cycle peak signals in retail DRAM",
+    "Vera_Rubin_Timeline": "Sync with NVIDIA's next-gen platform launch"
+  }
+}

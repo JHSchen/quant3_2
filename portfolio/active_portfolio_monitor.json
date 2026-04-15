@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T09:30:00Z",
+  "last_sync": "2026-04-15T12:05:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -7,8 +7,8 @@
       "weight": 0.04,
       "target_weight": 0.08,
       "cost_basis": 379.75,
-      "current_price": 379.75,
-      "pnl_pct": 0.0,
+      "current_price": 380.78,
+      "pnl_pct": 0.0027,
       "status": "ACTIVE_MONITORING"
     },
     "TSLA": {
@@ -30,8 +30,8 @@
       "weight": 0.08,
       "target_weight": 0.08,
       "cost_basis": 53.80,
-      "current_price": 54.75,
-      "pnl_pct": 0.0177,
+      "current_price": 54.00,
+      "pnl_pct": 0.0037,
       "status": "ACTIVE_MONITORING"
     },
     "AMZN": {
@@ -44,8 +44,8 @@
     "002179.SZ": {
       "weight": 0.03,
       "cost_basis": 34.00,
-      "current_price": 36.51,
-      "pnl_pct": 0.0738,
+      "current_price": 35.87,
+      "pnl_pct": 0.055,
       "status": "ACTIVE_MONITORING"
     },
     "VRT": {
@@ -57,12 +57,12 @@
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     },
     "09992.HK": {
-      "weight": 0.0,
+      "weight": 0.02,
       "target_weight": 0.06,
-      "cost_basis": 0.0,
-      "current_price": 163.90,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+      "cost_basis": 163.90,
+      "current_price": 163.30,
+      "pnl_pct": -0.0037,
+      "status": "ACTIVE_MONITORING"
     },
     "NVDA": {
       "weight": 0.02,
@@ -71,25 +71,66 @@
       "current_price": 196.51,
       "pnl_pct": 0.1165,
       "status": "ACTIVE_MONITORING"
+    },
+    "WM": {
+      "weight": 0.0,
+      "target_weight": 0.10,
+      "cost_basis": 0.0,
+      "current_price": 227.09,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "MU": {
+      "weight": 0.03,
+      "target_weight": 0.08,
+      "cost_basis": 357.00,
+      "current_price": 465.66,
+      "pnl_pct": 0.3044,
+      "status": "ACTIVE_MONITORING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T12:05:00Z",
+      "ticker": "MU",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight increased to 8%. AI memory super-cycle + HBM4 dominance.",
+      "action": "Execute 5% market buy (Delta +5%). Set trailing stop at $418."
+    },
+    {
+      "timestamp": "2026-04-15T11:55:00Z",
+      "ticker": "WM",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Circular economy + RNG synergy logic verified.",
+      "action": "Execute first 5% market buy in $225-$228 range. Set Q1 earnings alert."
+    },
     {
       "timestamp": "2026-04-15T09:30:00Z",
       "ticker": "NVDA",
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Initial 2% weight detected. Delta +8% tranches deployed.",
       "action": "Set buy limits at $190.00, $182.00, $176.00."
-    },
-    {
-      "timestamp": "2026-04-15T09:10:00Z",
-      "ticker": "09992.HK",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight 6%. Entry tranches deployed.",
-      "action": "Execute first 2% market buy. Set alerts for subsequent entries."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "MU",
+      "delta": 0.05,
+      "tranches": [
+        {"weight": 0.03, "type": "MARKET_BUY", "price": 465.66, "reason": "Scaling AI memory leadership"},
+        {"weight": 0.02, "type": "LIMIT_BUY", "price": 442.00, "reason": "20D MA Retest add"}
+      ],
+      "validation_sum": 0.05
+    },
+    {
+      "ticker": "WM",
+      "delta": 0.10,
+      "tranches": [
+        {"weight": 0.05, "type": "MARKET_BUY", "price": 227.09, "reason": "Initial base position"},
+        {"weight": 0.05, "type": "LIMIT_BUY", "price": 235.00, "reason": "Post-earnings momentum add"}
+      ],
+      "validation_sum": 0.10
+    },
     {
       "ticker": "NVDA",
       "delta": 0.08,
@@ -115,22 +156,6 @@
       "delta": 0.05,
       "tranches": [
         {"weight": 0.02, "type": "LIMIT_BUY", "price": 298.00, "reason": "20D MA Support"},
-        {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
-      ],
-      "validation_sum": 0.05
-    },
-    {
-      "ticker": "WM",
-      "delta": 0.10,
-      "tranches": [
-        {"weight": 0.05, "type": "MARKET_BUY", "price": 227.09, "reason": "Initial base position"},
-        {"weight": 0.05, "type": "LIMIT_BUY", "price": 235.00, "reason": "Post-earnings momentum add"}
-      ],
-      "validation_sum": 0.10
-    }
-  ]
-}
-"reason": "20D MA Support"},
         {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
       ],
       "validation_sum": 0.05
