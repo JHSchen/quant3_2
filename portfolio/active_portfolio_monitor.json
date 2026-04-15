@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T08:50:00Z",
+  "last_sync": "2026-04-15T09:10:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -55,25 +55,43 @@
       "current_price": 310.51,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "09992.HK": {
+      "weight": 0.0,
+      "target_weight": 0.06,
+      "cost_basis": 0.0,
+      "current_price": 163.90,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T09:10:00Z",
+      "ticker": "09992.HK",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight 6%. Entry tranches deployed.",
+      "action": "Execute first 2% market buy. Set alerts for subsequent entries."
+    },
     {
       "timestamp": "2026-04-15T08:50:00Z",
       "ticker": "VRT",
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Target weight 5%. Limit buy grid deployed.",
       "action": "Set buy alerts at $298.00 and $285.00."
-    },
-    {
-      "timestamp": "2026-04-15T08:35:00Z",
-      "ticker": "02675.HK",
-      "level": "GREEN",
-      "trigger": "SYNC_RECOVERY: Restored portfolio data. Set 8% weight for Edge Medical.",
-      "action": "Enable global monitoring."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "09992.HK",
+      "delta": 0.06,
+      "tranches": [
+        {"weight": 0.02, "type": "MARKET_BUY", "price": 163.90, "reason": "Initial position build"},
+        {"weight": 0.02, "type": "LIMIT_BUY", "price": 158.50, "reason": "Technical support level"},
+        {"weight": 0.02, "type": "LIMIT_BUY", "price": 152.00, "reason": "Extreme valuation support"}
+      ],
+      "validation_sum": 0.06
+    },
     {
       "ticker": "VRT",
       "delta": 0.05,
