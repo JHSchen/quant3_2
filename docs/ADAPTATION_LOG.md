@@ -46,3 +46,16 @@ New_Rules:
   2. **RULE-0.6: Precise Line-Number Anchoring** - All claims derived from a file must be prefixed with `[L{line_number}]` and verifiable via `sed`.
 Reexecution_Status: PASS_重新执行成功
 
+## Iteration #2 (Position Sizing & Atomic Persistence)
+Date: 2026-04-14
+Agent: Gemini CLI (Orchestrator)
+Failure_Mode: Persistence Gap, Zero-Base Bias, Math Instability, Stop-Loss Latency.
+Root_Cause_Summary: The workflow was a "read-only" analytical pipeline that ignored existing position states and lacked an automated "save" mechanism after user confirmation.
+New_Structural_Fixes:
+  1. **Phase 7 (Automatic Persistence)**: Strategy confirmation now triggers an atomic update of `portfolio/*.json` and `active_portfolio_monitor.json` + Git sync in a single turn.
+  2. **Delta-Awareness**: Execution Agent must calculate `Delta = Target - Current` using cost-basis injection from Phase -1.
+  3. **Stop-Loss Short-Circuit (Absolute Override)**: If `pnl < stop_loss`, bypass all debate/gating and generate emergency `stop_market` plan immediately.
+  4. **Math Validator Fallback**: Implemented a 3-strike summation check for tranches with a ±0.001 tolerance.
+  5. **Second-Derivative Gating**: Negative deltas (passive drift) replaced by Trailing Stop if fundamental acceleration is positive.
+Reexecution_Status: PASS_流程闭环达成
+

@@ -1,29 +1,94 @@
 {
-  "last_sync": "2026-04-15T08:20:00Z",
+  "last_sync": "2026-04-15T08:35:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
+    "AVGO": {
+      "weight": 0.04,
+      "target_weight": 0.08,
+      "cost_basis": 379.75,
+      "current_price": 379.75,
+      "pnl_pct": 0.0,
+      "status": "ACTIVE_MONITORING",
+      "rules": {
+        "entry_range": [345.00, 355.00],
+        "take_profit": 450.00,
+        "stop_loss": 328.00,
+        "kill_switch": "Google TPU partnership extension confirmed to 2031"
+      }
+    },
+    "TSLA": {
+      "weight": 0.06,
+      "cost_basis": 397.0,
+      "current_price": 364.20,
+      "pnl_pct": -0.0826,
+      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_334.80"
+    },
+    "BABA": {
+      "weight": 0.075,
+      "cost_basis": 143.0,
+      "current_price": 131.35,
+      "pnl_pct": -0.0815,
+      "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
+    },
     "02675.HK": {
       "name": "精锋医疗-B",
       "weight": 0.08,
+      "target_weight": 0.08,
       "cost_basis": 53.80,
       "current_price": 54.75,
       "pnl_pct": 0.0177,
       "status": "ACTIVE_MONITORING",
+      "rules": {
+        "entry_range": [52.0, 54.5],
+        "take_profit": 72.0,
+        "stop_loss": 46.0,
+        "kill_switch": "Major safety accident or overseas patent injunction"
+      },
       "competitor_watch": {
         "ISRG": {"price": 467.22, "signal": "Benchmark Support"},
         "02252.HK": {"price": 32.18, "signal": "Direct Valuation Arbitrage"}
       }
+    },
+    "AMZN": {
+      "weight": 0.073,
+      "cost_basis": 212.0,
+      "current_price": 249.02,
+      "pnl_pct": 0.1746,
+      "status": "ACTIVE_MONITORING"
+    },
+    "002179.SZ": {
+      "weight": 0.03,
+      "cost_basis": 34.00,
+      "current_price": 36.51,
+      "pnl_pct": 0.0738,
+      "status": "ACTIVE_MONITORING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T08:35:00Z",
+      "ticker": "02675.HK",
+      "level": "GREEN",
+      "trigger": "SYNC_RECOVERY: Restored portfolio data. Set 8% weight for Edge Medical.",
+      "action": "Enable global monitoring."
+    },
     {
       "timestamp": "2026-04-15T08:20:00Z",
       "ticker": "02675.HK",
       "level": "GREEN",
       "trigger": "COMPETITOR_MONITOR_SYNC: ISRG at $467.22, 02252.HK at 32.18.",
-      "action": "Set volume-to-price drift alert for liquidity monitoring."
+      "action": "Set volume-to-price drift alert."
     }
   ],
-  "execution_commands": []
+  "execution_commands": [
+    {
+      "ticker": "AMZN",
+      "delta": 0.227,
+      "tranches": [
+        {"weight": 0.077, "type": "LIMIT_BUY", "price": 235.00, "reason": "First institutional support level"}
+      ],
+      "validation_sum": 0.227
+    }
+  ]
 }
