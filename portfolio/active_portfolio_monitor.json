@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T09:10:00Z",
+  "last_sync": "2026-04-15T09:30:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -63,25 +63,43 @@
       "current_price": 163.90,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "NVDA": {
+      "weight": 0.02,
+      "target_weight": 0.10,
+      "cost_basis": 176.00,
+      "current_price": 196.51,
+      "pnl_pct": 0.1165,
+      "status": "ACTIVE_MONITORING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T09:30:00Z",
+      "ticker": "NVDA",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Initial 2% weight detected. Delta +8% tranches deployed.",
+      "action": "Set buy limits at $190.00, $182.00, $176.00."
+    },
     {
       "timestamp": "2026-04-15T09:10:00Z",
       "ticker": "09992.HK",
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Target weight 6%. Entry tranches deployed.",
       "action": "Execute first 2% market buy. Set alerts for subsequent entries."
-    },
-    {
-      "timestamp": "2026-04-15T08:50:00Z",
-      "ticker": "VRT",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight 5%. Limit buy grid deployed.",
-      "action": "Set buy alerts at $298.00 and $285.00."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "NVDA",
+      "delta": 0.08,
+      "tranches": [
+        {"weight": 0.03, "type": "LIMIT_BUY", "price": 190.00, "reason": "Previous resistance as support"},
+        {"weight": 0.03, "type": "LIMIT_BUY", "price": 182.00, "reason": "Gap fill and cost retest"},
+        {"weight": 0.02, "type": "LIMIT_BUY", "price": 176.00, "reason": "Cost basis defense"}
+      ],
+      "validation_sum": 0.08
+    },
     {
       "ticker": "09992.HK",
       "delta": 0.06,
@@ -100,14 +118,6 @@
         {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
       ],
       "validation_sum": 0.05
-    },
-    {
-      "ticker": "AMZN",
-      "delta": 0.227,
-      "tranches": [
-        {"weight": 0.077, "type": "LIMIT_BUY", "price": 235.00, "reason": "First institutional support level"}
-      ],
-      "validation_sum": 0.227
     }
   ]
 }
