@@ -1,0 +1,22 @@
+{
+  "ticker": "VRT",
+  "name": "Vertiv Holdings Co",
+  "strategy_type": "AI_INFRASTRUCTURE_COOLING",
+  "topology": "Physical thermal constraint of AI racks (DLC transition)",
+  "constants": {
+    "liquid_cooling_adoption": ">50% by 2026",
+    "backlog_support": "$15B as of 2026 Q1"
+  },
+  "risk_pricing": {
+    "target_weight": 0.05,
+    "entry_zones": [
+      {"price": 298.00, "tranche": 0.02, "logic": "20D MA Support"},
+      {"price": 285.00, "tranche": 0.03, "logic": "Post-earnings gap fill"}
+    ],
+    "take_profit": 360.00,
+    "stop_loss": 265.00,
+    "kill_switch": "Earnings report delays due to grid availability or NVIDIA second-sourcing"
+  },
+  "status": "STRATEGY_CONFIRMED",
+  "last_audit": "2026-04-15T08:50:00Z"
+}
