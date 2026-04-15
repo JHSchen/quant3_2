@@ -1,24 +1,30 @@
 {
   "ticker": "TSLA",
   "name": "Tesla",
-  "status": "active_momentum_rebalance",
-  "last_updated": "2026-04-13T14:30:00Z",
+  "status": "STRATEGY_CONFIRMED_TRIM_IN_PROGRESS",
+  "last_updated": "2026-04-15T14:15:00Z",
   "strategy": {
-    "topology_core": "FSD Global Expansion vs Delivery Miss (358k) + Geopolitical Risk",
-    "current_price_reference": 346.0,
-    "action_required": "Tighten Trailing Stop to $334.80. Monitor $338.27 Support.",
-    "take_profit_target": [420, 500],
+    "topology_core": "Terafab AI Compute Vertical Integration vs Inventory Liquidation & Intel Execution Risk",
+    "current_price_reference": 370.38,
+    "target_weight": 0.04,
+    "action_required": "Execute 2% Trim (1% Limit @ 372.50, 1% Trailing Stop @ 375.00). Monitor $355 Support.",
+    "take_profit_target": [420, 500, 750],
     "trailing_stop_loss": 334.8,
-    "hard_stop_loss": 140,
+    "hard_stop_loss": 315.0,
     "event_triggers": [
-      "FSD approval in additional EU countries",
-      "Model 2 production milestones",
-      "US-Iran peace talk results"
+      "Q1 Earnings (April 22) - Energy Storage Margin Threshold: 18%",
+      "Terafab tape-out confirmation (Intel 18A success)",
+      "FSD V13 widespread release/OEM licensing news"
     ]
   },
-  "monitor_nodes": {
-    "FSD_EU_Adoption": "Track RDW approval spillover to DE/FR",
-    "Model_2_BOM": "Monitor supplier contracts for $25k platform",
-    "Institutional_Flows": "Track Cathie Wood vs. Sumitomo divergence"
-  }
+  "risk_parameters": {
+    "volatility_cap": 0.45,
+    "beta_adjustment": 1.8,
+    "kill_switch_conditions": [
+      "Energy Storage margins < 18%",
+      "Equity offering > $10B",
+      "Intel 18A node major delay announcement"
+    ]
+  },
+  "execution_tranche_active": true
 }
