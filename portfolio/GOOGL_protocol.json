@@ -1,0 +1,25 @@
+{
+  "ticker": "GOOGL",
+  "name": "Alphabet (Google)",
+  "status": "active_profit_taking",
+  "last_updated": "2026-04-15T12:15:00Z",
+  "strategy": {
+    "topology_core": "AI Monetization (Gemini 3) vs Capex Overload ($180B) + DOJ Remedy Risk",
+    "current_price_reference": 332.91,
+    "entry_range": [255, 270],
+    "take_profit_target": [380, 420],
+    "trailing_stop_loss": 298.0,
+    "hard_stop_loss": 280.0,
+    "purity_filter_status": "PASS (Cloud/AI Synergy 48% Growth)",
+    "kill_switch_conditions": [
+      "DOJ forced structural breakup of Chrome/Android",
+      "Q1 Operating Margin compression > 300bps",
+      "Cloud growth falls below 35%"
+    ]
+  },
+  "monitor_nodes": {
+    "Capex_Efficiency": "Track ROI on $180B AI infrastructure investment",
+    "SGE_CTR": "Monitor search ads click-through rate in AI Mode",
+    "Reg_Appeal": "Follow DOJ remedies appeal progress (May 2026 hearing)"
+  }
+}
