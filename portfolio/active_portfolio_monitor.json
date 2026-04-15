@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T08:35:00Z",
+  "last_sync": "2026-04-15T08:50:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -9,13 +9,7 @@
       "cost_basis": 379.75,
       "current_price": 379.75,
       "pnl_pct": 0.0,
-      "status": "ACTIVE_MONITORING",
-      "rules": {
-        "entry_range": [345.00, 355.00],
-        "take_profit": 450.00,
-        "stop_loss": 328.00,
-        "kill_switch": "Google TPU partnership extension confirmed to 2031"
-      }
+      "status": "ACTIVE_MONITORING"
     },
     "TSLA": {
       "weight": 0.06,
@@ -38,17 +32,7 @@
       "cost_basis": 53.80,
       "current_price": 54.75,
       "pnl_pct": 0.0177,
-      "status": "ACTIVE_MONITORING",
-      "rules": {
-        "entry_range": [52.0, 54.5],
-        "take_profit": 72.0,
-        "stop_loss": 46.0,
-        "kill_switch": "Major safety accident or overseas patent injunction"
-      },
-      "competitor_watch": {
-        "ISRG": {"price": 467.22, "signal": "Benchmark Support"},
-        "02252.HK": {"price": 32.18, "signal": "Direct Valuation Arbitrage"}
-      }
+      "status": "ACTIVE_MONITORING"
     },
     "AMZN": {
       "weight": 0.073,
@@ -63,25 +47,42 @@
       "current_price": 36.51,
       "pnl_pct": 0.0738,
       "status": "ACTIVE_MONITORING"
+    },
+    "VRT": {
+      "weight": 0.0,
+      "target_weight": 0.05,
+      "cost_basis": 0.0,
+      "current_price": 310.51,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-15T08:50:00Z",
+      "ticker": "VRT",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight 5%. Limit buy grid deployed.",
+      "action": "Set buy alerts at $298.00 and $285.00."
+    },
     {
       "timestamp": "2026-04-15T08:35:00Z",
       "ticker": "02675.HK",
       "level": "GREEN",
       "trigger": "SYNC_RECOVERY: Restored portfolio data. Set 8% weight for Edge Medical.",
       "action": "Enable global monitoring."
-    },
-    {
-      "timestamp": "2026-04-15T08:20:00Z",
-      "ticker": "02675.HK",
-      "level": "GREEN",
-      "trigger": "COMPETITOR_MONITOR_SYNC: ISRG at $467.22, 02252.HK at 32.18.",
-      "action": "Set volume-to-price drift alert."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "VRT",
+      "delta": 0.05,
+      "tranches": [
+        {"weight": 0.02, "type": "LIMIT_BUY", "price": 298.00, "reason": "20D MA Support"},
+        {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
+      ],
+      "validation_sum": 0.05
+    },
     {
       "ticker": "AMZN",
       "delta": 0.227,
