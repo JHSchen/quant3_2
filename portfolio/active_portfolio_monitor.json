@@ -118,6 +118,22 @@
         {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
       ],
       "validation_sum": 0.05
+    },
+    {
+      "ticker": "WM",
+      "delta": 0.10,
+      "tranches": [
+        {"weight": 0.05, "type": "MARKET_BUY", "price": 227.09, "reason": "Initial base position"},
+        {"weight": 0.05, "type": "LIMIT_BUY", "price": 235.00, "reason": "Post-earnings momentum add"}
+      ],
+      "validation_sum": 0.10
+    }
+  ]
+}
+"reason": "20D MA Support"},
+        {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
+      ],
+      "validation_sum": 0.05
     }
   ]
 }
