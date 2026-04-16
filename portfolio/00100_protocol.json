@@ -1,0 +1,29 @@
+{
+  "ticker": "00100.HK",
+  "name": "MINIMAX-W",
+  "strategy": "AI Native Integrated Vertical (Model + App)",
+  "target_weight": 0.04,
+  "stop_loss": 745.0,
+  "take_profit": 1180.0,
+  "invalidation_conditions": [
+    "Talkie MAU stagnation (Moat erosion)",
+    "US Regulatory divestiture orders",
+    "Inference cost growth > LTV growth"
+  ],
+  "execution_plan": {
+    "tranches": [
+      {
+        "weight": 0.02,
+        "type": "LIMIT_BUY",
+        "price": 855.0,
+        "reason": "Tactical entry below spot"
+      },
+      {
+        "weight": 0.02,
+        "type": "LIMIT_BUY",
+        "price": 790.0,
+        "reason": "Structural support load"
+      }
+    ]
+  }
+}
