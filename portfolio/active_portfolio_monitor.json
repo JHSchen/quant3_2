@@ -132,29 +132,19 @@
   "execution_commands": [
     {
       "ticker": "TSLA",
-      "delta": -0.02,
+      "delta": -0.01,
       "tranches": [
-        {"weight": 0.01, "type": "LIMIT_TRIM", "price": 372.50, "reason": "Immediate liquidity capture at resistance level."},
         {"weight": 0.01, "type": "TRAILING_STOP_TRIM", "activation_price": 375.00, "callback_rate": "1.5%", "reason": "Sentiment bounce participation ahead of earnings."}
       ],
-      "validation_sum": -0.02
-    },
-    {
-      "ticker": "GOOGL",
-      "delta": -0.02,
-      "tranches": [
-        {"weight": 0.02, "type": "LIMIT_TRIM", "price": 333.00, "reason": "Second-derivative check: Capex growth outpaces revenue acceleration. Pre-earnings risk management."}
-      ],
-      "validation_sum": -0.02
+      "validation_sum": -0.01
     },
     {
       "ticker": "MU",
-      "delta": 0.05,
+      "delta": 0.02,
       "tranches": [
-        {"weight": 0.03, "type": "MARKET_BUY", "price": 465.66, "reason": "Scaling AI memory leadership"},
         {"weight": 0.02, "type": "LIMIT_BUY", "price": 442.00, "reason": "20D MA Retest add"}
       ],
-      "validation_sum": 0.05
+      "validation_sum": 0.02
     },
     {
       "ticker": "WM",
