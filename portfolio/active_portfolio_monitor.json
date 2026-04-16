@@ -64,6 +64,15 @@
       "pnl_pct": -0.0037,
       "status": "ACTIVE_MONITORING"
     },
+    "00100.HK": {
+      "name": "MINIMAX-W",
+      "weight": 0.0,
+      "target_weight": 0.04,
+      "cost_basis": 0.0,
+      "current_price": 886.0,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
     "NVDA": {
       "weight": 0.02,
       "target_weight": 0.10,
@@ -182,6 +191,12 @@
       "tranches": [
         {"weight": 0.02, "type": "LIMIT_BUY", "price": 298.00, "reason": "20D MA Support"},
         {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
+      ],
+      "validation_sum": 0.05
+    }
+  ]
+}
+ason": "Post-earnings gap fill"}
       ],
       "validation_sum": 0.05
     }
