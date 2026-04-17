@@ -101,12 +101,26 @@
       "weight": 0.06,
       "target_weight": 0.04,
       "cost_basis": 255.00,
-      "current_price": 332.91,
-      "pnl_pct": 0.3055,
-      "status": "ACTIVE_MONITORING"
+      "current_price": 337.72,
+      "pnl_pct": 0.3244,
+      "status": "TAKE_PROFIT_TRIM_READY_335"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-17T14:15:00Z",
+      "ticker": "BABA",
+      "level": "YELLOW",
+      "trigger": "TAKE_PROFIT_MATRIX: Price near TP1 ($145). Resistance exit logic activated.",
+      "action": "Set conditional 1.5% trim at $145."
+    },
+    {
+      "timestamp": "2026-04-17T14:10:00Z",
+      "ticker": "TSLA",
+      "level": "GREEN",
+      "trigger": "TAKE_PROFIT_MATRIX: Rebound above $390. Upgraded to Trailing Stop (1.5% callback).",
+      "action": "Cancel Limit @ 375, activate Trailing Stop Profit."
+    },
     {
       "timestamp": "2026-04-16T03:00:00Z",
       "ticker": "MULTI",
