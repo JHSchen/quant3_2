@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-15T12:15:00Z",
+  "last_sync": "2026-04-18T15:15:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -7,14 +7,14 @@
       "weight": 0.04,
       "target_weight": 0.08,
       "cost_basis": 379.75,
-      "current_price": 380.78,
-      "pnl_pct": 0.0027,
-      "status": "ACTIVE_MONITORING"
+      "current_price": 406.54,
+      "pnl_pct": 0.0705,
+      "status": "STRATEGY_CONFIRMED_ADDING_POSITION"
     },
     "TSLA": {
       "weight": 0.06,
       "cost_basis": 397.0,
-      "current_price": 364.20,
+      "current_price": 364.2,
       "pnl_pct": -0.0826,
       "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_334.80"
     },
@@ -29,8 +29,8 @@
       "name": "精锋医疗-B",
       "weight": 0.08,
       "target_weight": 0.08,
-      "cost_basis": 53.80,
-      "current_price": 54.00,
+      "cost_basis": 53.8,
+      "current_price": 54.0,
       "pnl_pct": 0.0037,
       "status": "ACTIVE_MONITORING"
     },
@@ -43,7 +43,7 @@
     },
     "002179.SZ": {
       "weight": 0.03,
-      "cost_basis": 34.00,
+      "cost_basis": 34.0,
       "current_price": 35.87,
       "pnl_pct": 0.055,
       "status": "ACTIVE_MONITORING"
@@ -59,8 +59,8 @@
     "09992.HK": {
       "weight": 0.02,
       "target_weight": 0.06,
-      "cost_basis": 163.90,
-      "current_price": 163.30,
+      "cost_basis": 163.9,
+      "current_price": 163.3,
       "pnl_pct": -0.0037,
       "status": "ACTIVE_MONITORING"
     },
@@ -75,15 +75,15 @@
     },
     "NVDA": {
       "weight": 0.02,
-      "target_weight": 0.10,
-      "cost_basis": 176.00,
+      "target_weight": 0.1,
+      "cost_basis": 176.0,
       "current_price": 196.51,
       "pnl_pct": 0.1165,
       "status": "ACTIVE_MONITORING"
     },
     "WM": {
       "weight": 0.0,
-      "target_weight": 0.10,
+      "target_weight": 0.1,
       "cost_basis": 0.0,
       "current_price": 227.09,
       "pnl_pct": 0.0,
@@ -92,7 +92,7 @@
     "MU": {
       "weight": 0.03,
       "target_weight": 0.08,
-      "cost_basis": 357.00,
+      "cost_basis": 357.0,
       "current_price": 465.66,
       "pnl_pct": 0.3044,
       "status": "ACTIVE_MONITORING"
@@ -100,13 +100,20 @@
     "GOOGL": {
       "weight": 0.06,
       "target_weight": 0.04,
-      "cost_basis": 255.00,
+      "cost_basis": 255.0,
       "current_price": 337.72,
       "pnl_pct": 0.3244,
       "status": "TAKE_PROFIT_TRIM_READY_335"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-18T15:15:00Z",
+      "ticker": "AVGO",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Target weight increased to 8% (Delta +4%). Meta MTIA 2nm partnership + Q1 record earnings.",
+      "action": "Set Limit Buy @ 405.00 (2%) and Stop Limit Buy @ 420.00 (2%)."
+    },
     {
       "timestamp": "2026-04-17T14:15:00Z",
       "ticker": "BABA",
@@ -152,10 +159,35 @@
   ],
   "execution_commands": [
     {
+      "ticker": "AVGO",
+      "delta": 0.04,
+      "tranches": [
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 405.0,
+          "reason": "Wait for minor pullback to secure 7% PnL safety buffer."
+        },
+        {
+          "weight": 0.02,
+          "type": "STOP_LIMIT_BUY",
+          "price": 420.0,
+          "reason": "Momentum confirmation upon breaking psychological resistance."
+        }
+      ],
+      "validation_sum": 0.04
+    },
+    {
       "ticker": "TSLA",
       "delta": -0.01,
       "tranches": [
-        {"weight": 0.01, "type": "TRAILING_STOP_TRIM", "activation_price": 375.00, "callback_rate": "1.5%", "reason": "Sentiment bounce participation ahead of earnings."}
+        {
+          "weight": 0.01,
+          "type": "TRAILING_STOP_TRIM",
+          "activation_price": 375.0,
+          "callback_rate": "1.5%",
+          "reason": "Sentiment bounce participation ahead of earnings."
+        }
       ],
       "validation_sum": -0.01
     },
@@ -163,26 +195,56 @@
       "ticker": "MU",
       "delta": 0.02,
       "tranches": [
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 442.00, "reason": "20D MA Retest add"}
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 442.0,
+          "reason": "20D MA Retest add"
+        }
       ],
       "validation_sum": 0.02
     },
     {
       "ticker": "WM",
-      "delta": 0.10,
+      "delta": 0.1,
       "tranches": [
-        {"weight": 0.05, "type": "MARKET_BUY", "price": 227.09, "reason": "Initial base position"},
-        {"weight": 0.05, "type": "LIMIT_BUY", "price": 235.00, "reason": "Post-earnings momentum add"}
+        {
+          "weight": 0.05,
+          "type": "MARKET_BUY",
+          "price": 227.09,
+          "reason": "Initial base position"
+        },
+        {
+          "weight": 0.05,
+          "type": "LIMIT_BUY",
+          "price": 235.0,
+          "reason": "Post-earnings momentum add"
+        }
       ],
-      "validation_sum": 0.10
+      "validation_sum": 0.1
     },
     {
       "ticker": "NVDA",
       "delta": 0.08,
       "tranches": [
-        {"weight": 0.03, "type": "LIMIT_BUY", "price": 190.00, "reason": "Previous resistance as support"},
-        {"weight": 0.03, "type": "LIMIT_BUY", "price": 182.00, "reason": "Gap fill and cost retest"},
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 176.00, "reason": "Cost basis defense"}
+        {
+          "weight": 0.03,
+          "type": "LIMIT_BUY",
+          "price": 190.0,
+          "reason": "Previous resistance as support"
+        },
+        {
+          "weight": 0.03,
+          "type": "LIMIT_BUY",
+          "price": 182.0,
+          "reason": "Gap fill and cost retest"
+        },
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 176.0,
+          "reason": "Cost basis defense"
+        }
       ],
       "validation_sum": 0.08
     },
@@ -190,9 +252,24 @@
       "ticker": "09992.HK",
       "delta": 0.06,
       "tranches": [
-        {"weight": 0.02, "type": "MARKET_BUY", "price": 163.90, "reason": "Initial position build"},
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 158.50, "reason": "Technical support level"},
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 152.00, "reason": "Extreme valuation support"}
+        {
+          "weight": 0.02,
+          "type": "MARKET_BUY",
+          "price": 163.9,
+          "reason": "Initial position build"
+        },
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 158.5,
+          "reason": "Technical support level"
+        },
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 152.0,
+          "reason": "Extreme valuation support"
+        }
       ],
       "validation_sum": 0.06
     },
@@ -200,8 +277,18 @@
       "ticker": "VRT",
       "delta": 0.05,
       "tranches": [
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 298.00, "reason": "20D MA Support"},
-        {"weight": 0.03, "type": "LIMIT_BUY", "price": 285.00, "reason": "Post-earnings gap fill"}
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 298.0,
+          "reason": "20D MA Support"
+        },
+        {
+          "weight": 0.03,
+          "type": "LIMIT_BUY",
+          "price": 285.0,
+          "reason": "Post-earnings gap fill"
+        }
       ],
       "validation_sum": 0.05
     }
