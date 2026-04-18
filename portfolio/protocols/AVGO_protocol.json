@@ -1,49 +1,49 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "ACTIVE_MONITORING",
+  "status": "STRATEGY_CONFIRMED_ADDING_POSITION",
   "strategy_snapshot": {
-    "topology": "Custom Silicon Utility (TPU v7/v8) + Networking Fabric (Tomahawk/Jericho) + VMware Infrastructure",
-    "primary_vector": "Hyperscale ASIC co-design dominance (Google 2031 extension) vs Nvidia TCO arbitrage",
-    "fragile_point": "Oligopsony Concentration (Google dependency) + 2nm/3nm Fab capacity (TSMC)"
+    "topology": "Custom Silicon Utility (TPU v7/v8) + Meta MTIA (2nm) + Networking Fabric + VCF",
+    "primary_vector": "ASIC Co-design dominance (Meta/Google) + 1.6T Interconnect Supercycle",
+    "fragile_point": "TSMC 2nm Yield Lag + Capex Efficiency Trap"
   },
   "execution_protocol": {
     "entry_rules": {
       "initial_tranche_pct": 0.40,
-      "entry_zone": [370.00, 380.00],
-      "current_price_baseline": 379.75,
-      "confirmation_event": "Q2 2026 Earnings (June 2026) + VMware Margin Data"
+      "entry_zone": [400.00, 405.00],
+      "current_price_baseline": 406.54,
+      "confirmation_event": "Meta MTIA Roadmap Milestone + Q2 Earnings"
     },
     "add_rules": {
-      "catalyst": "Anthropic/Frontier model diversification (Path 2) or TP > $345.00 support retest",
+      "catalyst": "Breakout above $420.00 or pullback to $405.00 support",
       "limit": "Max total weight 0.08",
       "tranches": [
         {
-          "price": 355.00,
-          "weight_step": 0.02,
-          "priority": "MEDIUM"
-        },
-        {
-          "price": 345.00,
+          "price": 405.00,
           "weight_step": 0.02,
           "priority": "HIGH"
+        },
+        {
+          "price": 420.00,
+          "weight_step": 0.02,
+          "priority": "MEDIUM"
         }
       ]
     },
     "take_profit_rules": {
-      "fundamental_tp": 450.00,
-      "trailing_stop_pct": 0.08
+      "fundamental_tp": 480.00,
+      "trailing_stop_pct": 0.10
     },
     "stop_loss_rules": {
-      "technical_sl": 328.00,
-      "fundamental_melt_down": "Google TPU partnership shift or >15% reduction in TPU CAPEX",
-      "macro_kill_switch": "Data center power delays (>2 quarters) or TSMC 2nm yield failure"
+      "technical_sl": 365.00,
+      "fundamental_melt_down": "Meta MTIA delay > 2 quarters",
+      "macro_kill_switch": "TSMC 2nm production failure"
     }
   },
   "risk_metrics": {
     "purity_score": 0.435,
-    "concentration_risk": "HIGH (Google >75% of ASIC Rev)",
-    "valuation_anchor": "PE 21.2 (Current) -> 24.5 (Target)"
+    "concentration_risk": "MEDIUM (Diversifying to Meta/Anthropic)",
+    "valuation_anchor": "PE 22.4 (Forward) -> 28.0 (Target)"
   },
-  "last_updated": "2026-04-14T13:40:00Z"
+  "last_updated": "2026-04-18T15:15:00Z"
 }
