@@ -73,6 +73,9 @@
 - 现金流断裂熔断：经营性现金流连续两季深度为负 → 清仓
 - 技术代差熔断：替代技术官宣量产 → 无条件清仓
 
+#### Schema Compliance (Phase 7 Requirement)
+Risk Agent 在输出 Final Protocol 时，必须确保其 JSON 结构符合 `docs/schemas/protocol.schema.json`。
+
 #### Kill Switch（一票否决）
 - 整体策略崩塌的系统性条件
 - 例：北美CSP削减Capex、宏观流动性枯竭

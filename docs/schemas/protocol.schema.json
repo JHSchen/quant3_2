@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Investment Protocol Schema",
+  "type": "object",
+  "required": ["ticker", "status", "strategy_snapshot", "execution_protocol", "risk_metrics", "last_updated"],
+  "properties": {
+    "ticker": { "type": "string" },
+    "name": { "type": "string" },
+    "status": { "type": "string" },
+    "strategy_snapshot": {
+      "type": "object",
+      "required": ["topology", "primary_vector", "fragile_point"],
+      "properties": {
+        "topology": { "type": "string" },
+        "primary_vector": { "type": "string" },
+        "fragile_point": { "type": "string" }
+      }
+    },
+    "execution_protocol": {
+      "type": "object",
+      "required": ["entry_rules", "add_rules", "take_profit_rules", "stop_loss_rules"],
+      "properties": {
+        "entry_rules": {
+          "type": "object",
+          "properties": {
+            "initial_tranche_pct": { "type": "number" },
+            "entry_zone": { "type": "array", "items": { "type": "number" } },
+            "current_price_baseline": { "type": "number" },
+            "confirmation_event": { "type": "string" }
+          }
+        },
+        "add_rules": {
+          "type": "object",
+          "properties": {
+            "catalyst": { "type": "string" },
+            "limit": { "type": "string" },
+            "tranches": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "price": { "type": "number" },
+                  "weight_step": { "type": "number" },
+                  "priority": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "take_profit_rules": {
+          "type": "object",
+          "properties": {
+            "fundamental_tp": { "type": "number" },
+            "trailing_stop_pct": { "type": "number" }
+          }
+        },
+        "stop_loss_rules": {
+          "type": "object",
+          "properties": {
+            "technical_sl": { "type": "number" },
+            "fundamental_melt_down": { "type": "string" },
+            "macro_kill_switch": { "type": "string" }
+          }
+        }
+      }
+    },
+    "risk_metrics": {
+      "type": "object",
+      "properties": {
+        "purity_score": { "type": "number" },
+        "concentration_risk": { "type": "string" },
+        "valuation_anchor": { "type": "string" }
+      }
+    },
+    "last_updated": { "type": "string", "format": "date-time" }
+  }
+}

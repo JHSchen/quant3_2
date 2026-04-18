@@ -22,7 +22,22 @@ def validate_input(user_input):
 ### 2. 信息路由与状态注入（Routing & State Injection）
 
 **Empirical Grounding (Phase -1) 注入**：
-Orchestrator 必须读取 `active_portfolio_monitor.json`，提取目标标的的 `current_weight`，`cost_basis`，`current_price` 和 `stop_loss_threshold`。将这些数据作为 "Initial State Constants" 注入所有下游 Agent 的 Prompt 中。
+Monitor Agent 执行后输出 `Data_Context_Lock`。Orchestrator 必须读取并注入。
+
+**Data_Context_Lock 模板**：
+```markdown
+| Field | Value | Source |
+|-------|-------|--------|
+| Ticker | <TICKER> | yfinance |
+| Price | <PRICE> | yfinance |
+| Cost Basis | <COST> | Monitor |
+| Floating PnL | <PNL>% | Calculation |
+| News Tier 1 | <NEWS_1> | SEC/IR |
+| News Tier 2 | <NEWS_2> | Reuters |
+```
+
+**Schema 校验强制化 (Phase 7)**：
+Orchestrator 在执行 `write_file` 前，必须验证内容符合 `docs/schemas/` 下的对应 Schema。
 
 | 源 → 目标 | 传递内容 | 屏蔽内容 |
 |-----------|---------|---------|

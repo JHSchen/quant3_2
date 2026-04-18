@@ -30,12 +30,12 @@ You MUST use these tags for every agent's output:
 
 When a user provides an investment target or strategy to analyze, follow these phases:
 
-### Phase -1: Empirical Grounding (Orchestrator Mandate)
-**CRITICAL: This phase must be executed BEFORE any Agent speaks.**
-- **Price Fetching**: Invoke `run_shell_command` with `python3 scripts/get_latest_market_data.py <TICKER>` to get the absolute current price and metrics.
-- **News Verification**: Use `google_web_search` or `web_fetch` to find the 3 most recent Tier 1/Tier 2 news items (per `docs/data_verification.md`).
-- **Portfolio State Retrieval**: Read `active_portfolio_monitor.json` to extract `current_weight`, `cost_basis`, `current_price` (to compute `floating_pnl_pct`), and designated `stop_loss_threshold`.
-- **Context Locking**: Inject the retrieved data as "Impediment Constants" into the system instruction for Strategy, Adversary, and Risk agents.
+### Phase -1: Empirical Grounding (Monitor Agent Mandate)
+**CRITICAL: This phase must be executed by the Monitor Agent BEFORE any other Agent speaks.**
+- **Price Fetching**: Monitor Agent MUST invoke `python3 scripts/get_latest_market_data.py <TICKER>` to get absolute current price and metrics.
+- **News Verification**: Monitor Agent MUST use the Triangulation Protocol (per `docs/data_verification.md`) to verify recent news.
+- **Portfolio State Retrieval**: Orchestrator reads `portfolio/active_portfolio_monitor.json` to extract `current_weight`, `cost_basis`, etc.
+- **Context Locking**: Monitor Agent outputs a `Data_Context_Lock` table. Orchestrator injects this as "Impediment Constants" into Phase 1-3.
 
 ### Phase 0: Input Validation
 - Check if the target is clear. If ambiguous, ask for clarification.
