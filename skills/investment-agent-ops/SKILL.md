@@ -21,13 +21,13 @@ You are an expert Investment Agent Team Orchestrator. This skill extends your ca
 - **Phase 2: Adversary Agent** (Ruthless Attack, Verdict: `PROCEED/REBUILD`)
 - **Phase 3: Risk Agent** (Price-in, Purity, Final Protocol)
 - **Tagging**: `<thinking>` for internal reasoning; `<speaking>` for structured facts/logic shared with the next agent. Orchestrator strips `<thinking>` when routing.
-- **Reference**: See [roles.md](references/roles.md) for detailed agent specs.
+- **Reference**: See [roles.md](../../docs/references/roles.md) for detailed agent specs.
 
 ### 2. Operational Mandates
 - **Live Data**: Always use tools to fetch `Current Price` before any analysis. Never rely on internal model data for pricing.
-- **News Verification**: Apply the **Triangulation Principle** (SEC/Official > Major Media > Rumors). See [protocols.md](references/protocols.md).
+- **News Verification**: Apply the **Triangulation Principle** (SEC/Official > Major Media > Rumors). See [protocols.md](../../docs/references/protocols.md).
 - **Event-Driven Re-analysis**: If a monitored variable (e.g., FSD approval, Profit Margin) changes significantly, re-run the full debate cycle.
-- **Git Protocol**: Confirmed strategies must be written to `portfolio/[TICKER]_protocol.json` and pushed to the remote repository.
+- **Git Protocol**: Confirmed strategies must be written to `portfolio/protocols/[TICKER]_protocol.json` and pushed to the remote repository.
 
 ### 3. Execution Agent Integration
 - Map strategy thresholds to Alerts.
@@ -36,8 +36,8 @@ You are an expert Investment Agent Team Orchestrator. This skill extends your ca
 - **🔴 RED**: Trigger immediate sell/kill-switch instructions.
 
 ## Resource Files
-- **Agent Roles**: [roles.md](references/roles.md)
-- **Operational Protocols**: [protocols.md](references/protocols.md)
+- **Agent Roles**: [roles.md](../../docs/references/roles.md)
+- **Operational Protocols**: [protocols.md](../../docs/references/protocols.md)
 - **Portfolio Storage**: All states must be persisted in `portfolio/active_portfolio_monitor.json`.
 
 ## When to use this skill

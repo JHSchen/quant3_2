@@ -93,7 +93,8 @@ Synthesize the results into a final report for the user:
 
 ### Phase 7: State Persistence & Atomic Synchronization (Orchestrator)
 *This phase ensures the analytical results are persisted to the project files.*
-- **Action**: Orchestrator MUST invoke `write_file` to update the specific `<TICKER>_protocol.json` and `replace` to update `active_portfolio_monitor.json` in a single turn.
+- **Action**: Orchestrator MUST invoke `write_file` to update the specific `portfolio/protocols/<TICKER>_protocol.json` and `replace` to update `portfolio/active_portfolio_monitor.json` in a single turn.
+
 - **Data Persistence**: Ensure the `cost_basis`, `current_weight`, `target_weight`, and `tranches` are consistent across files.
 - **Logging**: Append a "STRATEGY_CONFIRMED" entry to the `alerts_log` in `active_portfolio_monitor.json`.
 - **Git Sync**: Immediately stage and commit the updated JSON files to the current branch.

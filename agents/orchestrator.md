@@ -84,7 +84,7 @@ def convergence_check(adversary_output, iteration_count):
 **触发条件**：用户回复 "确认"、"Confirm"、"Proceed" 或类似肯定表达。
 
 **执行动作**：
-1. **更新 Protocol**：使用 `write_file` 覆写 `<TICKER>_protocol.json`，确保包含最新的 `target_parameters` 和 `deployment_plan`。
+1. **更新 Protocol**：使用 `write_file` 覆写 `portfolio/protocols/<TICKER>_protocol.json`，确保包含最新的 `target_parameters` 和 `deployment_plan`。
 2. **更新 Monitor**：使用 `replace` 修改 `active_portfolio_monitor.json`：
    - 更新该标的的 `weight`, `cost_basis`, `status`, `rules`。
    - 在 `alerts_log` 中追加一条类型为 `STRATEGY_CONFIRMED` 的日志。
