@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portfolio Monitor Schema",
+  "type": "object",
+  "required": ["last_sync", "monitoring_frequency", "system_rules", "portfolio", "alerts_log"],
+  "properties": {
+    "last_sync": { "type": "string", "format": "date-time" },
+    "monitoring_frequency": { "type": "string" },
+    "system_rules": { "type": "string" },
+    "portfolio": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["weight", "cost_basis", "current_price", "status"],
+        "properties": {
+          "name": { "type": "string" },
+          "weight": { "type": "number" },
+          "target_weight": { "type": "number" },
+          "cost_basis": { "type": "number" },
+          "current_price": { "type": "number" },
+          "pnl_pct": { "type": "number" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "alerts_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "ticker", "level", "trigger", "action"],
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "ticker": { "type": "string" },
+          "level": { "enum": ["INFO", "GREEN", "YELLOW", "RED"] },
+          "trigger": { "type": "string" },
+          "action": { "type": "string" }
+        }
+      }
+    },
+    "execution_commands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ticker", "delta", "tranches"],
+        "properties": {
+          "ticker": { "type": "string" },
+          "delta": { "type": "number" },
+          "tranches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "weight": { "type": "number" },
+                "type": { "type": "string" },
+                "price": { "type": "number" },
+                "activation_price": { "type": "number" },
+                "callback_rate": { "type": "string" },
+                "reason": { "type": "string" }
+              }
+            }
+          },
+          "validation_sum": { "type": "number" }
+        }
+      }
+    }
+  }
+}

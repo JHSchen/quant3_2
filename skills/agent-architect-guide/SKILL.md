@@ -31,6 +31,7 @@ When the user asks to "improve" or "refine" an agent (e.g., "Make the Adversary 
 ## Resource Files
 - **Design Patterns**: [design_patterns.md](references/design_patterns.md)
 - **Roles**: [roles.md](../investment-agent-ops/references/roles.md)
+- **Protocols**: [protocols.md](../investment-agent-ops/references/protocols.md)
 
 ## When to use this skill
 Trigger this skill when the user says:
