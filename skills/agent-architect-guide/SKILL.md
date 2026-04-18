@@ -20,7 +20,7 @@ When the user asks to "improve" or "refine" an agent (e.g., "Make the Adversary 
 4. **Impact Analysis**: Explain how this change affects the downstream agents (e.g., Risk, Execution).
 5. **Implementation & Persistence**:
    - Update `GEMINI.md` (the system instruction).
-   - Update `references/roles.md` or `references/protocols.md`.
+   - Update `docs/references/roles.md` or `docs/references/protocols.md`.
    - Commit and push to GitHub.
 
 ## Core Best Practices
@@ -30,8 +30,8 @@ When the user asks to "improve" or "refine" an agent (e.g., "Make the Adversary 
 
 ## Resource Files
 - **Design Patterns**: [design_patterns.md](references/design_patterns.md)
-- **Roles**: [roles.md](../investment-agent-ops/references/roles.md)
-- **Protocols**: [protocols.md](../investment-agent-ops/references/protocols.md)
+- **Roles**: [roles.md](../../docs/references/roles.md)
+- **Protocols**: [protocols.md](../../docs/references/protocols.md)
 
 ## When to use this skill
 Trigger this skill when the user says:

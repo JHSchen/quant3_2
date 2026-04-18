@@ -43,7 +43,7 @@ To prevent reacting to rumors, the system prioritizes:
 ## 4. Automation & Sync
 
 Every confirmed strategy or monitoring update is persisted:
-- **Location**: `portfolio/[TICKER]_protocol.json` and `portfolio/active_portfolio_monitor.json`.
+- **Location**: `portfolio/protocols/[TICKER]_protocol.json` and `portfolio/active_portfolio_monitor.json`.
 - **Git Sync**: The system automatically commits and pushes confirmed changes to the GitHub repository to maintain a synchronized "investment brain."
 
 ## 5. Customization
