@@ -1,139 +1,26 @@
 {
-  "ticker": "09992.HK",
-  "name": "泡泡玛特 (Pop Mart)",
-  "strategy_type": "GLOBAL_IP_EXPANSION",
-  "topology": "Emotional asset distribution network + Global SSS Acceleration",
+  "ticker": "002179.SZ",
+  "name": "中航光电 (Jonhon)",
+  "strategy_type": "MILITARY_ELECTRONICS_RECOVERY",
+  "topology": "Defense Budget Execution -> J-20/Y-20 Quantities -> High-End Connectors",
   "constants": {
-    "gross_margin": ">60%",
-    "overseas_efficiency": "Significant premium over domestic",
-    "current_price": 158.90
+    "price_anchor": "CNY",
+    "unit": "Share",
+    "current_price": 36.65,
+    "pe_ratio": 35.90
   },
   "risk_pricing": {
-    "target_weight": 0.06,
+    "target_weight": 0.05,
+    "current_weight": 0.03,
+    "cost_basis": 34.00,
     "entry_zones": [
-      {"price": 163.90, "tranche": 0.02, "logic": "Initial market entry (Executed)"},
-      {"price": 158.50, "tranche": 0.02, "logic": "Technical support level (Current Entry Zone)"},
-      {"price": 152.00, "tranche": 0.02, "logic": "Extreme valuation support"}
+      {"price": 38.50, "tranche": 0.02, "logic": "Momentum add upon breaking key resistance"}
     ],
-    "take_profit": 225.00,
-    "stop_loss": 142.00,
-    "kill_switch": "Overseas SSS growth negative or core IP revenue share < 25%"
+    "take_profit": 42.00,
+    "stop_loss": 34.00,
+    "trailing_stop": 35.80,
+    "kill_switch": "Major defense model delivery delay OR raw material costs > +20% spike"
   },
-  "status": "ACTIVE_MONITORING_BUILDING_POSITION",
-  "last_audit": "2026-04-17T05:55:00Z"
-}
-ght": 0.08,
-      "cost_basis": 53.80,
-      "current_price": 54.05,
-      "pnl_pct": 0.0046,
-      "status": "ACTIVE_MONITORING"
-    },
-    "AMZN": {
-      "weight": 0.073,
-      "cost_basis": 212.0,
-      "current_price": 249.70,
-      "pnl_pct": 0.1778,
-      "status": "ACTIVE_MONITORING"
-    },
-    "002179.SZ": {
-      "weight": 0.03,
-      "cost_basis": 34.00,
-      "current_price": 35.86,
-      "pnl_pct": 0.0547,
-      "status": "ACTIVE_MONITORING"
-    },
-    "VRT": {
-      "weight": 0.0,
-      "target_weight": 0.05,
-      "cost_basis": 0.0,
-      "current_price": 301.00,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY_298"
-    },
-    "09992.HK": {
-      "weight": 0.02,
-      "target_weight": 0.06,
-      "cost_basis": 163.90,
-      "current_price": 158.90,
-      "pnl_pct": -0.0305,
-      "status": "ACTIVE_MONITORING_BUILDING_POSITION"
-    },
-    "00100.HK": {
-      "name": "MINIMAX-W",
-      "weight": 0.0,
-      "target_weight": 0.04,
-      "cost_basis": 0.0,
-      "current_price": 855.5,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_WAITING_FOR_STABILITY"
-    },
-    "NVDA": {
-      "weight": 0.02,
-      "target_weight": 0.10,
-      "cost_basis": 176.00,
-      "current_price": 198.35,
-      "pnl_pct": 0.1270,
-      "status": "ACTIVE_MONITORING"
-    },
-    "WM": {
-      "weight": 0.0,
-      "target_weight": 0.10,
-      "cost_basis": 0.0,
-      "current_price": 224.08,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_ACTION_ZONE_225"
-    },
-    "MU": {
-      "weight": 0.03,
-      "target_weight": 0.08,
-      "cost_basis": 357.00,
-      "current_price": 457.23,
-      "pnl_pct": 0.2808,
-      "status": "ACTIVE_MONITORING"
-    },
-    "GOOGL": {
-      "weight": 0.06,
-      "target_weight": 0.04,
-      "cost_basis": 255.00,
-      "current_price": 336.02,
-      "pnl_pct": 0.3177,
-      "status": "ACTIVE_MONITORING_TRIM_PENDING"
-    }
-  },
-  "alerts_log": [
-    {
-      "timestamp": "2026-04-17T05:55:00Z",
-      "ticker": "MULTI",
-      "level": "INFO",
-      "trigger": "STRATEGY_SYNC: Real-time price update for all tickers. TSLA loss narrowing, WM enters Action Zone.",
-      "action": "Updated active_portfolio_monitor.json and 002179/09992 protocols."
-    },
-    {
-      "timestamp": "2026-04-16T03:00:00Z",
-      "ticker": "MULTI",
-      "level": "INFO",
-      "trigger": "EXECUTION_SYNC: Phase 1 complete for TSLA, GOOGL, MU.",
-      "action": "Updated weights: TSLA(5%), GOOGL(4%), MU(6%). New MU basis: 411.33."
-    }
-  ],
-  "execution_commands": [
-    {
-      "ticker": "WM",
-      "delta": 0.10,
-      "tranches": [
-        {"weight": 0.05, "type": "MARKET_BUY", "price": 224.08, "reason": "Immediate entry - price below $225 base"},
-        {"weight": 0.05, "type": "LIMIT_BUY", "price": 235.00, "reason": "Post-earnings momentum add"}
-      ],
-      "validation_sum": 0.10
-    },
-    {
-      "ticker": "09992.HK",
-      "delta": 0.04,
-      "tranches": [
-        {"weight": 0.02, "type": "MARKET_BUY", "price": 158.90, "reason": "Building position at support"},
-        {"weight": 0.02, "type": "LIMIT_BUY", "price": 152.00, "reason": "Extreme valuation support"}
-      ],
-      "validation_sum": 0.04
-    }
-  ]
+  "status": "ACTIVE_MONITORING_TRAILING_STOP_SET",
+  "last_audit": "2026-04-20T06:30:00Z"
 }
