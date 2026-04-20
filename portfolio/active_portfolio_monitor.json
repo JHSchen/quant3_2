@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-20T05:30:00Z",
+  "last_sync": "2026-04-20T05:50:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -108,13 +108,35 @@
     "CMB_GOLD": {
       "name": "招商银行金条",
       "weight": 0.08,
-      "cost_basis": 948.40,
-      "current_price": 1073.40,
+      "cost_basis": 948.4,
+      "current_price": 1073.4,
       "pnl_pct": 0.1318,
       "status": "STRATEGY_CONFIRMED_ACTIVE_HOLD"
+    },
+    "06869.HK": {
+      "name": "长飞光纤",
+      "weight": 0.04,
+      "cost_basis": 220.0,
+      "current_price": 211.8,
+      "pnl_pct": -0.0373,
+      "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-20T05:50:00Z",
+      "ticker": "06869.HK",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Position 4% @ 220 HKD. Risk assessment suggests trim to 2.5% to mitigate April 29 binary event.",
+      "action": "Set Limit Sell @ 218.50 (0.75%) and 221.00 (0.75%). Stop loss @ 198.00."
+    },
+    {
+      "timestamp": "2026-04-20T05:50:00Z",
+      "ticker": "06869.HK",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Position 4% @ 220 HKD. Risk assessment suggests trim to 2.5% to mitigate April 29 binary event.",
+      "action": "Set Limit Sell @ 218.50 (0.75%) and 221.00 (0.75%). Stop loss @ 198.00."
+    },
     {
       "timestamp": "2026-04-20T05:30:00Z",
       "ticker": "CMB_GOLD",
@@ -173,6 +195,25 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "06869.HK",
+      "delta": -0.015,
+      "tranches": [
+        {
+          "weight": 0.0075,
+          "type": "LIMIT_SELL",
+          "price": 218.5,
+          "reason": "Trim near resistance"
+        },
+        {
+          "weight": 0.0075,
+          "type": "LIMIT_SELL",
+          "price": 221.0,
+          "reason": "Break-even exit"
+        }
+      ],
+      "validation_sum": -0.015
+    },
     {
       "ticker": "AVGO",
       "delta": 0.04,
