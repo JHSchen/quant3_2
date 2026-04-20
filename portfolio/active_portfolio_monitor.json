@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-20T07:15:00",
+  "last_sync": "2026-04-20T07:45:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -14,16 +14,16 @@
     "TSLA": {
       "weight": 0.06,
       "cost_basis": 397.0,
-      "current_price": 364.2,
-      "pnl_pct": -0.0826,
-      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_334.80"
+      "current_price": 400.62,
+      "pnl_pct": 0.0091,
+      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_378.00"
     },
     "BABA": {
       "weight": 0.075,
       "cost_basis": 143.0,
-      "current_price": 131.35,
-      "pnl_pct": -0.0815,
-      "status": "GREEN_ALERT_OPPORTUNITY_ZONE"
+      "current_price": 141.01,
+      "pnl_pct": -0.0139,
+      "status": "YELLOW_ALERT_PROFIT_PROTECTION"
     },
     "02675.HK": {
       "name": "精锋医疗-B",
@@ -37,8 +37,8 @@
     "AMZN": {
       "weight": 0.073,
       "cost_basis": 212.0,
-      "current_price": 249.02,
-      "pnl_pct": 0.1746,
+      "current_price": 250.56,
+      "pnl_pct": 0.1819,
       "status": "ACTIVE_MONITORING"
     },
     "002179.SZ": {
@@ -52,7 +52,7 @@
       "weight": 0.0,
       "target_weight": 0.05,
       "cost_basis": 0.0,
-      "current_price": 310.51,
+      "current_price": 307.34,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     },
@@ -77,15 +77,15 @@
       "weight": 0.02,
       "target_weight": 0.1,
       "cost_basis": 176.0,
-      "current_price": 196.51,
-      "pnl_pct": 0.1165,
+      "current_price": 201.68,
+      "pnl_pct": 0.1459,
       "status": "ACTIVE_MONITORING"
     },
     "WM": {
       "weight": 0.0,
       "target_weight": 0.1,
       "cost_basis": 0.0,
-      "current_price": 227.09,
+      "current_price": 223.95,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     },
@@ -93,17 +93,17 @@
       "weight": 0.03,
       "target_weight": 0.08,
       "cost_basis": 357.0,
-      "current_price": 465.66,
-      "pnl_pct": 0.3044,
+      "current_price": 455.07,
+      "pnl_pct": 0.2747,
       "status": "ACTIVE_MONITORING"
     },
     "GOOGL": {
       "weight": 0.06,
       "target_weight": 0.04,
       "cost_basis": 255.0,
-      "current_price": 337.72,
-      "pnl_pct": 0.3244,
-      "status": "TAKE_PROFIT_TRIM_READY_335"
+      "current_price": 341.68,
+      "pnl_pct": 0.3399,
+      "status": "TAKE_PROFIT_TRIM_READY_341.50"
     },
     "CMB_GOLD": {
       "name": "招商银行金条",
@@ -151,6 +151,27 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-20T07:45:00Z",
+      "ticker": "BABA",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Profit protection activated near cost basis. 1/3 trim @ 144.50.",
+      "action": "Set Limit Sell @ 144.50 (2.5%), Stop Loss @ 128.00."
+    },
+    {
+      "timestamp": "2026-04-20T07:45:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Stop loss tightened to 378.00 ahead of Q1 earnings.",
+      "action": "Set Hard Stop @ 378.00."
+    },
+    {
+      "timestamp": "2026-04-20T07:45:00Z",
+      "ticker": "GOOGL",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Profit taking executed at $341.68. Reducing weight to 4%.",
+      "action": "Execute 2% Market Sell."
+    },
+    {
       "timestamp": "2026-04-20T07:15:00Z",
       "ticker": "600487.SS",
       "level": "GREEN",
@@ -170,346 +191,46 @@
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
       "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
-    },
-    {
-      "timestamp": "2026-04-20T06:15:00Z",
-      "ticker": "NUCLEAR",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
-      "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
-    },
-    {
-      "timestamp": "2026-04-20T05:50:00Z",
-      "ticker": "06869.HK",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Position 4% @ 220 HKD. Risk assessment suggests trim to 2.5% to mitigate April 29 binary event.",
-      "action": "Set Limit Sell @ 218.50 (0.75%) and 221.00 (0.75%). Stop loss @ 198.00."
-    },
-    {
-      "timestamp": "2026-04-20T05:50:00Z",
-      "ticker": "06869.HK",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Position 4% @ 220 HKD. Risk assessment suggests trim to 2.5% to mitigate April 29 binary event.",
-      "action": "Set Limit Sell @ 218.50 (0.75%) and 221.00 (0.75%). Stop loss @ 198.00."
-    },
-    {
-      "timestamp": "2026-04-20T05:30:00Z",
-      "ticker": "CMB_GOLD",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Anchor set to CMB Gold Bar (¥1,073.40). Target 8%. Profit buffer ¥10k acknowledged.",
-      "action": "Set Hard Stop @ ¥980, Trailing Stop @ ¥1,040."
-    },
-    {
-      "timestamp": "2026-04-18T15:15:00Z",
-      "ticker": "AVGO",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight increased to 8% (Delta +4%). Meta MTIA 2nm partnership + Q1 record earnings.",
-      "action": "Set Limit Buy @ 405.00 (2%) and Stop Limit Buy @ 420.00 (2%)."
-    },
-    {
-      "timestamp": "2026-04-17T14:15:00Z",
-      "ticker": "BABA",
-      "level": "YELLOW",
-      "trigger": "TAKE_PROFIT_MATRIX: Price near TP1 ($145). Resistance exit logic activated.",
-      "action": "Set conditional 1.5% trim at $145."
-    },
-    {
-      "timestamp": "2026-04-17T14:10:00Z",
-      "ticker": "TSLA",
-      "level": "GREEN",
-      "trigger": "TAKE_PROFIT_MATRIX: Rebound above $390. Upgraded to Trailing Stop (1.5% callback).",
-      "action": "Cancel Limit @ 375, activate Trailing Stop Profit."
-    },
-    {
-      "timestamp": "2026-04-16T03:00:00Z",
-      "ticker": "MULTI",
-      "level": "INFO",
-      "trigger": "EXECUTION_SYNC: Phase 1 complete for TSLA, GOOGL, MU.",
-      "action": "Updated weights: TSLA(5%), GOOGL(4%), MU(6%). New MU basis: 411.33."
-    },
-    {
-      "timestamp": "2026-04-15T12:15:00Z",
-      "ticker": "GOOGL",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Target weight reduced to 4% (Trim 2%). Hedge Capex uncertainty & lock 30% gains.",
-      "action": "Execute 2% limit trim at $333.00. Set trailing stop at $298."
-    },
-    {
-      "timestamp": "2026-04-15T12:05:00Z",
-      "ticker": "MU",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight increased to 8%. AI memory super-cycle + HBM4 dominance.",
-      "action": "Execute 5% market buy (Delta +5%). Set trailing stop at $418."
-    },
-    {
-      "timestamp": "2026-04-15T11:55:00Z",
-      "ticker": "WM",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Target weight 10%. Circular economy + RNG synergy logic verified.",
-      "action": "Execute first 5% market buy in $225-$228 range. Set Q1 earnings alert."
     }
   ],
   "execution_commands": [
     {
-      "ticker": "600487.SS",
-      "delta": 0.03,
+      "ticker": "BABA",
+      "delta": -0.025,
       "tranches": [
         {
-          "weight": 0.015,
-          "type": "LIMIT_BUY",
-          "price": 54.2,
-          "reason": "Post-hype support test"
-        },
-        {
-          "weight": 0.015,
-          "type": "LIMIT_BUY",
-          "price": 51.5,
-          "reason": "Margin of safety add"
-        }
-      ],
-      "validation_sum": 0.03
-    },
-    {
-      "ticker": "002179.SZ",
-      "delta": -0.03,
-      "tranches": [
-        {
-          "weight": 0.03,
-          "type": "TRAILING_STOP_CLOSE",
-          "activation_price": 35.8,
-          "reason": "Lock in 5% net gain if momentum reverses"
-        }
-      ],
-      "validation_sum": -0.03
-    },
-    {
-      "ticker": "601985.SS",
-      "delta": 0.04,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 8.5,
-          "reason": "PE mean reversion support"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 8.2,
-          "reason": "Major floor support"
-        }
-      ],
-      "validation_sum": 0.04
-    },
-    {
-      "ticker": "003816.SZ",
-      "delta": 0.02,
-      "tranches": [
-        {
-          "weight": 0.01,
-          "type": "LIMIT_BUY",
-          "price": 4.3,
-          "reason": "Post-maintenance wash-out"
-        },
-        {
-          "weight": 0.01,
-          "type": "LIMIT_BUY",
-          "price": 4.15,
-          "reason": "Dividend support"
-        }
-      ],
-      "validation_sum": 0.02
-    },
-    {
-      "ticker": "601985.SS",
-      "delta": 0.04,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 8.5,
-          "reason": "PE mean reversion support"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 8.2,
-          "reason": "Major floor support"
-        }
-      ],
-      "validation_sum": 0.04
-    },
-    {
-      "ticker": "003816.SZ",
-      "delta": 0.02,
-      "tranches": [
-        {
-          "weight": 0.01,
-          "type": "LIMIT_BUY",
-          "price": 4.3,
-          "reason": "Post-maintenance wash-out"
-        },
-        {
-          "weight": 0.01,
-          "type": "LIMIT_BUY",
-          "price": 4.15,
-          "reason": "Dividend support"
-        }
-      ],
-      "validation_sum": 0.02
-    },
-    {
-      "ticker": "06869.HK",
-      "delta": -0.015,
-      "tranches": [
-        {
-          "weight": 0.0075,
+          "weight": 0.025,
           "type": "LIMIT_SELL",
-          "price": 218.5,
-          "reason": "Trim near resistance"
-        },
-        {
-          "weight": 0.0075,
-          "type": "LIMIT_SELL",
-          "price": 221.0,
-          "reason": "Break-even exit"
+          "price": 144.5,
+          "reason": "De-risk position at breakeven/TP1 threshold"
         }
       ],
-      "validation_sum": -0.015
+      "validation_sum": -0.025
     },
     {
-      "ticker": "AVGO",
-      "delta": 0.04,
+      "ticker": "GOOGL",
+      "delta": -0.02,
       "tranches": [
         {
           "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 405.0,
-          "reason": "Wait for minor pullback to secure 7% PnL safety buffer."
-        },
-        {
-          "weight": 0.02,
-          "type": "STOP_LIMIT_BUY",
-          "price": 420.0,
-          "reason": "Momentum confirmation upon breaking psychological resistance."
+          "type": "MARKET_SELL",
+          "price": 341.68,
+          "reason": "Profit taking above $335 target"
         }
       ],
-      "validation_sum": 0.04
+      "validation_sum": -0.02
     },
     {
       "ticker": "TSLA",
-      "delta": -0.01,
+      "delta": 0.0,
       "tranches": [
         {
-          "weight": 0.01,
-          "type": "TRAILING_STOP_TRIM",
-          "activation_price": 375.0,
-          "callback_rate": "1.5%",
-          "reason": "Sentiment bounce participation ahead of earnings."
+          "type": "STOP_LOSS_UPDATE",
+          "price": 378.0,
+          "reason": "Pre-earnings volatility protection"
         }
       ],
-      "validation_sum": -0.01
-    },
-    {
-      "ticker": "MU",
-      "delta": 0.02,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 442.0,
-          "reason": "20D MA Retest add"
-        }
-      ],
-      "validation_sum": 0.02
-    },
-    {
-      "ticker": "WM",
-      "delta": 0.1,
-      "tranches": [
-        {
-          "weight": 0.05,
-          "type": "MARKET_BUY",
-          "price": 227.09,
-          "reason": "Initial base position"
-        },
-        {
-          "weight": 0.05,
-          "type": "LIMIT_BUY",
-          "price": 235.0,
-          "reason": "Post-earnings momentum add"
-        }
-      ],
-      "validation_sum": 0.1
-    },
-    {
-      "ticker": "NVDA",
-      "delta": 0.08,
-      "tranches": [
-        {
-          "weight": 0.03,
-          "type": "LIMIT_BUY",
-          "price": 190.0,
-          "reason": "Previous resistance as support"
-        },
-        {
-          "weight": 0.03,
-          "type": "LIMIT_BUY",
-          "price": 182.0,
-          "reason": "Gap fill and cost retest"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 176.0,
-          "reason": "Cost basis defense"
-        }
-      ],
-      "validation_sum": 0.08
-    },
-    {
-      "ticker": "09992.HK",
-      "delta": 0.06,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "MARKET_BUY",
-          "price": 163.9,
-          "reason": "Initial position build"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 158.5,
-          "reason": "Technical support level"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 152.0,
-          "reason": "Extreme valuation support"
-        }
-      ],
-      "validation_sum": 0.06
-    },
-    {
-      "ticker": "VRT",
-      "delta": 0.05,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "LIMIT_BUY",
-          "price": 298.0,
-          "reason": "20D MA Support"
-        },
-        {
-          "weight": 0.03,
-          "type": "LIMIT_BUY",
-          "price": 285.0,
-          "reason": "Post-earnings gap fill"
-        }
-      ],
-      "validation_sum": 0.05
+      "validation_sum": 0.0
     }
   ]
 }
