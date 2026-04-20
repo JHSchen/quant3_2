@@ -1,0 +1,27 @@
+{
+  "ticker": "06869.HK",
+  "name": "长飞光纤 (YOFC)",
+  "strategy_type": "AI_INFRASTRUCTURE_LATENCY_HEDGE",
+  "topology": "Hollow-Core Fiber (HCF) vs Traditional Solid Fiber",
+  "constants": {
+    "price_anchor": "HKD",
+    "unit": "Share",
+    "current_price": 211.80,
+    "board_meeting": "2026-04-29"
+  },
+  "risk_pricing": {
+    "target_weight": 0.025,
+    "current_weight": 0.04,
+    "cost_basis": 220.00,
+    "entry_zones": [],
+    "exit_zones": [
+      {"price": 218.50, "tranche": 0.0075, "logic": "Trim to reduce loss near resistance"},
+      {"price": 221.00, "tranche": 0.0075, "logic": "Break-even exit for 50% of delta"}
+    ],
+    "take_profit": 245.00,
+    "stop_loss": 198.00,
+    "kill_switch": "Q1 2026 Profit Growth < 30% OR break of 200 HKD support"
+  },
+  "status": "STRATEGY_CONFIRMED_TRIM_PENDING",
+  "last_audit": "2026-04-20T05:50:00Z"
+}
