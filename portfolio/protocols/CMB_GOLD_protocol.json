@@ -1,0 +1,27 @@
+{
+  "ticker": "CMB_GOLD",
+  "name": "招商银行投资金条 (CMB Gold Bar)",
+  "strategy_type": "DOMESTIC_LIQUIDITY_RESERVE",
+  "topology": "Domestic CNY Liquidity vs Global Spot Premium",
+  "constants": {
+    "price_anchor": "招商银行实时金条价格",
+    "unit": "CNY/gram",
+    "current_price": 1073.40
+  },
+  "risk_pricing": {
+    "target_weight": 0.08,
+    "current_weight": 0.08,
+    "cost_basis_est": 948.40,
+    "pnl_target_buffer": 10000.0,
+    "entry_zones": [
+      {"price": 1020.00, "logic": "Decision gate - Reduce to 4% if profit buffer halves"},
+      {"price": 980.00, "logic": "Hard Stop - Protect principal"}
+    ],
+    "take_profit": 1180.00,
+    "stop_loss": 980.00,
+    "trailing_stop": 1040.00,
+    "kill_switch": "USD/CNY < 6.8 OR PBoC net-selling gold for 2 months"
+  },
+  "status": "STRATEGY_CONFIRMED_ACTIVE_HOLD",
+  "last_audit": "2026-04-20T05:30:00Z"
+}
