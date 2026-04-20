@@ -1,0 +1,26 @@
+{
+  "ticker": "600487.SS",
+  "name": "亨通光电 (Hengtong)",
+  "strategy_type": "AI_INFRASTRUCTURE_DEEP_SEA_ENERGY",
+  "topology": "G.654.E Fiber Scarcity + HVDC Sea Cable Backlog",
+  "constants": {
+    "price_anchor": "CNY",
+    "unit": "Share",
+    "current_price": 55.65,
+    "pe_ratio": 35.0
+  },
+  "risk_pricing": {
+    "target_weight": 0.03,
+    "current_weight": 0.0,
+    "cost_basis": 0.0,
+    "entry_zones": [
+      {"price": 54.20, "tranche": 0.015, "logic": "Support level after media hype consolidation"},
+      {"price": 51.50, "tranche": 0.015, "logic": "Strong technical floor / PE reset zone"}
+    ],
+    "take_profit": 72.00,
+    "stop_loss": 48.00,
+    "kill_switch": "Overseas growth < 30% in Q2 OR Major Western market sea cable ban"
+  },
+  "status": "STRATEGY_CONFIRMED_PENDING_ENTRY",
+  "last_audit": "2026-04-20T07:15:00Z"
+}

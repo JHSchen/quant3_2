@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-20T06:15:00",
+  "last_sync": "2026-04-20T07:15:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -138,9 +138,25 @@
       "current_price": 4.47,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "600487.SS": {
+      "name": "亨通光电",
+      "weight": 0.0,
+      "target_weight": 0.03,
+      "cost_basis": 0.0,
+      "current_price": 55.65,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-20T07:15:00Z",
+      "ticker": "600487.SS",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Hengtong added to 'AI Physical Layer' sub-portfolio. Target 3%. Order backlog coverage to 2027Q1.",
+      "action": "Monitoring entry tranches at 54.20 and 51.50."
+    },
     {
       "timestamp": "2026-04-20T06:30:00Z",
       "ticker": "002179.SZ",
@@ -234,6 +250,25 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "600487.SS",
+      "delta": 0.03,
+      "tranches": [
+        {
+          "weight": 0.015,
+          "type": "LIMIT_BUY",
+          "price": 54.2,
+          "reason": "Post-hype support test"
+        },
+        {
+          "weight": 0.015,
+          "type": "LIMIT_BUY",
+          "price": 51.5,
+          "reason": "Margin of safety add"
+        }
+      ],
+      "validation_sum": 0.03
+    },
     {
       "ticker": "002179.SZ",
       "delta": -0.03,
