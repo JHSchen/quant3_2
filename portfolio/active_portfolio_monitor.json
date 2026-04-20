@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-20T05:50:00",
+  "last_sync": "2026-04-20T06:15:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -120,9 +120,41 @@
       "current_price": 211.8,
       "pnl_pct": -0.0373,
       "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
+    },
+    "601985.SS": {
+      "name": "中国核电",
+      "weight": 0.0,
+      "target_weight": 0.04,
+      "cost_basis": 0.0,
+      "current_price": 8.77,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "003816.SZ": {
+      "name": "中国广核",
+      "weight": 0.0,
+      "target_weight": 0.02,
+      "cost_basis": 0.0,
+      "current_price": 4.47,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-20T06:15:00Z",
+      "ticker": "NUCLEAR",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
+      "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
+    },
+    {
+      "timestamp": "2026-04-20T06:15:00Z",
+      "ticker": "NUCLEAR",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
+      "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
+    },
     {
       "timestamp": "2026-04-20T05:50:00Z",
       "ticker": "06869.HK",
@@ -195,6 +227,82 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "601985.SS",
+      "delta": 0.04,
+      "tranches": [
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 8.5,
+          "reason": "PE mean reversion support"
+        },
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 8.2,
+          "reason": "Major floor support"
+        }
+      ],
+      "validation_sum": 0.04
+    },
+    {
+      "ticker": "003816.SZ",
+      "delta": 0.02,
+      "tranches": [
+        {
+          "weight": 0.01,
+          "type": "LIMIT_BUY",
+          "price": 4.3,
+          "reason": "Post-maintenance wash-out"
+        },
+        {
+          "weight": 0.01,
+          "type": "LIMIT_BUY",
+          "price": 4.15,
+          "reason": "Dividend support"
+        }
+      ],
+      "validation_sum": 0.02
+    },
+    {
+      "ticker": "601985.SS",
+      "delta": 0.04,
+      "tranches": [
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 8.5,
+          "reason": "PE mean reversion support"
+        },
+        {
+          "weight": 0.02,
+          "type": "LIMIT_BUY",
+          "price": 8.2,
+          "reason": "Major floor support"
+        }
+      ],
+      "validation_sum": 0.04
+    },
+    {
+      "ticker": "003816.SZ",
+      "delta": 0.02,
+      "tranches": [
+        {
+          "weight": 0.01,
+          "type": "LIMIT_BUY",
+          "price": 4.3,
+          "reason": "Post-maintenance wash-out"
+        },
+        {
+          "weight": 0.01,
+          "type": "LIMIT_BUY",
+          "price": 4.15,
+          "reason": "Dividend support"
+        }
+      ],
+      "validation_sum": 0.02
+    },
     {
       "ticker": "06869.HK",
       "delta": -0.015,
