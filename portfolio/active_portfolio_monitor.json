@@ -44,9 +44,9 @@
     "002179.SZ": {
       "weight": 0.03,
       "cost_basis": 34.0,
-      "current_price": 35.87,
-      "pnl_pct": 0.055,
-      "status": "ACTIVE_MONITORING"
+      "current_price": 36.65,
+      "pnl_pct": 0.0779,
+      "status": "ACTIVE_MONITORING_TRAILING_STOP_35.80"
     },
     "VRT": {
       "weight": 0.0,
@@ -142,6 +142,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-20T06:30:00Z",
+      "ticker": "002179.SZ",
+      "level": "GREEN",
+      "trigger": "STRATEGY_SYNC: Protocol fixed for Jonhon. 7.7% gain secured via Trailing Stop @ 35.80.",
+      "action": "Set Trailing Stop @ 35.80 to lock in partial profits."
+    },
+    {
       "timestamp": "2026-04-20T06:15:00Z",
       "ticker": "NUCLEAR",
       "level": "GREEN",
@@ -227,6 +234,19 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "002179.SZ",
+      "delta": -0.03,
+      "tranches": [
+        {
+          "weight": 0.03,
+          "type": "TRAILING_STOP_CLOSE",
+          "activation_price": 35.8,
+          "reason": "Lock in 5% net gain if momentum reverses"
+        }
+      ],
+      "validation_sum": -0.03
+    },
     {
       "ticker": "601985.SS",
       "delta": 0.04,
