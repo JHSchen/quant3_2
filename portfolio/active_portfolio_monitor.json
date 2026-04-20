@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-20T14:15:00",
+  "last_sync": "2026-04-20T14:30:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -7,9 +7,9 @@
       "weight": 0.04,
       "target_weight": 0.08,
       "cost_basis": 379.75,
-      "current_price": 406.54,
-      "pnl_pct": 0.0705,
-      "status": "STRATEGY_CONFIRMED_ADDING_POSITION"
+      "current_price": 398.80,
+      "pnl_pct": 0.0502,
+      "status": "STRATEGY_CONFIRMED"
     },
     "TSLA": {
       "weight": 0.06,

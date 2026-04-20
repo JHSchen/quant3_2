@@ -1,35 +1,27 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "STRATEGY_CONFIRMED_ADDING_POSITION",
+  "status": "STRATEGY_CONFIRMED",
   "strategy_snapshot": {
     "topology": "Custom Silicon Utility (TPU v7/v8) + Meta MTIA (2nm) + Networking Fabric + VCF",
     "primary_vector": "ASIC Co-design dominance (Meta/Google) + 1.6T Interconnect Supercycle",
     "fragile_point": "TSMC 2nm Yield Lag + Capex Efficiency Trap"
   },
   "execution_protocol": {
-    "entry_rules": {
-      "initial_tranche_pct": 0.40,
-      "entry_zone": [400.00, 405.00],
-      "current_price_baseline": 406.54,
-      "confirmation_event": "Meta MTIA Roadmap Milestone + Q2 Earnings"
+    "initial_state": {
+      "current_weight": 0.04,
+      "cost_basis": 379.75,
+      "current_price_baseline": 398.80,
+      "floating_pnl_pct": 0.0502
     },
-    "add_rules": {
-      "catalyst": "Breakout above $420.00 or pullback to $405.00 support",
-      "limit": "Max total weight 0.08",
-      "tranches": [
-        {
-          "price": 405.00,
-          "weight_step": 0.02,
-          "priority": "HIGH"
-        },
-        {
-          "price": 420.00,
-          "weight_step": 0.02,
-          "priority": "MEDIUM"
-        }
-      ]
+    "target_parameters": {
+      "target_weight_limit": 0.08,
+      "position_delta": 0.04
     },
+    "deployment_plan": [
+      {"size": 0.02, "type": "limit_buy", "price": 398.50, "comment": "Immediate support fill"},
+      {"size": 0.02, "type": "limit_buy", "price": 395.00, "comment": "Secondary support accumulation"}
+    ],
     "take_profit_rules": {
       "fundamental_tp": 480.00,
       "trailing_stop_pct": 0.10
@@ -37,13 +29,14 @@
     "stop_loss_rules": {
       "technical_sl": 365.00,
       "fundamental_melt_down": "Meta MTIA delay > 2 quarters",
-      "macro_kill_switch": "TSMC 2nm production failure"
+      "macro_kill_switch": "TSMC 2nm production failure or VMware churn > 20%"
     }
   },
   "risk_metrics": {
     "purity_score": 0.435,
     "concentration_risk": "MEDIUM (Diversifying to Meta/Anthropic)",
-    "valuation_anchor": "PE 22.4 (Forward) -> 28.0 (Target)"
+    "valuation_anchor": "PE 22.0 (Current) -> 28.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-04-20)"
   },
-  "last_updated": "2026-04-18T15:15:00Z"
+  "last_updated": "2026-04-20T14:30:00Z"
 }
