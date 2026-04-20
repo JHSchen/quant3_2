@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-18T15:15:00Z",
+  "last_sync": "2026-04-20T05:30:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -104,9 +104,24 @@
       "current_price": 337.72,
       "pnl_pct": 0.3244,
       "status": "TAKE_PROFIT_TRIM_READY_335"
+    },
+    "CMB_GOLD": {
+      "name": "招商银行金条",
+      "weight": 0.08,
+      "cost_basis": 948.40,
+      "current_price": 1073.40,
+      "pnl_pct": 0.1318,
+      "status": "STRATEGY_CONFIRMED_ACTIVE_HOLD"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-20T05:30:00Z",
+      "ticker": "CMB_GOLD",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Anchor set to CMB Gold Bar (¥1,073.40). Target 8%. Profit buffer ¥10k acknowledged.",
+      "action": "Set Hard Stop @ ¥980, Trailing Stop @ ¥1,040."
+    },
     {
       "timestamp": "2026-04-18T15:15:00Z",
       "ticker": "AVGO",
