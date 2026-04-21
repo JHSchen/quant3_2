@@ -195,6 +195,25 @@
   ],
   "execution_commands": [
     {
+      "ticker": "AMZN",
+      "delta": 0.077,
+      "tranches": [
+        {
+          "weight": 0.037,
+          "type": "LIMIT_BUY",
+          "price": 248.5,
+          "reason": "Base building tranche"
+        },
+        {
+          "weight": 0.04,
+          "type": "LIMIT_BUY",
+          "price": 250.56,
+          "reason": "Momentum/Breakout confirmation"
+        }
+      ],
+      "validation_sum": 0.077
+    },
+    {
       "ticker": "BABA",
       "delta": -0.025,
       "tranches": [

@@ -12,15 +12,16 @@
     "initial_state": {
       "current_weight": 0.073,
       "cost_basis": 212.00,
-      "current_price_baseline": 250.56,
-      "floating_pnl_pct": 0.1819
+      "current_price_baseline": 248.28,
+      "floating_pnl_pct": 0.1711
     },
     "target_parameters": {
       "target_weight_limit": 0.15,
       "position_delta": 0.077
     },
     "deployment_plan": [
-      {"size": 0.077, "type": "limit_buy", "price": 250.56, "comment": "Earnings anticipation tranche (requires AWS growth > 28%)"}
+      {"size": 0.037, "type": "limit_buy", "price": 248.50, "comment": "Base building tranche"},
+      {"size": 0.040, "type": "limit_buy", "price": 250.56, "comment": "Momentum/Breakout confirmation tranche"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 300.00,
@@ -35,8 +36,8 @@
   "risk_metrics": {
     "purity_score": 0.107,
     "capex_risk": "VERY HIGH ($200B/2026)",
-    "valuation_anchor": "PE 26.5 (Current) -> 34.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-04-20)"
+    "valuation_anchor": "PE 26.3 (Current) -> 34.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-04-21)"
   },
-  "last_updated": "2026-04-20T13:45:00Z"
+  "last_updated": "2026-04-21T02:22:00Z"
 }
