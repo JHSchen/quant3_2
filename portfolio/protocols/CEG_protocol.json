@@ -1,0 +1,23 @@
+{
+  "ticker": "CEG",
+  "name": "Constellation Energy",
+  "strategy_type": "AI_NUCLEAR_ENERGY_INFRASTRUCTURE",
+  "topology": "24/7 Zero-Carbon Power for Hyperscale Data Centers",
+  "constants": {
+    "microsoft_ppa_capacity": "835MW",
+    "doe_loan_status": "$1B Approved (April 2026)",
+    "market_supply_gap": "19GW by 2028"
+  },
+  "risk_pricing": {
+    "target_weight": 0.03,
+    "entry_zones": [
+      {"price": 278.50, "tranche": 0.01, "logic": "Oscillation zone support"},
+      {"price": 268.00, "tranche": 0.02, "logic": "Guidance disappointment floor"}
+    ],
+    "take_profit": 320.00,
+    "stop_loss": 250.00,
+    "kill_switch": "Microsoft PPA termination or NRC restart veto"
+  },
+  "status": "STRATEGY_CONFIRMED",
+  "last_audit": "2026-04-22T14:00:00Z"
+}

@@ -34,6 +34,14 @@
       "pnl_pct": -0.0139,
       "status": "YELLOW_ALERT_PROFIT_PROTECTION"
     },
+    "CEG": {
+      "weight": 0.0,
+      "target_weight": 0.03,
+      "cost_basis": 0.0,
+      "current_price": 282.69,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
     "02675.HK": {
       "name": "精锋医疗-B",
       "weight": 0.08,

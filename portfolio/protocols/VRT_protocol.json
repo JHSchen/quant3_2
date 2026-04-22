@@ -8,10 +8,10 @@
     "backlog_support": "$15B as of 2026 Q1"
   },
   "risk_pricing": {
-    "target_weight": 0.05,
+    "target_weight": 0.02,
     "entry_zones": [
-      {"price": 298.00, "tranche": 0.02, "logic": "20D MA Support"},
-      {"price": 285.00, "tranche": 0.03, "logic": "Post-earnings gap fill"}
+      {"price": 302.50, "tranche": 0.01, "logic": "Post-earnings support test"},
+      {"price": 300.50, "tranche": 0.01, "logic": "300 psychological floor"}
     ],
     "take_profit": 360.00,
     "stop_loss": 265.00,
