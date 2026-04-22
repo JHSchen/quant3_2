@@ -1,8 +1,17 @@
 {
-  "last_sync": "2026-04-20T14:30:00",
+  "last_sync": "2026-04-22T06:50:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
+    "600118.SS": {
+      "name": "中国卫星",
+      "weight": 0.08,
+      "target_weight": 0.06,
+      "cost_basis": 85.0,
+      "current_price": 97.47,
+      "pnl_pct": 0.1467,
+      "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
+    },
     "AVGO": {
       "weight": 0.04,
       "target_weight": 0.08,
@@ -151,6 +160,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-22T06:50:00Z",
+      "ticker": "600118.SS",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_CONFIRMED: Q1 earnings volatility detected. Trailing stop set @ 91.50, TP1 @ 101.85.",
+      "action": "Set Trailing Stop @ 91.50, Limit Sell 2% @ 101.85."
+    },
+    {
       "timestamp": "2026-04-20T07:45:00Z",
       "ticker": "BABA",
       "level": "YELLOW",
@@ -194,6 +210,19 @@
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "600118.SS",
+      "delta": -0.02,
+      "tranches": [
+        {
+          "weight": 0.02,
+          "type": "LIMIT_SELL",
+          "price": 101.85,
+          "reason": "TP1: Psychological resistance & Profit lock-in"
+        }
+      ],
+      "validation_sum": -0.02
+    },
     {
       "ticker": "AMZN",
       "delta": 0.077,
