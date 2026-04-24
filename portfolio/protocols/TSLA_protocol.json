@@ -1,16 +1,16 @@
 {
   "ticker": "TSLA",
   "name": "Tesla",
-  "status": "STRATEGY_CONFIRMED_TRIM_IN_PROGRESS",
-  "last_updated": "2026-04-15T14:15:00Z",
+  "status": "EXIT_PROTOCOL_STOP_LOSS_BREACH",
+  "last_updated": "2026-04-24T16:15:00Z",
   "strategy": {
     "topology_core": "Terafab AI Compute Vertical Integration vs Inventory Liquidation & Intel Execution Risk",
-    "current_price_reference": 370.38,
-    "target_weight": 0.04,
-    "action_required": "Execute 2% Trim (1% Limit @ 372.50, 1% Trailing Stop @ 375.00). Monitor $355 Support.",
+    "current_price_reference": 373.30,
+    "target_weight": 0.0,
+    "action_required": "FULL EXIT - Stop Loss 378.00 breached. Topology collapse on pre-earnings divergence.",
     "take_profit_target": [420, 500, 750],
-    "trailing_stop_loss": 334.8,
-    "hard_stop_loss": 315.0,
+    "trailing_stop_loss": null,
+    "hard_stop_loss": 378.0,
     "event_triggers": [
       "Q1 Earnings (April 22) - Energy Storage Margin Threshold: 18%",
       "Terafab tape-out confirmation (Intel 18A success)",

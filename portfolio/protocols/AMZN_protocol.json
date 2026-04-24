@@ -1,7 +1,7 @@
 {
   "ticker": "AMZN",
   "name": "Amazon.com, Inc.",
-  "status": "STRATEGY_CONFIRMED",
+  "status": "PARTIAL_PROFIT_LOCK_IN",
   "strategy_snapshot": {
     "topology": "AWS Cloud + GenAI Layer (Bedrock) + Custom Silicon (Trainium 3) + Project Leo (Satellite)",
     "primary_vector": "Vertical AI Utility (Silicon OEM) + Project Leo Connectivity vs Capex Burn",
@@ -12,23 +12,23 @@
     "initial_state": {
       "current_weight": 0.073,
       "cost_basis": 212.00,
-      "current_price_baseline": 248.28,
-      "floating_pnl_pct": 0.1711
+      "current_price_baseline": 262.24,
+      "floating_pnl_pct": 0.2369
     },
     "target_parameters": {
-      "target_weight_limit": 0.15,
-      "position_delta": 0.077
+      "target_weight_limit": 0.10,
+      "position_delta": -0.013
     },
     "deployment_plan": [
-      {"size": 0.037, "type": "limit_buy", "price": 248.50, "comment": "Base building tranche"},
-      {"size": 0.040, "type": "limit_buy", "price": 250.56, "comment": "Momentum/Breakout confirmation tranche"}
+      {"size": 0.013, "type": "limit_sell", "price": 263.50, "comment": "TP1 Resistance lock-in"},
+      {"size": 0.06, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Core runner position"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 300.00,
-      "trailing_stop": 275.00
+      "trailing_stop": 250.00
     },
     "stop_loss_rules": {
-      "hard_stop": 218.00,
+      "hard_stop": 235.00,
       "fundamental_melt_down": "AWS growth < 15% or Operating Margins < 10%",
       "macro_kill_switch": "Regulatory breakup order OR AWS growth < 10% for two consecutive quarters"
     }
@@ -36,8 +36,8 @@
   "risk_metrics": {
     "purity_score": 0.107,
     "capex_risk": "VERY HIGH ($200B/2026)",
-    "valuation_anchor": "PE 26.3 (Current) -> 34.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-04-21)"
+    "valuation_anchor": "PE 27.6 (Current) -> 34.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-04-24)"
   },
-  "last_updated": "2026-04-21T02:22:00Z"
+  "last_updated": "2026-04-24T16:15:00Z"
 }

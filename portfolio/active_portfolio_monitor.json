@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-22T06:50:00",
+  "last_sync": "2026-04-24T16:15:00",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -16,23 +16,24 @@
       "weight": 0.04,
       "target_weight": 0.08,
       "cost_basis": 379.75,
-      "current_price": 398.80,
-      "pnl_pct": 0.0502,
+      "current_price": 419.6,
+      "pnl_pct": 0.1049,
       "status": "STRATEGY_CONFIRMED"
     },
     "TSLA": {
       "weight": 0.06,
+      "target_weight": 0.0,
       "cost_basis": 397.0,
-      "current_price": 400.62,
-      "pnl_pct": 0.0091,
-      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_378.00"
+      "current_price": 373.3,
+      "pnl_pct": -0.0597,
+      "status": "STOP_LOSS_BREACHED_EXIT_MANDATORY"
     },
     "BABA": {
       "weight": 0.075,
       "cost_basis": 143.0,
-      "current_price": 141.01,
-      "pnl_pct": -0.0139,
-      "status": "YELLOW_ALERT_PROFIT_PROTECTION"
+      "current_price": 135.48,
+      "pnl_pct": -0.0526,
+      "status": "YELLOW_ALERT_STOP_LOSS_WATCH_128.00"
     },
     "CEG": {
       "weight": 0.0,
@@ -53,10 +54,11 @@
     },
     "AMZN": {
       "weight": 0.073,
+      "target_weight": 0.06,
       "cost_basis": 212.0,
-      "current_price": 250.56,
-      "pnl_pct": 0.1819,
-      "status": "STRATEGY_CONFIRMED"
+      "current_price": 262.24,
+      "pnl_pct": 0.2369,
+      "status": "PARTIAL_PROFIT_LOCK_IN_PENDING"
     },
     "002179.SZ": {
       "weight": 0.03,
@@ -94,8 +96,8 @@
       "weight": 0.02,
       "target_weight": 0.1,
       "cost_basis": 176.0,
-      "current_price": 201.68,
-      "pnl_pct": 0.1459,
+      "current_price": 208.56,
+      "pnl_pct": 0.185,
       "status": "ACTIVE_MONITORING"
     },
     "WM": {
@@ -108,19 +110,19 @@
     },
     "MU": {
       "weight": 0.06,
-      "target_weight": 0.08,
+      "target_weight": 0.04,
       "cost_basis": 400.0,
-      "current_price": 451.47,
-      "pnl_pct": 0.1287,
-      "status": "STRATEGY_CONFIRMED"
+      "current_price": 498.42,
+      "pnl_pct": 0.2461,
+      "status": "PARTIAL_PROFIT_LOCK_IN_PENDING"
     },
     "GOOGL": {
       "weight": 0.06,
       "target_weight": 0.04,
       "cost_basis": 255.0,
-      "current_price": 341.68,
-      "pnl_pct": 0.3399,
-      "status": "TAKE_PROFIT_TRIM_READY_341.50"
+      "current_price": 343.25,
+      "pnl_pct": 0.3461,
+      "status": "TRIM_EXECUTED_HOLD_TO_TARGET"
     },
     "CMB_GOLD": {
       "name": "招商银行金条",
@@ -168,125 +170,85 @@
   },
   "alerts_log": [
     {
-      "timestamp": "2026-04-22T06:50:00Z",
-      "ticker": "600118.SS",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Q1 earnings volatility detected. Trailing stop set @ 91.50, TP1 @ 101.85.",
-      "action": "Set Trailing Stop @ 91.50, Limit Sell 2% @ 101.85."
-    },
-    {
-      "timestamp": "2026-04-20T07:45:00Z",
-      "ticker": "BABA",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Profit protection activated near cost basis. 1/3 trim @ 144.50.",
-      "action": "Set Limit Sell @ 144.50 (2.5%), Stop Loss @ 128.00."
-    },
-    {
-      "timestamp": "2026-04-20T07:45:00Z",
+      "timestamp": "2026-04-24T16:15:00Z",
       "ticker": "TSLA",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Stop loss tightened to 378.00 ahead of Q1 earnings.",
-      "action": "Set Hard Stop @ 378.00."
+      "level": "RED",
+      "trigger": "STRATEGY_CONFIRMED: Stop loss 378.00 breached. Topology collapse.",
+      "action": "Issue Stop-Market Exit @ 373.00."
     },
     {
-      "timestamp": "2026-04-20T07:45:00Z",
+      "timestamp": "2026-04-24T16:15:00Z",
+      "ticker": "MU",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: AI Sector rally profit protection.",
+      "action": "Set Limit Sell 2% @ 499.50, Trailing Stop 5% on remainder."
+    },
+    {
+      "timestamp": "2026-04-24T16:15:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: AWS/Meta rally profit protection.",
+      "action": "Set Limit Sell 1.3% @ 263.50, Trailing Stop 5% on remainder."
+    },
+    {
+      "timestamp": "2026-04-24T16:15:00Z",
       "ticker": "GOOGL",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Profit taking executed at $341.68. Reducing weight to 4%.",
-      "action": "Execute 2% Market Sell."
-    },
-    {
-      "timestamp": "2026-04-20T07:15:00Z",
-      "ticker": "600487.SS",
       "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Hengtong added to 'AI Physical Layer' sub-portfolio. Target 3%. Order backlog coverage to 2027Q1.",
-      "action": "Monitoring entry tranches at 54.20 and 51.50."
-    },
-    {
-      "timestamp": "2026-04-20T06:30:00Z",
-      "ticker": "002179.SZ",
-      "level": "GREEN",
-      "trigger": "STRATEGY_SYNC: Protocol fixed for Jonhon. 7.7% gain secured via Trailing Stop @ 35.80.",
-      "action": "Set Trailing Stop @ 35.80 to lock in partial profits."
-    },
-    {
-      "timestamp": "2026-04-20T06:15:00Z",
-      "ticker": "NUCLEAR",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
-      "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
+      "trigger": "STRATEGY_CONFIRMED: Profit target 341.50 reached.",
+      "action": "Execute 2% Market Trim to target weight 4%."
     }
   ],
   "execution_commands": [
     {
-      "ticker": "600118.SS",
+      "ticker": "TSLA",
+      "delta": -0.06,
+      "tranches": [
+        {
+          "weight": 0.06,
+          "type": "STOP_MARKET",
+          "price": 373.0,
+          "reason": "MANDATORY_EXIT_STOP_LOSS_BREACH"
+        }
+      ],
+      "validation_sum": -0.06
+    },
+    {
+      "ticker": "GOOGL",
       "delta": -0.02,
       "tranches": [
         {
           "weight": 0.02,
-          "type": "LIMIT_SELL",
-          "price": 101.85,
-          "reason": "TP1: Psychological resistance & Profit lock-in"
+          "type": "MARKET",
+          "reason": "PROFIT_TAKING_TRIM_TO_TARGET"
         }
       ],
       "validation_sum": -0.02
     },
     {
       "ticker": "AMZN",
-      "delta": 0.077,
+      "delta": -0.013,
       "tranches": [
         {
-          "weight": 0.037,
-          "type": "LIMIT_BUY",
-          "price": 248.5,
-          "reason": "Base building tranche"
-        },
-        {
-          "weight": 0.04,
-          "type": "LIMIT_BUY",
-          "price": 250.56,
-          "reason": "Momentum/Breakout confirmation"
+          "weight": 0.013,
+          "type": "LIMIT",
+          "price": 263.5,
+          "reason": "TP1_LOCK_IN"
         }
       ],
-      "validation_sum": 0.077
+      "validation_sum": -0.013
     },
     {
-      "ticker": "BABA",
-      "delta": -0.025,
-      "tranches": [
-        {
-          "weight": 0.025,
-          "type": "LIMIT_SELL",
-          "price": 144.5,
-          "reason": "De-risk position at breakeven/TP1 threshold"
-        }
-      ],
-      "validation_sum": -0.025
-    },
-    {
-      "ticker": "GOOGL",
+      "ticker": "MU",
       "delta": -0.02,
       "tranches": [
         {
           "weight": 0.02,
-          "type": "MARKET_SELL",
-          "price": 341.68,
-          "reason": "Profit taking above $335 target"
+          "type": "LIMIT",
+          "price": 499.5,
+          "reason": "TP1_LOCK_IN"
         }
       ],
       "validation_sum": -0.02
-    },
-    {
-      "ticker": "TSLA",
-      "delta": 0.0,
-      "tranches": [
-        {
-          "type": "STOP_LOSS_UPDATE",
-          "price": 378.0,
-          "reason": "Pre-earnings volatility protection"
-        }
-      ],
-      "validation_sum": 0.0
     }
   ]
 }

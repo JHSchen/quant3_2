@@ -1,7 +1,7 @@
 {
   "ticker": "MU",
   "name": "Micron Technology",
-  "status": "STRATEGY_CONFIRMED",
+  "status": "PARTIAL_PROFIT_LOCK_IN",
   "strategy_snapshot": {
     "topology": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
     "primary_vector": "Wafer-Area Penalty + 1-gamma Node Power Efficiency",
@@ -12,23 +12,23 @@
     "initial_state": {
       "current_weight": 0.06,
       "cost_basis": 400.00,
-      "current_price_baseline": 451.47,
-      "floating_pnl_pct": 0.1287
+      "current_price_baseline": 498.42,
+      "floating_pnl_pct": 0.2461
     },
     "target_parameters": {
-      "target_weight_limit": 0.08,
-      "position_delta": 0.02
+      "target_weight_limit": 0.05,
+      "position_delta": -0.02
     },
     "deployment_plan": [
-      {"size": 0.01, "type": "market_buy", "comment": "Immediate core completion"},
-      {"size": 0.01, "type": "limit_buy", "price": 440.00, "comment": "Volatility capture"}
+      {"size": 0.02, "type": "limit_sell", "price": 499.50, "comment": "TP1 Psychological $500 Resistance"},
+      {"size": 0.04, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Core runner position"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 580.00,
       "trailing_stop_pct": 0.08
     },
     "stop_loss_rules": {
-      "trailing_stop": 418.00,
+      "trailing_stop": 473.00,
       "fundamental_melt_down": "1-gamma node yields < 70% or HBM4 qualification failure",
       "macro_kill_switch": "DRAM spot prices decline > 15% in a single month"
     }
@@ -36,8 +36,8 @@
   "risk_metrics": {
     "purity_score": 0.52,
     "capex_risk": "HIGH ($25B/2026)",
-    "valuation_anchor": "PE 4.4 (Current) -> 14.0 (Forward 2027)",
-    "adversary_checkpoint": "APPROVED (2026-04-20)"
+    "valuation_anchor": "PE 4.9 (Current) -> 14.0 (Forward 2027)",
+    "adversary_checkpoint": "APPROVED (2026-04-24)"
   },
-  "last_updated": "2026-04-20T14:15:00Z"
+  "last_updated": "2026-04-24T16:15:00Z"
 }
