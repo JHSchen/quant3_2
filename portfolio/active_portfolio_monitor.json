@@ -41,10 +41,11 @@
     },
     "CEG": {
       "weight": 0.029,
+      "target_weight": 0.04,
       "cost_basis": 289.0,
       "current_price": 313.53,
       "pnl_pct": 0.085,
-      "status": "ACTIVE_MONITORING"
+      "status": "HOLD_FOR_TP_320"
     },
     "GOOGL": {
       "weight": 0.027,
@@ -79,13 +80,21 @@
     },
     "VRT": {
       "weight": 0.006,
+      "target_weight": 0.02,
       "cost_basis": 302.0,
       "current_price": 323.46,
       "pnl_pct": 0.071,
-      "status": "ACTIVE_MONITORING"
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-26T13:15:00Z",
+      "ticker": "VRT",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Liquid cooling backlog conversion and Blackwell synergy locked.",
+      "action": "Set Limit Add 0.7% @ 315.00."
+    },
     {
       "timestamp": "2026-04-26T13:05:00Z",
       "ticker": "TSM",
@@ -166,6 +175,19 @@
         }
       ],
       "validation_sum": 0.012
+    },
+    {
+      "ticker": "VRT",
+      "delta": 0.007,
+      "tranches": [
+        {
+          "weight": 0.007,
+          "type": "LIMIT",
+          "price": 315.0,
+          "reason": "ACCUMULATION_T1"
+        }
+      ],
+      "validation_sum": 0.007
     }
   ]
 }

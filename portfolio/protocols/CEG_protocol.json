@@ -1,23 +1,36 @@
 {
   "ticker": "CEG",
   "name": "Constellation Energy",
-  "strategy_type": "AI_NUCLEAR_ENERGY_INFRASTRUCTURE",
-  "topology": "24/7 Zero-Carbon Power for Hyperscale Data Centers",
-  "constants": {
-    "microsoft_ppa_capacity": "835MW",
-    "doe_loan_status": "$1B Approved (April 2026)",
-    "market_supply_gap": "19GW by 2028"
+  "status": "STRATEGY_CONFIRMED_HOLD_FOR_TP",
+  "strategy_snapshot": {
+    "topology": "AI 数据中心 24/7 碳中和电力核心节点，核电重估标杆。",
+    "primary_vector": "Crane (三哩岛) 重启及微软 PPA 协议溢价、Calpine 资产整合。",
+    "fragile_point": "PJM 电网接入延时至 2030 年带来的确定性折价及监管不确定性。"
   },
-  "risk_pricing": {
-    "target_weight": 0.03,
-    "entry_zones": [
-      {"price": 278.50, "tranche": 0.01, "logic": "Oscillation zone support"},
-      {"price": 268.00, "tranche": 0.02, "logic": "Guidance disappointment floor"}
-    ],
-    "take_profit": 320.00,
-    "stop_loss": 250.00,
-    "kill_switch": "Microsoft PPA termination or NRC restart veto"
+  "execution_protocol": {
+    "initial_state": {
+      "current_weight": 0.029,
+      "cost_basis": 289.0,
+      "current_price_baseline": 313.53
+    },
+    "target_parameters": {
+      "target_weight_limit": 0.04,
+      "position_delta": 0.011
+    },
+    "take_profit_rules": {
+      "tp1": 320.00,
+      "tp2_final": 350.00
+    },
+    "stop_loss_rules": {
+      "trailing_stop": 295.00,
+      "fundamental_melt_down": "核能重启贷款遭监管撤销或主要科技客户取消 PPA 协议",
+      "macro_kill_switch": "联邦能源监管政策重大逆转"
+    }
   },
-  "status": "STRATEGY_CONFIRMED",
-  "last_audit": "2026-04-22T14:00:00Z"
+  "risk_metrics": {
+    "purity_score": 0.78,
+    "concentration_risk": "MEDIUM (Nuclear Policy)",
+    "valuation_anchor": "EPS Guidance $11-$12"
+  },
+  "last_updated": "2026-04-26T13:15:00Z"
 }
