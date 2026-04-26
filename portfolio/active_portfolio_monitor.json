@@ -12,10 +12,11 @@
     },
     "BABA": {
       "weight": 0.059,
+      "target_weight": 0.03,
       "cost_basis": 143.0,
       "current_price": 135.82,
       "pnl_pct": -0.05,
-      "status": "ACTIVE_MONITORING"
+      "status": "EVENT_DRIVEN_MONITORING_PIVOT"
     },
     "MU": {
       "weight": 0.05,
@@ -85,6 +86,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-04-26T12:55:00Z",
+      "ticker": "BABA",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on AI Cloud growth & Spinoffs.",
+      "action": "Set Target Weight 3.0%. Issue Trim command for 2.9% weight."
+    },
+    {
       "timestamp": "2026-04-26T12:45:00Z",
       "ticker": "TSLA",
       "level": "YELLOW",
@@ -132,6 +140,18 @@
         }
       ],
       "validation_sum": 0.015
+    },
+    {
+      "ticker": "BABA",
+      "delta": -0.029,
+      "tranches": [
+        {
+          "weight": 0.029,
+          "type": "MARKET",
+          "reason": "STRATEGIC_TRIM_TO_REALLOCATE_TO_AI"
+        }
+      ],
+      "validation_sum": -0.029
     }
   ]
 }
