@@ -36,7 +36,7 @@
       "cost_basis": 397.0,
       "current_price": 376.3,
       "pnl_pct": -0.052,
-      "status": "RED_ALERT_BREAK_378"
+      "status": "EVENT_DRIVEN_MONITORING_AUTONOMY"
     },
     "CEG": {
       "weight": 0.029,
@@ -84,6 +84,13 @@
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-26T12:45:00Z",
+      "ticker": "TSLA",
+      "level": "YELLOW",
+      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on Robotaxi safety & HW3 upgrades.",
+      "action": "Disable Technical Hard-Stop @ 378. Monitor Dallas/Houston pilot data."
+    },
     {
       "timestamp": "2026-04-26T12:25:00Z",
       "ticker": "NVDA",
