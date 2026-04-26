@@ -1,22 +1,49 @@
 {
   "ticker": "VRT",
   "name": "Vertiv Holdings Co",
-  "strategy_type": "AI_INFRASTRUCTURE_COOLING",
-  "topology": "Physical thermal constraint of AI racks (DLC transition)",
-  "constants": {
-    "liquid_cooling_adoption": ">50% by 2026",
-    "backlog_support": "$15B as of 2026 Q1"
+  "status": "STRATEGY_CONFIRMED_ACCUMULATING",
+  "strategy_snapshot": {
+    "topology": "AI 算力‘热约束’终结者，液冷（DLC）技术全球标准锁定者。",
+    "primary_vector": "Blackwell/Rubin 架构液冷渗透率爆发，150亿积压订单转化。",
+    "fragile_point": "供应链（泵、歧管）交付瓶颈及重资产扩张下的利润率波动。"
   },
-  "risk_pricing": {
-    "target_weight": 0.05,
-    "entry_zones": [
-      {"price": 298.00, "tranche": 0.02, "logic": "20D MA Support"},
-      {"price": 285.00, "tranche": 0.03, "logic": "Post-earnings gap fill"}
-    ],
-    "take_profit": 360.00,
-    "stop_loss": 265.00,
-    "kill_switch": "Earnings report delays due to grid availability or NVIDIA second-sourcing"
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_pct": 0.006,
+      "current_price_baseline": 323.46
+    },
+    "add_rules": {
+      "catalyst": "季度财报确认液冷业务毛利及交付周期缩短",
+      "limit": "Max weight 2.0%",
+      "tranches": [
+        {
+          "price": 315.00,
+          "weight_step": 0.007,
+          "priority": "HIGH",
+          "reason": "技术支撑位及补齐底仓"
+        },
+        {
+          "price": 295.00,
+          "weight_step": 0.007,
+          "priority": "MEDIUM",
+          "reason": "趋势回撤强力补仓"
+        }
+      ]
+    },
+    "take_profit_rules": {
+      "fundamental_tp": 360.00,
+      "trailing_stop_pct": 5.0
+    },
+    "stop_loss_rules": {
+      "technical_sl": 280.00,
+      "fundamental_melt_down": "主要算力 OEM 客户转向浸没式液冷或液冷渗透率不及预期",
+      "macro_kill_switch": "数据中心资本开支进入下行周期"
+    }
   },
-  "status": "STRATEGY_CONFIRMED",
-  "last_audit": "2026-04-15T08:50:00Z"
+  "risk_metrics": {
+    "purity_score": 0.82,
+    "concentration_risk": "MEDIUM (Thermal Infrastructure)",
+    "valuation_anchor": "Price-to-Backlog Ratio"
+  },
+  "last_updated": "2026-04-26T13:15:00Z"
 }

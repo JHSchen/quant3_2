@@ -1,0 +1,25 @@
+{
+  "ticker": "600118.SS",
+  "name": "中国卫星 (China Satellite)",
+  "strategy_type": "SPACE_INFRASTRUCTURE_CONSTELLATION",
+  "topology": "National GW/千帆 Constellation Foundry + Hainan Mass Production",
+  "constants": {
+    "price_anchor": "CNY",
+    "unit": "Share",
+    "current_price": 97.47,
+    "pe_ratio": -674.96
+  },
+  "risk_pricing": {
+    "target_weight": 0.06,
+    "current_weight": 0.08,
+    "cost_basis": 85.00,
+    "take_profit_levels": [
+      {"price": 101.85, "tranche": 0.02, "logic": "TP1: Psychological resistance & Profit lock-in"},
+      {"price": 118.00, "tranche": 0.03, "logic": "TP2: Historical peak resistance"}
+    ],
+    "trailing_stop": 91.50,
+    "kill_switch": "Intraday volume at limit-down > 2x 30-day average OR Scale-down in constellation launch targets"
+  },
+  "status": "STRATEGY_CONFIRMED_TRIM_PENDING",
+  "last_audit": "2026-04-22T06:45:00Z"
+}

@@ -1,236 +1,193 @@
 {
-  "last_sync": "2026-04-20T07:45:00",
+  "last_sync": "2026-04-26T13:05:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
-    "AVGO": {
-      "weight": 0.04,
-      "target_weight": 0.08,
-      "cost_basis": 379.75,
-      "current_price": 406.54,
-      "pnl_pct": 0.0705,
-      "status": "STRATEGY_CONFIRMED_ADDING_POSITION"
-    },
-    "TSLA": {
-      "weight": 0.06,
-      "cost_basis": 397.0,
-      "current_price": 400.62,
-      "pnl_pct": 0.0091,
-      "status": "YELLOW_ALERT_STOP_LOSS_TIGHTENED_378.00"
+    "AMZN": {
+      "weight": 0.048,
+      "cost_basis": 220.0,
+      "current_price": 263.99,
+      "pnl_pct": 0.20,
+      "status": "TRIM_EXECUTED_HOLD_TO_TP2"
     },
     "BABA": {
-      "weight": 0.075,
+      "weight": 0.059,
+      "target_weight": 0.03,
       "cost_basis": 143.0,
-      "current_price": 141.01,
-      "pnl_pct": -0.0139,
-      "status": "YELLOW_ALERT_PROFIT_PROTECTION"
-    },
-    "02675.HK": {
-      "name": "精锋医疗-B",
-      "weight": 0.08,
-      "target_weight": 0.08,
-      "cost_basis": 53.8,
-      "current_price": 54.0,
-      "pnl_pct": 0.0037,
-      "status": "ACTIVE_MONITORING"
-    },
-    "AMZN": {
-      "weight": 0.073,
-      "cost_basis": 212.0,
-      "current_price": 250.56,
-      "pnl_pct": 0.1819,
-      "status": "ACTIVE_MONITORING"
-    },
-    "002179.SZ": {
-      "weight": 0.03,
-      "cost_basis": 34.0,
-      "current_price": 36.65,
-      "pnl_pct": 0.0779,
-      "status": "ACTIVE_MONITORING_TRAILING_STOP_35.80"
-    },
-    "VRT": {
-      "weight": 0.0,
-      "target_weight": 0.05,
-      "cost_basis": 0.0,
-      "current_price": 307.34,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "09992.HK": {
-      "weight": 0.02,
-      "target_weight": 0.06,
-      "cost_basis": 163.9,
-      "current_price": 163.3,
-      "pnl_pct": -0.0037,
-      "status": "ACTIVE_MONITORING"
-    },
-    "00100.HK": {
-      "name": "MINIMAX-W",
-      "weight": 0.0,
-      "target_weight": 0.04,
-      "cost_basis": 0.0,
-      "current_price": 886.0,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "NVDA": {
-      "weight": 0.02,
-      "target_weight": 0.1,
-      "cost_basis": 176.0,
-      "current_price": 201.68,
-      "pnl_pct": 0.1459,
-      "status": "ACTIVE_MONITORING"
-    },
-    "WM": {
-      "weight": 0.0,
-      "target_weight": 0.1,
-      "cost_basis": 0.0,
-      "current_price": 223.95,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+      "current_price": 135.82,
+      "pnl_pct": -0.05,
+      "status": "EVENT_DRIVEN_MONITORING_PIVOT"
     },
     "MU": {
       "weight": 0.03,
-      "target_weight": 0.08,
-      "cost_basis": 357.0,
-      "current_price": 455.07,
-      "pnl_pct": 0.2747,
+      "cost_basis": 404.0,
+      "current_price": 496.72,
+      "pnl_pct": 0.229,
+      "status": "TRIM_EXECUTED_HOLD_TO_TP2"
+    },
+    "WM": {
+      "weight": 0.037,
+      "cost_basis": 225.0,
+      "current_price": 229.53,
+      "pnl_pct": 0.02,
       "status": "ACTIVE_MONITORING"
     },
+    "TSLA": {
+      "weight": 0.03,
+      "cost_basis": 397.0,
+      "current_price": 376.3,
+      "pnl_pct": -0.052,
+      "status": "EVENT_DRIVEN_MONITORING_AUTONOMY"
+    },
+    "CEG": {
+      "weight": 0.029,
+      "target_weight": 0.04,
+      "cost_basis": 289.0,
+      "current_price": 313.53,
+      "pnl_pct": 0.085,
+      "status": "HOLD_FOR_TP_320"
+    },
     "GOOGL": {
-      "weight": 0.06,
-      "target_weight": 0.04,
+      "weight": 0.027,
       "cost_basis": 255.0,
-      "current_price": 341.68,
-      "pnl_pct": 0.3399,
-      "status": "TAKE_PROFIT_TRIM_READY_341.50"
+      "current_price": 344.4,
+      "pnl_pct": 0.351,
+      "status": "ACTIVE_MONITORING_TRAILING_STOP_327"
     },
-    "CMB_GOLD": {
-      "name": "招商银行金条",
-      "weight": 0.08,
-      "cost_basis": 948.4,
-      "current_price": 1073.4,
-      "pnl_pct": 0.1318,
-      "status": "STRATEGY_CONFIRMED_ACTIVE_HOLD"
+    "AVGO": {
+      "weight": 0.025,
+      "target_weight": 0.05,
+      "cost_basis": 311.0,
+      "current_price": 422.76,
+      "pnl_pct": 0.359,
+      "status": "ACCUMULATING_TRAILING_STOP_401"
     },
-    "06869.HK": {
-      "name": "长飞光纤",
-      "weight": 0.04,
-      "cost_basis": 220.0,
-      "current_price": 211.8,
-      "pnl_pct": -0.0373,
-      "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
-    },
-    "601985.SS": {
-      "name": "中国核电",
-      "weight": 0.0,
-      "target_weight": 0.04,
-      "cost_basis": 0.0,
-      "current_price": 8.77,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "003816.SZ": {
-      "name": "中国广核",
-      "weight": 0.0,
-      "target_weight": 0.02,
-      "cost_basis": 0.0,
-      "current_price": 4.47,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "600487.SS": {
-      "name": "亨通光电",
-      "weight": 0.0,
+    "NVDA": {
+      "weight": 0.008,
       "target_weight": 0.03,
-      "cost_basis": 0.0,
-      "current_price": 55.65,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+      "cost_basis": 176.0,
+      "current_price": 208.27,
+      "pnl_pct": 0.183,
+      "status": "ACCUMULATING_TRAILING_STOP_192"
+    },
+    "TSM": {
+      "weight": 0.008,
+      "target_weight": 0.03,
+      "cost_basis": 332.0,
+      "current_price": 402.46,
+      "pnl_pct": 0.212,
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING_TRAILING_STOP_375"
+    },
+    "VRT": {
+      "weight": 0.006,
+      "target_weight": 0.02,
+      "cost_basis": 302.0,
+      "current_price": 323.46,
+      "pnl_pct": 0.071,
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING"
     }
   },
   "alerts_log": [
     {
-      "timestamp": "2026-04-20T07:45:00Z",
+      "timestamp": "2026-04-26T13:15:00Z",
+      "ticker": "VRT",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Liquid cooling backlog conversion and Blackwell synergy locked.",
+      "action": "Set Limit Add 0.7% @ 315.00."
+    },
+    {
+      "timestamp": "2026-04-26T13:05:00Z",
+      "ticker": "TSM",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: 2nm dominance and AI foundry re-rating protocol locked.",
+      "action": "Set Limit Add 1.2% @ 395.00. Set Trailing Stop @ 375.00."
+    },
+    {
+      "timestamp": "2026-04-26T13:05:00Z",
+      "ticker": "PORTFOLIO",
+      "level": "GREEN",
+      "trigger": "TAKE_PROFIT_EXECUTED: AMZN (1.3%) and MU (2.0%) profits locked.",
+      "action": "Updated weights and trailing stops for winners."
+    },
+    {
+      "timestamp": "2026-04-26T12:55:00Z",
       "ticker": "BABA",
       "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Profit protection activated near cost basis. 1/3 trim @ 144.50.",
-      "action": "Set Limit Sell @ 144.50 (2.5%), Stop Loss @ 128.00."
+      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on AI Cloud growth & Spinoffs.",
+      "action": "Set Target Weight 3.0%. Issue Trim command for 2.9% weight."
     },
     {
-      "timestamp": "2026-04-20T07:45:00Z",
+      "timestamp": "2026-04-26T12:45:00Z",
       "ticker": "TSLA",
       "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Stop loss tightened to 378.00 ahead of Q1 earnings.",
-      "action": "Set Hard Stop @ 378.00."
-    },
-    {
-      "timestamp": "2026-04-20T07:45:00Z",
-      "ticker": "GOOGL",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_CONFIRMED: Profit taking executed at $341.68. Reducing weight to 4%.",
-      "action": "Execute 2% Market Sell."
-    },
-    {
-      "timestamp": "2026-04-20T07:15:00Z",
-      "ticker": "600487.SS",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Hengtong added to 'AI Physical Layer' sub-portfolio. Target 3%. Order backlog coverage to 2027Q1.",
-      "action": "Monitoring entry tranches at 54.20 and 51.50."
-    },
-    {
-      "timestamp": "2026-04-20T06:30:00Z",
-      "ticker": "002179.SZ",
-      "level": "GREEN",
-      "trigger": "STRATEGY_SYNC: Protocol fixed for Jonhon. 7.7% gain secured via Trailing Stop @ 35.80.",
-      "action": "Set Trailing Stop @ 35.80 to lock in partial profits."
-    },
-    {
-      "timestamp": "2026-04-20T06:15:00Z",
-      "ticker": "NUCLEAR",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Nuclear power identified as AI 'Ultimate Energy'. CNNP (4%) and CGN (2%) protocols deployed.",
-      "action": "Monitoring entry zones for 601985.SS (<8.50) and 003816.SZ (<4.35)."
+      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on Robotaxi safety & HW3 upgrades.",
+      "action": "Disable Technical Hard-Stop @ 378. Monitor Dallas/Houston pilot data."
     }
   ],
   "execution_commands": [
     {
       "ticker": "BABA",
-      "delta": -0.025,
+      "delta": -0.029,
       "tranches": [
         {
-          "weight": 0.025,
-          "type": "LIMIT_SELL",
-          "price": 144.5,
-          "reason": "De-risk position at breakeven/TP1 threshold"
+          "weight": 0.029,
+          "type": "MARKET",
+          "reason": "STRATEGIC_TRIM_TO_REALLOCATE_TO_AI"
         }
       ],
-      "validation_sum": -0.025
+      "validation_sum": -0.029
     },
     {
-      "ticker": "GOOGL",
-      "delta": -0.02,
+      "ticker": "NVDA",
+      "delta": 0.012,
       "tranches": [
         {
-          "weight": 0.02,
-          "type": "MARKET_SELL",
-          "price": 341.68,
-          "reason": "Profit taking above $335 target"
+          "weight": 0.012,
+          "type": "LIMIT",
+          "price": 201.5,
+          "reason": "ACCUMULATION_T1"
         }
       ],
-      "validation_sum": -0.02
+      "validation_sum": 0.012
     },
     {
-      "ticker": "TSLA",
-      "delta": 0.0,
+      "ticker": "AVGO",
+      "delta": 0.015,
       "tranches": [
         {
-          "type": "STOP_LOSS_UPDATE",
-          "price": 378.0,
-          "reason": "Pre-earnings volatility protection"
+          "weight": 0.015,
+          "type": "LIMIT",
+          "price": 420.0,
+          "reason": "ACCUMULATION_T1"
         }
       ],
-      "validation_sum": 0.0
+      "validation_sum": 0.015
+    },
+    {
+      "ticker": "TSM",
+      "delta": 0.012,
+      "tranches": [
+        {
+          "weight": 0.012,
+          "type": "LIMIT",
+          "price": 395.0,
+          "reason": "ACCUMULATION_T1"
+        }
+      ],
+      "validation_sum": 0.012
+    },
+    {
+      "ticker": "VRT",
+      "delta": 0.007,
+      "tranches": [
+        {
+          "weight": 0.007,
+          "type": "LIMIT",
+          "price": 315.0,
+          "reason": "ACCUMULATION_T1"
+        }
+      ],
+      "validation_sum": 0.007
     }
   ]
 }

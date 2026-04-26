@@ -1,0 +1,49 @@
+{
+  "ticker": "TSM",
+  "name": "Taiwan Semiconductor Manufacturing Company",
+  "status": "STRATEGY_CONFIRMED_ACCUMULATING",
+  "strategy_snapshot": {
+    "topology": "全球算力主权节点，AI 产业最后守门人。",
+    "primary_vector": "2nm 制程垄断地位、CoWoS 封装瓶颈掌控、NVIDIA 核心代工溢价。",
+    "fragile_point": "海外工厂成本稀释毛利、地缘政治供应链韧性风险。"
+  },
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_pct": 0.008,
+      "current_price_baseline": 402.46
+    },
+    "add_rules": {
+      "catalyst": "2nm 产能确认及 AI 相关营收占比突破 65%",
+      "limit": "Max weight 3.0%",
+      "tranches": [
+        {
+          "price": 395.00,
+          "weight_step": 0.012,
+          "priority": "HIGH",
+          "reason": "均线支撑加仓"
+        },
+        {
+          "price": 380.00,
+          "weight_step": 0.01,
+          "priority": "MEDIUM",
+          "reason": "强心理支撑位补齐"
+        }
+      ]
+    },
+    "take_profit_rules": {
+      "fundamental_tp": 550.00,
+      "trailing_stop_pct": 5.0
+    },
+    "stop_loss_rules": {
+      "technical_sl": 375.00,
+      "fundamental_melt_down": "2nm 进度重大延误或主要客户转向竞争对手",
+      "macro_kill_switch": "地缘政治重大冲突导致出口中断"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 0.92,
+    "concentration_risk": "MEDIUM (Foundry Monopoly)",
+    "valuation_anchor": "PE 21x (2026 Prediction)"
+  },
+  "last_updated": "2026-04-26T13:05:00Z"
+}

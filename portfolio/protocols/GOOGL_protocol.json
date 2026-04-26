@@ -1,15 +1,16 @@
 {
   "ticker": "GOOGL",
   "name": "Alphabet (Google)",
-  "status": "active_profit_taking",
-  "last_updated": "2026-04-15T12:15:00Z",
+  "status": "PROFIT_TAKING_TRIM_EXECUTED",
+  "last_updated": "2026-04-24T16:15:00Z",
   "strategy": {
     "topology_core": "AI Monetization (Gemini 3) vs Capex Overload ($180B) + DOJ Remedy Risk",
-    "current_price_reference": 332.91,
+    "current_price_reference": 343.25,
     "entry_range": [255, 270],
+    "target_weight": 0.04,
     "take_profit_target": [380, 420],
-    "trailing_stop_loss": 298.0,
-    "hard_stop_loss": 280.0,
+    "trailing_stop_loss": 325.0,
+    "hard_stop_loss": 310.0,
     "purity_filter_status": "PASS (Cloud/AI Synergy 48% Growth)",
     "kill_switch_conditions": [
       "DOJ forced structural breakup of Chrome/Android",

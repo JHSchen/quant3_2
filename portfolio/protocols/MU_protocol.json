@@ -1,25 +1,43 @@
 {
   "ticker": "MU",
   "name": "Micron Technology",
-  "status": "active_growth_rebalance",
-  "last_updated": "2026-04-15T12:05:00Z",
-  "strategy": {
-    "topology_core": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
-    "current_price_reference": 465.66,
-    "entry_range": [450, 465],
-    "take_profit_target": [600, 750],
-    "trailing_stop_loss": 418.0,
-    "hard_stop_loss": 380.0,
-    "purity_filter_status": "PASS (HBM/AI contribution > 20%)",
-    "kill_switch_conditions": [
-      "HBM4 yield drops below 40%",
-      "Spot prices decline > 10% for two consecutive weeks",
-      "NVIDIA data center guidance revision downward"
-    ]
+  "status": "TRIM_EXECUTED_HOLD_TO_TP2",
+  "strategy_snapshot": {
+    "topology": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
+    "primary_vector": "Wafer-Area Penalty + 1-gamma Node Power Efficiency",
+    "fragile_point": "1-gamma yield stability vs Samsung/SK Hynix HBM4 catch-up",
+    "core_thesis": "Structural memory undersupply driven by HBM wafer consumption decoupling MU from legacy cycles."
   },
-  "monitor_nodes": {
-    "HBM4_Ramp": "Track 15,000 wafer capacity expansion milestones",
-    "Spot_Contract_Spread": "Monitor potential cycle peak signals in retail DRAM",
-    "Vera_Rubin_Timeline": "Sync with NVIDIA's next-gen platform launch"
-  }
+  "execution_protocol": {
+    "initial_state": {
+      "current_weight": 0.06,
+      "cost_basis": 400.00,
+      "current_price_baseline": 498.42,
+      "floating_pnl_pct": 0.2461
+    },
+    "target_parameters": {
+      "target_weight_limit": 0.05,
+      "position_delta": -0.02
+    },
+    "deployment_plan": [
+      {"size": 0.02, "type": "limit_sell", "price": 499.50, "comment": "TP1 Psychological $500 Resistance"},
+      {"size": 0.04, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Core runner position"}
+    ],
+    "take_profit_rules": {
+      "fundamental_tp": 580.00,
+      "trailing_stop_pct": 0.08
+    },
+    "stop_loss_rules": {
+      "trailing_stop": 473.00,
+      "fundamental_melt_down": "1-gamma node yields < 70% or HBM4 qualification failure",
+      "macro_kill_switch": "DRAM spot prices decline > 15% in a single month"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 0.52,
+    "capex_risk": "HIGH ($25B/2026)",
+    "valuation_anchor": "PE 4.9 (Current) -> 14.0 (Forward 2027)",
+    "adversary_checkpoint": "APPROVED (2026-04-24)"
+  },
+  "last_updated": "2026-04-26T13:05:00Z"
 }
