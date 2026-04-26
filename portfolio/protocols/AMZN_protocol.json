@@ -1,7 +1,7 @@
 {
   "ticker": "AMZN",
   "name": "Amazon.com, Inc.",
-  "status": "PARTIAL_PROFIT_LOCK_IN",
+  "status": "TRIM_EXECUTED_HOLD_TO_TP2",
   "strategy_snapshot": {
     "topology": "AWS Cloud + GenAI Layer (Bedrock) + Custom Silicon (Trainium 3) + Project Leo (Satellite)",
     "primary_vector": "Vertical AI Utility (Silicon OEM) + Project Leo Connectivity vs Capex Burn",
@@ -39,5 +39,5 @@
     "valuation_anchor": "PE 27.6 (Current) -> 34.0 (Target)",
     "adversary_checkpoint": "APPROVED (2026-04-24)"
   },
-  "last_updated": "2026-04-24T16:15:00Z"
+  "last_updated": "2026-04-26T13:05:00Z"
 }

@@ -1,7 +1,7 @@
 {
   "ticker": "MU",
   "name": "Micron Technology",
-  "status": "PARTIAL_PROFIT_LOCK_IN",
+  "status": "TRIM_EXECUTED_HOLD_TO_TP2",
   "strategy_snapshot": {
     "topology": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
     "primary_vector": "Wafer-Area Penalty + 1-gamma Node Power Efficiency",
@@ -39,5 +39,5 @@
     "valuation_anchor": "PE 4.9 (Current) -> 14.0 (Forward 2027)",
     "adversary_checkpoint": "APPROVED (2026-04-24)"
   },
-  "last_updated": "2026-04-24T16:15:00Z"
+  "last_updated": "2026-04-26T13:05:00Z"
 }
