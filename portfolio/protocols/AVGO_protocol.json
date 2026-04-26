@@ -1,42 +1,49 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "STRATEGY_CONFIRMED",
+  "status": "STRATEGY_CONFIRMED_ACCUMULATING",
   "strategy_snapshot": {
-    "topology": "Custom Silicon Utility (TPU v7/v8) + Meta MTIA (2nm) + Networking Fabric + VCF",
-    "primary_vector": "ASIC Co-design dominance (Meta/Google) + 1.6T Interconnect Supercycle",
-    "fragile_point": "TSMC 2nm Yield Lag + Capex Efficiency Trap"
+    "topology": "数据中心内部通信物理标准锁定者，互联之王。",
+    "primary_vector": "定制化 ASIC 订单爆发，VMWare 整合利润率提升。",
+    "fragile_point": "高估值下的半导体周期下行风险及巨额债务利息压力。"
   },
   "execution_protocol": {
-    "initial_state": {
-      "current_weight": 0.04,
-      "cost_basis": 379.75,
-      "current_price_baseline": 398.80,
-      "floating_pnl_pct": 0.0502
+    "entry_rules": {
+      "initial_tranche_pct": 0.025,
+      "current_price_baseline": 422.76
     },
-    "target_parameters": {
-      "target_weight_limit": 0.08,
-      "position_delta": 0.04
+    "add_rules": {
+      "catalyst": "定制化 AI 芯片客户（如 Meta, Google）订单指引上调",
+      "limit": "Max weight 5.0%",
+      "tranches": [
+        {
+          "price": 420.00,
+          "weight_step": 0.015,
+          "priority": "HIGH",
+          "reason": "现价附近建立核心算力底仓"
+        },
+        {
+          "price": 435.00,
+          "weight_step": 0.01,
+          "priority": "MEDIUM",
+          "reason": "突破历史高点后的趋势加仓"
+        }
+      ]
     },
-    "deployment_plan": [
-      {"size": 0.02, "type": "limit_buy", "price": 398.50, "comment": "Immediate support fill"},
-      {"size": 0.02, "type": "limit_buy", "price": 395.00, "comment": "Secondary support accumulation"}
-    ],
     "take_profit_rules": {
-      "fundamental_tp": 480.00,
-      "trailing_stop_pct": 0.10
+      "fundamental_tp": 520.00,
+      "trailing_stop_pct": 5.0
     },
     "stop_loss_rules": {
-      "technical_sl": 365.00,
-      "fundamental_melt_down": "Meta MTIA delay > 2 quarters",
-      "macro_kill_switch": "TSMC 2nm production failure or VMware churn > 20%"
+      "technical_sl": 375.00,
+      "fundamental_melt_down": "主要 ASIC 客户流失或 VMWare 业务出现大幅整合失败信号",
+      "macro_kill_switch": "全球云资本开支缩减"
     }
   },
   "risk_metrics": {
-    "purity_score": 0.435,
-    "concentration_risk": "MEDIUM (Diversifying to Meta/Anthropic)",
-    "valuation_anchor": "PE 22.0 (Current) -> 28.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-04-20)"
+    "purity_score": 0.88,
+    "concentration_risk": "MEDIUM (Semiconductor Cycle)",
+    "valuation_anchor": "Free Cash Flow Yield > 4%"
   },
-  "last_updated": "2026-04-20T14:30:00Z"
+  "last_updated": "2026-04-26T12:25:00Z"
 }

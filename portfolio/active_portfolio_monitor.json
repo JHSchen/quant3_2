@@ -1,270 +1,130 @@
 {
-  "last_sync": "2026-04-24T16:15:00",
+  "last_sync": "2026-04-26T12:25:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
-    "600118.SS": {
-      "name": "中国卫星",
-      "weight": 0.08,
-      "target_weight": 0.06,
-      "cost_basis": 85.0,
-      "current_price": 97.47,
-      "pnl_pct": 0.1467,
-      "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
-    },
-    "AVGO": {
-      "weight": 0.04,
-      "target_weight": 0.08,
-      "cost_basis": 379.75,
-      "current_price": 419.6,
-      "pnl_pct": 0.1049,
-      "status": "STRATEGY_CONFIRMED"
-    },
-    "TSLA": {
-      "weight": 0.06,
-      "target_weight": 0.0,
-      "cost_basis": 397.0,
-      "current_price": 373.3,
-      "pnl_pct": -0.0597,
-      "status": "STOP_LOSS_BREACHED_EXIT_MANDATORY"
+    "AMZN": {
+      "weight": 0.061,
+      "cost_basis": 220.0,
+      "current_price": 263.99,
+      "pnl_pct": 0.20,
+      "status": "ACTIVE_MONITORING"
     },
     "BABA": {
-      "weight": 0.075,
+      "weight": 0.059,
       "cost_basis": 143.0,
-      "current_price": 135.48,
-      "pnl_pct": -0.0526,
-      "status": "YELLOW_ALERT_STOP_LOSS_WATCH_128.00"
-    },
-    "CEG": {
-      "weight": 0.0,
-      "target_weight": 0.03,
-      "cost_basis": 0.0,
-      "current_price": 282.69,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "02675.HK": {
-      "name": "精锋医疗-B",
-      "weight": 0.08,
-      "target_weight": 0.08,
-      "cost_basis": 53.8,
-      "current_price": 54.0,
-      "pnl_pct": 0.0037,
+      "current_price": 135.82,
+      "pnl_pct": -0.05,
       "status": "ACTIVE_MONITORING"
-    },
-    "AMZN": {
-      "weight": 0.073,
-      "target_weight": 0.06,
-      "cost_basis": 212.0,
-      "current_price": 262.24,
-      "pnl_pct": 0.2369,
-      "status": "PARTIAL_PROFIT_LOCK_IN_PENDING"
-    },
-    "002179.SZ": {
-      "weight": 0.03,
-      "cost_basis": 34.0,
-      "current_price": 36.65,
-      "pnl_pct": 0.0779,
-      "status": "ACTIVE_MONITORING_TRAILING_STOP_35.80"
-    },
-    "VRT": {
-      "weight": 0.0,
-      "target_weight": 0.05,
-      "cost_basis": 0.0,
-      "current_price": 307.34,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "09992.HK": {
-      "weight": 0.02,
-      "target_weight": 0.06,
-      "cost_basis": 163.9,
-      "current_price": 163.3,
-      "pnl_pct": -0.0037,
-      "status": "ACTIVE_MONITORING"
-    },
-    "00100.HK": {
-      "name": "MINIMAX-W",
-      "weight": 0.0,
-      "target_weight": 0.04,
-      "cost_basis": 0.0,
-      "current_price": 886.0,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "NVDA": {
-      "weight": 0.02,
-      "target_weight": 0.1,
-      "cost_basis": 176.0,
-      "current_price": 208.56,
-      "pnl_pct": 0.185,
-      "status": "ACTIVE_MONITORING"
-    },
-    "WM": {
-      "weight": 0.0,
-      "target_weight": 0.1,
-      "cost_basis": 0.0,
-      "current_price": 223.95,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     },
     "MU": {
-      "weight": 0.06,
-      "target_weight": 0.04,
-      "cost_basis": 400.0,
-      "current_price": 498.42,
-      "pnl_pct": 0.2461,
-      "status": "PARTIAL_PROFIT_LOCK_IN_PENDING"
+      "weight": 0.05,
+      "cost_basis": 404.0,
+      "current_price": 496.72,
+      "pnl_pct": 0.229,
+      "status": "ACTIVE_MONITORING_TRAILING_STOP_480"
+    },
+    "WM": {
+      "weight": 0.037,
+      "cost_basis": 225.0,
+      "current_price": 229.53,
+      "pnl_pct": 0.02,
+      "status": "ACTIVE_MONITORING"
+    },
+    "TSLA": {
+      "weight": 0.03,
+      "cost_basis": 397.0,
+      "current_price": 376.3,
+      "pnl_pct": -0.052,
+      "status": "RED_ALERT_BREAK_378"
+    },
+    "CEG": {
+      "weight": 0.029,
+      "cost_basis": 289.0,
+      "current_price": 313.53,
+      "pnl_pct": 0.085,
+      "status": "ACTIVE_MONITORING"
     },
     "GOOGL": {
-      "weight": 0.06,
-      "target_weight": 0.04,
+      "weight": 0.027,
       "cost_basis": 255.0,
-      "current_price": 343.25,
-      "pnl_pct": 0.3461,
-      "status": "TRIM_EXECUTED_HOLD_TO_TARGET"
+      "current_price": 344.4,
+      "pnl_pct": 0.351,
+      "status": "ACTIVE_MONITORING"
     },
-    "CMB_GOLD": {
-      "name": "招商银行金条",
-      "weight": 0.08,
-      "cost_basis": 948.4,
-      "current_price": 1073.4,
-      "pnl_pct": 0.1318,
-      "status": "STRATEGY_CONFIRMED_ACTIVE_HOLD"
+    "AVGO": {
+      "weight": 0.025,
+      "target_weight": 0.05,
+      "cost_basis": 311.0,
+      "current_price": 422.76,
+      "pnl_pct": 0.359,
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING"
     },
-    "06869.HK": {
-      "name": "长飞光纤",
-      "weight": 0.04,
-      "cost_basis": 220.0,
-      "current_price": 211.8,
-      "pnl_pct": -0.0373,
-      "status": "STRATEGY_CONFIRMED_TRIM_PENDING"
-    },
-    "601985.SS": {
-      "name": "中国核电",
-      "weight": 0.0,
-      "target_weight": 0.04,
-      "cost_basis": 0.0,
-      "current_price": 8.77,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "003816.SZ": {
-      "name": "中国广核",
-      "weight": 0.0,
-      "target_weight": 0.02,
-      "cost_basis": 0.0,
-      "current_price": 4.47,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
-    },
-    "600487.SS": {
-      "name": "亨通光电",
-      "weight": 0.0,
+    "NVDA": {
+      "weight": 0.008,
       "target_weight": 0.03,
-      "cost_basis": 0.0,
-      "current_price": 55.65,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+      "cost_basis": 176.0,
+      "current_price": 208.27,
+      "pnl_pct": 0.183,
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING"
     },
-    "600030.SS": {
-      "name": "中信证券",
-      "weight": 0.0,
-      "target_weight": 0.03,
-      "cost_basis": 0.0,
-      "current_price": 26.23,
-      "pnl_pct": 0.0,
-      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    "TSM": {
+      "weight": 0.008,
+      "cost_basis": 332.0,
+      "current_price": 402.46,
+      "pnl_pct": 0.212,
+      "status": "ACTIVE_MONITORING"
+    },
+    "VRT": {
+      "weight": 0.006,
+      "cost_basis": 302.0,
+      "current_price": 323.46,
+      "pnl_pct": 0.071,
+      "status": "ACTIVE_MONITORING"
     }
   },
   "alerts_log": [
     {
-      "timestamp": "2026-04-26T12:15:00Z",
-      "ticker": "600030.SS",
+      "timestamp": "2026-04-26T12:25:00Z",
+      "ticker": "NVDA",
       "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Value Elevation Plan & 2026 Strategy Anchor Lock.",
-      "action": "Set Limit Entry 3% @ 26.20."
+      "trigger": "STRATEGY_CONFIRMED: Accumulation protocol for Blackwell cycle locked.",
+      "action": "Set Limit Add 1.2% @ 201.50."
     },
     {
-      "timestamp": "2026-04-24T16:15:00Z",
-      "ticker": "TSLA",
-      "level": "RED",
-      "trigger": "STRATEGY_CONFIRMED: Stop loss 378.00 breached. Topology collapse.",
-      "action": "Issue Stop-Market Exit @ 373.00."
-    },
-    {
-      "timestamp": "2026-04-24T16:15:00Z",
-      "ticker": "MU",
+      "timestamp": "2026-04-26T12:25:00Z",
+      "ticker": "AVGO",
       "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: AI Sector rally profit protection.",
-      "action": "Set Limit Sell 2% @ 499.50, Trailing Stop 5% on remainder."
-    },
-    {
-      "timestamp": "2026-04-24T16:15:00Z",
-      "ticker": "AMZN",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: AWS/Meta rally profit protection.",
-      "action": "Set Limit Sell 1.3% @ 263.50, Trailing Stop 5% on remainder."
-    },
-    {
-      "timestamp": "2026-04-24T16:15:00Z",
-      "ticker": "GOOGL",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Profit target 341.50 reached.",
-      "action": "Execute 2% Market Trim to target weight 4%."
+      "trigger": "STRATEGY_CONFIRMED: ASIC/VMWare growth ramp locked.",
+      "action": "Set Limit Add 1.5% @ 420.00."
     }
   ],
   "execution_commands": [
     {
-      "ticker": "TSLA",
-      "delta": -0.06,
+      "ticker": "NVDA",
+      "delta": 0.012,
       "tranches": [
         {
-          "weight": 0.06,
-          "type": "STOP_MARKET",
-          "price": 373.0,
-          "reason": "MANDATORY_EXIT_STOP_LOSS_BREACH"
-        }
-      ],
-      "validation_sum": -0.06
-    },
-    {
-      "ticker": "GOOGL",
-      "delta": -0.02,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "MARKET",
-          "reason": "PROFIT_TAKING_TRIM_TO_TARGET"
-        }
-      ],
-      "validation_sum": -0.02
-    },
-    {
-      "ticker": "AMZN",
-      "delta": -0.013,
-      "tranches": [
-        {
-          "weight": 0.013,
+          "weight": 0.012,
           "type": "LIMIT",
-          "price": 263.5,
-          "reason": "TP1_LOCK_IN"
+          "price": 201.5,
+          "reason": "ACCUMULATION_T1"
         }
       ],
-      "validation_sum": -0.013
+      "validation_sum": 0.012
     },
     {
-      "ticker": "MU",
-      "delta": -0.02,
+      "ticker": "AVGO",
+      "delta": 0.015,
       "tranches": [
         {
-          "weight": 0.02,
+          "weight": 0.015,
           "type": "LIMIT",
-          "price": 499.5,
-          "reason": "TP1_LOCK_IN"
+          "price": 420.0,
+          "reason": "ACCUMULATION_T1"
         }
       ],
-      "validation_sum": -0.02
+      "validation_sum": 0.015
     }
   ]
 }
