@@ -166,9 +166,25 @@
       "current_price": 55.65,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
+    },
+    "600030.SS": {
+      "name": "中信证券",
+      "weight": 0.0,
+      "target_weight": 0.03,
+      "cost_basis": 0.0,
+      "current_price": 26.23,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_PENDING_ENTRY"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-26T12:15:00Z",
+      "ticker": "600030.SS",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Value Elevation Plan & 2026 Strategy Anchor Lock.",
+      "action": "Set Limit Entry 3% @ 26.20."
+    },
     {
       "timestamp": "2026-04-24T16:15:00Z",
       "ticker": "TSLA",

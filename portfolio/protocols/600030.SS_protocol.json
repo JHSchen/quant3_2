@@ -1,0 +1,43 @@
+{
+  "ticker": "600030.SS",
+  "name": "中信证券",
+  "status": "STRATEGY_CONFIRMED_PENDING_ENTRY",
+  "strategy_snapshot": {
+    "topology": "中国资本市场供给侧改革核心节点，头部券商溢价。",
+    "primary_vector": "建设一流投资银行政策红利 + 财富管理/国际业务对冲周期。",
+    "fragile_point": "公允价值变动收益波动剧烈，盈利质量依赖于市场单边走势。"
+  },
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_pct": 0.03,
+      "entry_zone": [25.80, 26.20],
+      "current_price_baseline": 26.23
+    },
+    "add_rules": {
+      "catalyst": "2026年中报验证非方向性收入持续增长",
+      "limit": "Max weight 5%",
+      "tranches": [
+        {
+          "price": 24.50,
+          "weight_step": 0.02,
+          "priority": "HIGH"
+        }
+      ]
+    },
+    "take_profit_rules": {
+      "fundamental_tp": 36.60,
+      "trailing_stop_pct": 5.0
+    },
+    "stop_loss_rules": {
+      "technical_sl": 23.50,
+      "fundamental_melt_down": "主营业务收入同比下滑 > 15%",
+      "macro_kill_switch": "市场日均成交额 < 8000 亿或重大监管处罚"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 0.85,
+    "concentration_risk": "MEDIUM (券商龙头系统性风险)",
+    "valuation_anchor": "PB 1.1x (2026 Prediction)"
+  },
+  "last_updated": "2026-04-26T12:15:00Z"
+}
