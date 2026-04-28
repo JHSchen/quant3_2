@@ -85,9 +85,23 @@
       "current_price": 323.46,
       "pnl_pct": 0.071,
       "status": "STRATEGY_CONFIRMED_ACCUMULATING"
+    },
+    "02513": {
+      "weight": 0.01,
+      "cost_basis": 807.5,
+      "current_price": 807.5,
+      "pnl_pct": 0.0,
+      "status": "STRATEGY_CONFIRMED_HOLD_ONLY_TRAILING_STOP_720"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-28T05:40:00Z",
+      "ticker": "02513",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Zhipu AI (02513.HK) protocol locked. Holding 830 shares.",
+      "action": "Set Trailing Stop @ 720.00. No further add at current levels."
+    },
     {
       "timestamp": "2026-04-26T13:15:00Z",
       "ticker": "VRT",

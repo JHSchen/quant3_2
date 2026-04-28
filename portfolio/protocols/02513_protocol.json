@@ -1,0 +1,43 @@
+{
+  "ticker": "02513",
+  "name": "Zhipu AI (智谱 AI)",
+  "status": "STRATEGY_CONFIRMED_HOLD_ONLY",
+  "strategy_snapshot": {
+    "topology": "亚洲 AI 生态系统的核心智能中枢，专有计算-Token 交换中心。",
+    "primary_vector": "GLM-5 智能体生态爆发及 83% API 调价后的利润收割。",
+    "fragile_point": "估值地心引力（YTD +700%）及低流动性下的“小门效应”。"
+  },
+  "execution_protocol": {
+    "entry_rules": {
+      "initial_tranche_shares": 830,
+      "current_price_baseline": 807.5
+    },
+    "add_rules": {
+      "catalyst": "Token 消耗增长持续 >100% 且估值回撤至 50 日均线",
+      "limit": "Max weight 1.5% (CURRENTLY VETOED BY ADVERSARY AT 800+)",
+      "tranches": [
+        {
+          "price": 680.0,
+          "weight_step": 0.005,
+          "priority": "LOW",
+          "reason": "技术性深调后的估值修复"
+        }
+      ]
+    },
+    "take_profit_rules": {
+      "fundamental_tp": 1050.0,
+      "trailing_stop_pct": 10.0
+    },
+    "stop_loss_rules": {
+      "technical_sl": 720.0,
+      "fundamental_melt_down": "Token 增速掉破 50% 或 MiniMax/DeepSeek 开启毁灭性价格战",
+      "macro_kill_switch": "港股 AI 板块估值中枢下移或流动性枯竭"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 1.0,
+    "concentration_risk": "EXTREME (Momentum Bubble Risk)",
+    "valuation_anchor": "Pricing power transition from Growth to Profitability"
+  },
+  "last_updated": "2026-04-28T05:40:00Z"
+}
