@@ -10,18 +10,17 @@
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.073,
-      "cost_basis": 212.00,
-      "current_price_baseline": 262.24,
-      "floating_pnl_pct": 0.2369
+      "current_weight": 0.048,
+      "cost_basis": 220.00,
+      "current_price_baseline": 261.12,
+      "floating_pnl_pct": 0.1869
     },
     "target_parameters": {
-      "target_weight_limit": 0.10,
-      "position_delta": -0.013
+      "target_weight_limit": 0.05,
+      "position_delta": 0.00
     },
     "deployment_plan": [
-      {"size": 0.013, "type": "limit_sell", "price": 263.50, "comment": "TP1 Resistance lock-in"},
-      {"size": 0.06, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Core runner position"}
+      {"size": 0.048, "type": "trailing_stop", "distance_pct": 0.042, "comment": "Runner position protected at $250"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 300.00,
@@ -37,7 +36,7 @@
     "purity_score": 0.107,
     "capex_risk": "VERY HIGH ($200B/2026)",
     "valuation_anchor": "PE 27.6 (Current) -> 34.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-04-24)"
+    "adversary_checkpoint": "APPROVED (2026-04-28)"
   },
-  "last_updated": "2026-04-26T13:05:00Z"
+  "last_updated": "2026-04-28T08:42:00Z"
 }

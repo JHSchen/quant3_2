@@ -6,8 +6,8 @@
     "AMZN": {
       "weight": 0.048,
       "cost_basis": 220.0,
-      "current_price": 263.99,
-      "pnl_pct": 0.20,
+      "current_price": 261.12,
+      "pnl_pct": 0.187,
       "status": "TRIM_EXECUTED_HOLD_TO_TP2"
     },
     "BABA": {
@@ -31,11 +31,18 @@
       "current_price": 229.53,
       "pnl_pct": 0.02,
       "status": "ACTIVE_MONITORING"
+    }
     },
-    "TSLA": {
-      "weight": 0.03,
-      "cost_basis": 397.0,
-      "current_price": 376.3,
+    "alerts_log": [
+    {
+      "timestamp": "2026-04-28T08:42:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Trailing Stop set at 250.00. AWS vertical silicon thesis verified.",
+      "action": "Maintain 4.8% weight. Monitor $200B Capex execution risk."
+    },
+    {
+      "timestamp": "2026-04-28T08:35:00Z",
       "pnl_pct": -0.052,
       "status": "EVENT_DRIVEN_MONITORING_AUTONOMY"
     },
