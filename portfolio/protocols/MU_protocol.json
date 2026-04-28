@@ -10,25 +10,24 @@
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.06,
-      "cost_basis": 400.00,
-      "current_price_baseline": 498.42,
-      "floating_pnl_pct": 0.2461
+      "current_weight": 0.03,
+      "cost_basis": 404.00,
+      "current_price_baseline": 524.56,
+      "floating_pnl_pct": 0.2984
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": -0.02
+      "position_delta": 0.00
     },
     "deployment_plan": [
-      {"size": 0.02, "type": "limit_sell", "price": 499.50, "comment": "TP1 Psychological $500 Resistance"},
-      {"size": 0.04, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Core runner position"}
+      {"size": 0.03, "type": "trailing_stop", "distance_pct": 0.075, "comment": "Runner position protected at $485"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 580.00,
       "trailing_stop_pct": 0.08
     },
     "stop_loss_rules": {
-      "trailing_stop": 473.00,
+      "trailing_stop": 485.00,
       "fundamental_melt_down": "1-gamma node yields < 70% or HBM4 qualification failure",
       "macro_kill_switch": "DRAM spot prices decline > 15% in a single month"
     }
@@ -36,8 +35,8 @@
   "risk_metrics": {
     "purity_score": 0.52,
     "capex_risk": "HIGH ($25B/2026)",
-    "valuation_anchor": "PE 4.9 (Current) -> 14.0 (Forward 2027)",
-    "adversary_checkpoint": "APPROVED (2026-04-24)"
+    "valuation_anchor": "PE 5.2 (Current) -> 14.0 (Forward 2027)",
+    "adversary_checkpoint": "APPROVED (2026-04-28)"
   },
-  "last_updated": "2026-04-26T13:05:00Z"
+  "last_updated": "2026-04-28T08:35:00Z"
 }

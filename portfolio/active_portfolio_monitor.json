@@ -21,8 +21,8 @@
     "MU": {
       "weight": 0.03,
       "cost_basis": 404.0,
-      "current_price": 496.72,
-      "pnl_pct": 0.229,
+      "current_price": 524.56,
+      "pnl_pct": 0.298,
       "status": "TRIM_EXECUTED_HOLD_TO_TP2"
     },
     "WM": {
@@ -95,6 +95,13 @@
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-28T08:35:00Z",
+      "ticker": "MU",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Trailing Stop raised to 485.00. Memflation thesis intact.",
+      "action": "Maintain 3.0% weight. Monitor 1-gamma yield stability."
+    },
     {
       "timestamp": "2026-04-28T05:40:00Z",
       "ticker": "02513",
