@@ -185,8 +185,8 @@
         {
           "weight": 0.015,
           "type": "LIMIT",
-          "price": 420.0,
-          "reason": "ACCUMULATION_T1"
+          "price": 408.0,
+          "reason": "ACCUMULATION_T2"
         }
       ],
       "validation_sum": 0.015
@@ -203,6 +203,22 @@
         }
       ],
       "validation_sum": 0.012
+    },
+    {
+      "ticker": "VRT",
+      "delta": 0.007,
+      "tranches": [
+        {
+          "weight": 0.007,
+          "type": "LIMIT",
+          "price": 315.0,
+          "reason": "ACCUMULATION_T1"
+        }
+      ],
+      "validation_sum": 0.007
+    }
+  ]
+}_sum": 0.012
     },
     {
       "ticker": "VRT",
