@@ -1,7 +1,7 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "ACCUMULATING_TRAILING_STOP_401",
+  "status": "STRATEGY_CONFIRMED_ACCUMULATING_STOP_401_BUY_395",
   "strategy_snapshot": {
     "topology": "AI Compute Clusters -> Backend/Frontend Networking (Tomahawk/Jericho) -> Custom ASIC (XPUs) -> VMWare Cloud Foundation",
     "primary_vector": "Custom ASIC Dominance (Google TPU, Meta MTIA) + VMWare FCF Accretion",
@@ -10,18 +10,18 @@
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.035,
-      "cost_basis": 351.00,
+      "current_weight": 0.025,
+      "cost_basis": 311.00,
       "current_price_baseline": 418.20,
-      "floating_pnl_pct": 0.1915
+      "floating_pnl_pct": 0.359
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.015
+      "position_delta": 0.025
     },
     "deployment_plan": [
-      {"size": 0.035, "type": "trailing_stop", "distance_pct": 0.041, "comment": "Core position protected at $401"},
-      {"size": 0.015, "type": "limit_buy", "price": 408.00, "comment": "Accumulation T2 dip-buy"}
+      {"size": 0.025, "type": "trailing_stop", "distance_pct": 0.041, "comment": "Core position protected at $401"},
+      {"size": 0.025, "type": "limit_buy", "price": 395.00, "comment": "Re-accumulation below stop cascade"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 520.00,
@@ -39,5 +39,5 @@
     "valuation_anchor": "Free Cash Flow Yield > 4%",
     "adversary_checkpoint": "APPROVED (2026-04-28)"
   },
-  "last_updated": "2026-04-28T08:50:00Z"
+  "last_updated": "2026-04-28T11:45:00Z"
 }

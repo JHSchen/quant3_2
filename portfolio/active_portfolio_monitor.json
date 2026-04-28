@@ -67,7 +67,7 @@
       "cost_basis": 311.0,
       "current_price": 422.76,
       "pnl_pct": 0.359,
-      "status": "ACCUMULATING_TRAILING_STOP_401"
+      "status": "STRATEGY_CONFIRMED_ACCUMULATING_STOP_401_BUY_395"
     },
     "NVDA": {
       "weight": 0.008,
@@ -102,6 +102,13 @@
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-28T11:45:00Z",
+      "ticker": "AVGO",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Trailing Stop @ 401.00. Replaced $408 buy with $395 limit buy for 2.5% delta.",
+      "action": "Maintain 2.5% core. Re-accumulate below stop level to optimize cost basis."
+    },
     {
       "timestamp": "2026-04-28T08:35:00Z",
       "ticker": "MU",
@@ -180,16 +187,16 @@
     },
     {
       "ticker": "AVGO",
-      "delta": 0.015,
+      "delta": 0.025,
       "tranches": [
         {
-          "weight": 0.015,
+          "weight": 0.025,
           "type": "LIMIT",
-          "price": 408.0,
-          "reason": "ACCUMULATION_T2"
+          "price": 395.0,
+          "reason": "STRATEGIC_REACCUMULATION_BELOW_STOP_CASCADE"
         }
       ],
-      "validation_sum": 0.015
+      "validation_sum": 0.025
     },
     {
       "ticker": "TSM",
