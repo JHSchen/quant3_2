@@ -11,16 +11,15 @@
   },
   "risk_pricing": {
     "target_weight": 0.02,
-    "current_weight": 0.0,
-    "cost_basis": 0.0,
+    "current_weight": 0.01,
+    "cost_basis": 4.45,
     "entry_zones": [
-      {"price": 4.30, "tranche": 0.01, "logic": "Post-Q1 maintenance news wash-out"},
-      {"price": 4.15, "tranche": 0.01, "logic": "Dividend yield support zone"}
+      {"price": 4.30, "tranche": 0.01, "logic": "Post-Q1 maintenance news wash-out"}
     ],
     "take_profit": 5.20,
     "stop_loss": 3.95,
     "kill_switch": "Dividend payout ratio falls below 50% OR unexpected HCF standard delay"
   },
-  "status": "STRATEGY_CONFIRMED_PENDING_ENTRY",
+  "status": "ACTIVE_HOLDING",
   "last_audit": "2026-04-20T06:15:00Z"
 }

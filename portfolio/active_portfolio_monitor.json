@@ -99,9 +99,32 @@
       "current_price": 807.5,
       "pnl_pct": 0.0,
       "status": "STRATEGY_CONFIRMED_HOLD_ONLY_TRAILING_STOP_720"
+    },
+    "003816.SZ": {
+      "weight": 0.01,
+      "target_weight": 0.02,
+      "cost_basis": 4.45,
+      "current_price": 4.53,
+      "pnl_pct": 0.018,
+      "status": "ACTIVE_HOLDING"
+    },
+    "601985.SS": {
+      "weight": 0.01,
+      "target_weight": 0.04,
+      "cost_basis": 8.9,
+      "current_price": 8.99,
+      "pnl_pct": 0.01,
+      "status": "ACTIVE_HOLDING"
     }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-04-29T06:05:00Z",
+      "ticker": "NUCLEAR_SECTOR",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Positions established for 003816.SZ (1%) and 601985.SS (1%).",
+      "action": "Updated active monitor and protocols. Delta to target: +1% and +3%."
+    },
     {
       "timestamp": "2026-04-28T11:45:00Z",
       "ticker": "AVGO",
