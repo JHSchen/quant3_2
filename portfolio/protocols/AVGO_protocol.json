@@ -1,42 +1,42 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "ACCUMULATING_STEADY_GROWTH",
-  "protocol_version": "2026.5.1-ASIC-DOMINANCE",
+  "status": "NEAR_MAX_WEIGHT_HOLDING",
+  "protocol_version": "2026.5.1-HIGH-CONVICTION-HOLD",
   "strategy_snapshot": {
-    "topology": "AI Interconnect Tax + Custom ASIC (XPUs) + VMWare Subscription Engine",
-    "primary_vector": "Non-linear networking complexity growth in 100k+ GPU clusters + VCF margin accretion",
-    "fragile_point": "VMware customer churn due to aggressive pricing vs Hyperscaler logic internalisation",
-    "core_thesis": "Broadcom controls the critical connectivity and custom silicon path for AI. It is the only firm with multi-generational ASIC visibility through 2029."
+    "topology": "AI Interconnect Tax + Custom ASIC Dominance + VMware Cash Cow",
+    "primary_vector": "XPU production scaling (Google/Meta) + VCF license conversion",
+    "fragile_point": "Valuation saturation at $2T market cap vs potential VMware churn",
+    "core_thesis": "4.5% weight represents full conviction in the 2026 ASIC super-cycle. High cost basis ($372) requires tighter stop management than original entry."
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.025,
-      "cost_basis": 311.00,
+      "current_weight": 0.045,
+      "cost_basis": 372.00,
       "current_price_baseline": 420.75,
-      "floating_pnl_pct": 0.3529
+      "floating_pnl_pct": 0.1310
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
       "position_delta": 0.00
     },
     "deployment_plan": [
-      {"size": 0.025, "type": "trailing_stop", "distance_pct": 0.045, "comment": "Raised stop to $402 to lock in major gains."}
+      {"size": 0.02, "type": "trailing_stop", "distance_pct": 0.025, "comment": "Tight stop at $410 for recent add to lock in gains."},
+      {"size": 0.025, "type": "trailing_stop", "distance_pct": 0.045, "comment": "Core stop at $402."}
     ],
     "take_profit_rules": {
-      "fundamental_tp": 520.00,
-      "secondary_tp": 580.00
+      "tactical_trim_target": 480.00,
+      "fundamental_tp": 520.00
     },
     "stop_loss_rules": {
-      "hard_stop": 380.00,
-      "trailing_stop_lock": 402.00,
-      "macro_kill_switch": "Hyperscaler Capex guidance cut > 15% or major ASIC partner cancellation"
+      "hard_stop_principal": 385.00,
+      "macro_kill_switch": "VMware Q2 renewal rate < 80% or HBM4 supply shortage impacts ASIC shipments"
     }
   },
   "risk_metrics": {
     "purity_score": 0.88,
-    "valuation_anchor": "FCF Yield 4.2%",
+    "concentration_risk": "HIGH (Semiconductor Cluster)",
     "adversary_checkpoint": "APPROVED (2026-05-01)"
   },
-  "last_updated": "2026-05-01T14:05:00Z"
+  "last_updated": "2026-05-01T14:15:00Z"
 }
