@@ -1,13 +1,13 @@
 {
   "ticker": "BABA",
   "name": "Alibaba Group Holding Limited",
-  "status": "STRATEGIC_LIQUIDATION",
-  "protocol_version": "2026.5.1-EXIT-PLAN",
+  "status": "STRATEGIC_LIQUIDATION_ACTIVE",
+  "protocol_version": "2026.5.1-LIQUIDATION-FINAL",
   "strategy_snapshot": {
     "topology": "Cloud/AI Transition vs E-commerce Erosion",
     "primary_vector": "Technical Rebound (Pre-Earnings) + $19B Buyback Support",
     "fragile_point": "Negative FCF burn & Huawei chip conversion cost",
-    "core_thesis": "The stock is a value trap with structural headwinds. Objective is a phased exit during technical strength to reallocate capital to High-Purity AI nodes."
+    "core_thesis": "Capital rotation requirement. The opportunity cost of holding 6% BABA is too high compared to high-purity AI nodes (AMZN/GOOGL). Phased exit prioritized; forced exit mandated post-earnings."
   },
   "execution_protocol": {
     "initial_state": {
@@ -16,14 +16,23 @@
       "current_price_baseline": 131.88,
       "floating_pnl_pct": -0.0778
     },
-    "liquidation_plan": [
+    "primary_liquidation_plan": [
       {"size": 0.02, "type": "LIMIT", "price": 142.50, "reason": "BREAK_EVEN_EXIT_T1"},
       {"size": 0.02, "type": "LIMIT", "price": 152.00, "reason": "RESISTANCE_EXIT_T2"},
       {"size": 0.02, "type": "LIMIT", "price": 165.00, "reason": "MAX_REBOUND_EXIT_T3"}
     ],
-    "stop_loss_rules": {
-      "hard_stop": 113.00,
-      "comment": "Complete exit if support at $113 fails, regardless of rebound thesis."
+    "contingency_exit_rules": {
+      "time_based_forced_exit": {
+        "deadline": "2026-05-14T10:00:00Z",
+        "condition": "Price < $140.00 post-earnings",
+        "action": "FORCE_MARKET_SELL_50_PERCENT_OF_POSITION",
+        "rationale": "Dead money risk mitigation"
+      },
+      "hard_stop_loss": {
+        "price": 113.00,
+        "action": "TOTAL_LIQUIDATION_MARKET",
+        "rationale": "Structural breakdown of 52-week support"
+      }
     }
   },
   "risk_metrics": {
@@ -31,5 +40,5 @@
     "fcf_risk": "HIGH (Negative RMB 21.8B)",
     "adversary_checkpoint": "APPROVED (2026-05-01)"
   },
-  "last_updated": "2026-05-01T13:35:00Z"
+  "last_updated": "2026-05-01T13:45:00Z"
 }

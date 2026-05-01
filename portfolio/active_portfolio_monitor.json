@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-05-01T13:35:00Z",
+  "last_sync": "2026-05-01T13:45:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -16,7 +16,7 @@
       "cost_basis": 143.0,
       "current_price": 131.88,
       "pnl_pct": -0.0778,
-      "status": "STRATEGIC_LIQUIDATION"
+      "status": "STRATEGIC_LIQUIDATION_ACTIVE"
     },
     "MU": {
       "weight": 0.0,
@@ -107,18 +107,18 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T13:45:00Z",
+      "ticker": "BABA",
+      "level": "RED",
+      "trigger": "STRATEGIC_LIQUIDATION_FINALIZED: Phased exit + Post-earnings forced exit (@2026-05-14) + $113 Hard Stop.",
+      "action": "Protocol locked. No further chances after 5/14 earnings window."
+    },
+    {
       "timestamp": "2026-05-01T13:35:00Z",
       "ticker": "BABA",
       "level": "YELLOW",
       "trigger": "STRATEGIC_LIQUIDATION: Plan locked for phased exit. Targets: $142.5, $152, $165.",
       "action": "Synchronized 6.0% weight. Issued 3-stage limit sell protocol."
-    },
-    {
-      "timestamp": "2026-05-01T13:30:00Z",
-      "ticker": "AMZN",
-      "level": "GREEN",
-      "trigger": "STRATEGY_UPGRADE: Weight increased to 10.0% (Tier-0 Heavy). Trailing Stop raised to $258.",
-      "action": "Synchronized 10% holding with cost 223. Monitoring $200B Capex risk."
     }
   ],
   "execution_commands": [
