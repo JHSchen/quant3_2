@@ -1,14 +1,14 @@
 {
-  "last_sync": "2026-05-01T13:20:00Z",
+  "last_sync": "2026-05-01T13:30:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
     "AMZN": {
-      "weight": 0.048,
-      "cost_basis": 220.0,
-      "current_price": 261.12,
-      "pnl_pct": 0.187,
-      "status": "TRIM_EXECUTED_HOLD_TO_TP2"
+      "weight": 0.10,
+      "cost_basis": 223.0,
+      "current_price": 265.06,
+      "pnl_pct": 0.1886,
+      "status": "ACTIVE_MONITORING_HEAVY_WEIGHT"
     },
     "BABA": {
       "weight": 0.059,
@@ -107,25 +107,18 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T13:30:00Z",
+      "ticker": "AMZN",
+      "level": "GREEN",
+      "trigger": "STRATEGY_UPGRADE: Weight increased to 10.0% (Tier-0 Heavy). Trailing Stop raised to $258.",
+      "action": "Synchronized 10% holding with cost 223. Monitoring $200B Capex risk."
+    },
+    {
       "timestamp": "2026-05-01T13:20:00Z",
       "ticker": "GOOGL",
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Q1 earnings surprise (Search +19%, Cloud +63%). TPU v8 vertical integration locked.",
       "action": "Issued 0.6% Market Add and 0.7% Limit Add @ $372. Target 4.0% weight."
-    },
-    {
-      "timestamp": "2026-05-01T13:10:00Z",
-      "ticker": "MU",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Position re-entry at $517.16 after $485 stop triggered. HBM4 thesis reaffirmed.",
-      "action": "Issued 1.5% Market Buy and 1.5% Limit Buy @ $505. Target 3.0% core."
-    },
-    {
-      "timestamp": "2026-04-29T06:05:00Z",
-      "ticker": "NUCLEAR_SECTOR",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Positions established for 003816.SZ (1%) and 601985.SS (1%).",
-      "action": "Updated active monitor and protocols. Delta to target: +1% and +3%."
     }
   ],
   "execution_commands": [
@@ -164,70 +157,6 @@
         }
       ],
       "validation_sum": 0.03
-    },
-    {
-      "ticker": "BABA",
-      "delta": -0.029,
-      "tranches": [
-        {
-          "weight": 0.029,
-          "type": "MARKET",
-          "reason": "STRATEGIC_TRIM_TO_REALLOCATE_TO_AI"
-        }
-      ],
-      "validation_sum": -0.029
-    },
-    {
-      "ticker": "NVDA",
-      "delta": 0.012,
-      "tranches": [
-        {
-          "weight": 0.012,
-          "type": "LIMIT",
-          "price": 201.5,
-          "reason": "ACCUMULATION_T1"
-        }
-      ],
-      "validation_sum": 0.012
-    },
-    {
-      "ticker": "AVGO",
-      "delta": 0.025,
-      "tranches": [
-        {
-          "weight": 0.025,
-          "type": "LIMIT",
-          "price": 395.0,
-          "reason": "STRATEGIC_REACCUMULATION_BELOW_STOP_CASCADE"
-        }
-      ],
-      "validation_sum": 0.025
-    },
-    {
-      "ticker": "TSM",
-      "delta": 0.012,
-      "tranches": [
-        {
-          "weight": 0.012,
-          "type": "LIMIT",
-          "price": 395.0,
-          "reason": "ACCUMULATION_T1"
-        }
-      ],
-      "validation_sum": 0.012
-    },
-    {
-      "ticker": "VRT",
-      "delta": 0.007,
-      "tranches": [
-        {
-          "weight": 0.007,
-          "type": "LIMIT",
-          "price": 315.0,
-          "reason": "ACCUMULATION_T1"
-        }
-      ],
-      "validation_sum": 0.007
     }
   ]
 }

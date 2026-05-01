@@ -1,42 +1,43 @@
 {
   "ticker": "AMZN",
   "name": "Amazon.com, Inc.",
-  "status": "TRIM_EXECUTED_HOLD_TO_TP2",
+  "status": "HEAVY_WEIGHT_HOLDING",
+  "protocol_version": "2026.5.1-TEN-PERCENT-MOAT",
   "strategy_snapshot": {
-    "topology": "AWS Cloud + GenAI Layer (Bedrock) + Custom Silicon (Trainium 3) + Project Leo (Satellite)",
-    "primary_vector": "Vertical AI Utility (Silicon OEM) + Project Leo Connectivity vs Capex Burn",
-    "fragile_point": "$200B Capex vs AWS Growth Margin & FCF Compression",
-    "core_thesis": "Vertical integration (Trainium) decouples AI growth from Nvidia margin structure."
+    "topology": "AWS AI Acceleration + Custom Silicon (Trainium 3) + Robotics Logistics",
+    "primary_vector": "Vertical AI Integration (Silicon-to-Service) -> Margin Expansion",
+    "fragile_point": "$200B Capex Execution Risk & DOJ Antitrust Pressure",
+    "core_thesis": "AWS's 28% growth inflection validates the GenAI re-rating. 10% weight is justified by deep vertical integration."
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.048,
-      "cost_basis": 220.00,
-      "current_price_baseline": 261.12,
-      "floating_pnl_pct": 0.1869
+      "current_weight": 0.10,
+      "cost_basis": 223.00,
+      "current_price_baseline": 265.06,
+      "floating_pnl_pct": 0.1886
     },
     "target_parameters": {
-      "target_weight_limit": 0.05,
+      "target_weight_limit": 0.10,
       "position_delta": 0.00
     },
     "deployment_plan": [
-      {"size": 0.048, "type": "trailing_stop", "distance_pct": 0.042, "comment": "Runner position protected at $250"}
+      {"size": 0.10, "type": "trailing_stop", "distance_pct": 0.026, "comment": "Hard lock profit at $258 to protect 15% gain"}
     ],
     "take_profit_rules": {
-      "fundamental_tp": 300.00,
-      "trailing_stop": 250.00
+      "fundamental_tp": 315.00,
+      "tactical_trim_target": 290.00
     },
     "stop_loss_rules": {
-      "hard_stop": 235.00,
-      "fundamental_melt_down": "AWS growth < 15% or Operating Margins < 10%",
-      "macro_kill_switch": "Regulatory breakup order OR AWS growth < 10% for two consecutive quarters"
+      "hard_stop": 245.00,
+      "trailing_stop_lock": 258.00,
+      "macro_kill_switch": "AWS growth < 20% or DOJ forced split order"
     }
   },
   "risk_metrics": {
-    "purity_score": 0.107,
-    "capex_risk": "VERY HIGH ($200B/2026)",
-    "valuation_anchor": "PE 27.6 (Current) -> 34.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-04-28)"
+    "purity_score": 0.15,
+    "capex_risk": "EXTREME ($200B/2026)",
+    "valuation_anchor": "PE 27.0 (Current) -> 35.0 (Bull Target)",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
   },
-  "last_updated": "2026-04-28T08:42:00Z"
+  "last_updated": "2026-05-01T13:30:00Z"
 }
