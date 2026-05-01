@@ -1,45 +1,43 @@
 {
   "ticker": "TSLA",
   "name": "Tesla, Inc.",
-  "status": "EVENT_DRIVEN_MONITORING",
-  "last_updated": "2026-04-26T12:45:00Z",
+  "status": "ACCUMULATING_ROBOTAXI_RAMP",
+  "protocol_version": "2026.5.1-CYBERCAB-LAUNCH",
   "strategy_snapshot": {
-    "topology": "从硬件制造商向 AI 机器人与无人驾驶平台转型，估值由 FSD/Robotaxi 现金流贴现支撑。",
-    "primary_vector": "Robotaxi 试点运营、FSD V15 架构演进、HW3 向 AI4 硬件升级方案。",
-    "fragile_point": "无人驾驶试点重大事故、监管准入逆转、HW3 存量车升级成本超支。"
+    "topology": "AI Distributed Inference Fleet -> Robotaxi Network (Texas Triangle) -> AI5 Vertical Integration",
+    "primary_vector": "Cybercab high-volume production @ Giga Texas + FSD v14.3 commercialisation",
+    "fragile_point": "HW3 legacy fleet retrofit liability vs China FSD approval slippage (Q3 2026)",
+    "core_thesis": "Tesla is transitioning to an asset-light software business. 5% weight reflects front-running the 2027 AI5 leap."
   },
-  "monitoring_protocol": {
-    "core_event_matrix": [
-      {
-        "event": "Robotaxi 试点安全表现",
-        "threshold": "达拉斯/休斯顿试点出现伤亡事故或接管率异常升高",
-        "action": "IMMEDIATE_EXIT (Kill Switch)"
-      },
-      {
-        "event": "HW3 硬件升级方案",
-        "threshold": "官方宣布升级成本高于 $1500/辆 或 宣布 HW3 彻底无法支持自动驾驶且无补偿升级",
-        "action": "REBUILD_TOPOLOGY (Reduce Weight to <1%)"
-      },
-      {
-        "event": "FSD 全球准入",
-        "threshold": "中国/欧洲正式启动付费 Robotaxi 服务",
-        "action": "ACCUMULATE (Target Weight 5-8%)"
-      },
-      {
-        "event": "Optimus 部署进度",
-        "threshold": "Fremont 工厂部署量突破 5000 台并展示非结构化环境作业能力",
-        "action": "LONG_TERM_RE_RATING"
-      }
+  "execution_protocol": {
+    "initial_state": {
+      "current_weight": 0.045,
+      "cost_basis": 245.50,
+      "current_price_baseline": 381.92,
+      "floating_pnl_pct": 0.5556
+    },
+    "target_parameters": {
+      "target_weight_limit": 0.05,
+      "position_delta": 0.005
+    },
+    "deployment_plan": [
+      {"size": 0.0025, "type": "LIMIT", "price": 382.50, "reason": "Initial capture at current support"},
+      {"size": 0.0025, "type": "LIMIT", "price": 378.00, "reason": "Mean reversion entry"}
     ],
-    "price_anchors": {
-      "informational_support": 350.00,
-      "informational_resistance": 420.00,
-      "note": "Price levels are secondary to event triggers."
+    "take_profit_rules": {
+      "fundamental_tp": 450.00,
+      "secondary_tp": 520.00
+    },
+    "stop_loss_rules": {
+      "hard_stop": 340.00,
+      "trailing_stop_lock": 365.00,
+      "macro_kill_switch": "China FSD approval delay past 2026 OR Texas Robotaxi fatality"
     }
   },
-  "risk_parameters": {
-    "volatility_tolerance": "EXTREME",
-    "fundamental_melt_down": "Robotaxi 监管牌照被大规模吊销",
-    "macro_kill_switch": "马斯克质押股权强制平仓风险或核心 AI 团队集体离职"
-  }
+  "risk_metrics": {
+    "purity_score": 0.22,
+    "valuation_anchor": "FSD/Robotaxi DCF (2027 Forward)",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
+  },
+  "last_updated": "2026-05-01T14:25:00Z"
 }

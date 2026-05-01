@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-05-01T14:15:00Z",
+  "last_sync": "2026-05-01T14:25:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -65,6 +65,14 @@
       "pnl_pct": 0.0407,
       "status": "CORE_PILLAR_HOLDING"
     },
+    "TSLA": {
+      "weight": 0.045,
+      "target_weight": 0.05,
+      "cost_basis": 245.5,
+      "current_price": 381.92,
+      "pnl_pct": 0.5556,
+      "status": "ACCUMULATING_ROBOTAXI_RAMP"
+    },
     "NVDA": {
       "weight": 0.008,
       "target_weight": 0.03,
@@ -107,21 +115,40 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T14:25:00Z",
+      "ticker": "TSLA",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Cybercab production start de-risks Robotaxi path. Target weight 5.0%.",
+      "action": "Issued 0.5% Delta buy order via two tranches ($382.5, $378.0)."
+    },
+    {
       "timestamp": "2026-05-01T14:15:00Z",
       "ticker": "AVGO",
       "level": "GREEN",
       "trigger": "STRATEGY_UPGRADE: Weight increased to 4.5% (Cost 372). Implemented dual-stage trailing stops.",
       "action": "Synchronized 4.5% holding. Set Hard Stop at $385 to protect new cost basis."
-    },
-    {
-      "timestamp": "2026-05-01T14:05:00Z",
-      "ticker": "AVGO",
-      "level": "GREEN",
-      "trigger": "STRATEGY_UPGRADE: 2026 AI Revenue target reaffirmed. VMware FCF accretion validated.",
-      "action": "Synchronized 2.5% weight. Raised Trailing Stop to $402."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "TSLA",
+      "delta": 0.005,
+      "tranches": [
+        {
+          "weight": 0.0025,
+          "type": "LIMIT",
+          "price": 382.50,
+          "reason": "INITIAL_CAPTURE"
+        },
+        {
+          "weight": 0.0025,
+          "type": "LIMIT",
+          "price": 378.00,
+          "reason": "MEAN_REVERSION"
+        }
+      ],
+      "validation_sum": 0.005
+    },
     {
       "ticker": "GOOGL",
       "delta": 0.013,
