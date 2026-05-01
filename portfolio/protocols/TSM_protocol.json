@@ -1,49 +1,43 @@
 {
   "ticker": "TSM",
   "name": "Taiwan Semiconductor Manufacturing Company",
-  "status": "STRATEGY_CONFIRMED_ACCUMULATING",
+  "status": "CORE_PILLAR_HOLDING",
+  "protocol_version": "2026.5.1-2NM-DOMINANCE",
   "strategy_snapshot": {
-    "topology": "全球算力主权节点，AI 产业最后守门人。",
-    "primary_vector": "2nm 制程垄断地位、CoWoS 封装瓶颈掌控、NVIDIA 核心代工溢价。",
-    "fragile_point": "海外工厂成本稀释毛利、地缘政治供应链韧性风险。"
+    "topology": "Global AI Compute Settlement Node -> 2nm Monopoly + CoWoS Bottleneck Control",
+    "primary_vector": "Yield-driven Margin Expansion (2nm) + Advanced Packaging Premium",
+    "fragile_point": "Overseas Fab OpEx dilution vs Geopolitical supply chain risk",
+    "core_thesis": "TSM is the only node in the AI stack that cannot be bypassed. 5% weight reflects its status as the 'physical backstop' of the portfolio."
   },
   "execution_protocol": {
-    "entry_rules": {
-      "initial_tranche_pct": 0.008,
-      "current_price_baseline": 402.46
+    "initial_state": {
+      "current_weight": 0.05,
+      "cost_basis": 380.00,
+      "current_price_baseline": 395.46,
+      "floating_pnl_pct": 0.0407
     },
-    "add_rules": {
-      "catalyst": "2nm 产能确认及 AI 相关营收占比突破 65%",
-      "limit": "Max weight 3.0%",
-      "tranches": [
-        {
-          "price": 395.00,
-          "weight_step": 0.012,
-          "priority": "HIGH",
-          "reason": "均线支撑加仓"
-        },
-        {
-          "price": 380.00,
-          "weight_step": 0.01,
-          "priority": "MEDIUM",
-          "reason": "强心理支撑位补齐"
-        }
-      ]
+    "target_parameters": {
+      "target_weight_limit": 0.05,
+      "position_delta": 0.00
     },
+    "deployment_plan": [
+      {"size": 0.05, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Set trailing stop at $375 to protect principal."}
+    ],
     "take_profit_rules": {
       "fundamental_tp": 550.00,
-      "trailing_stop_pct": 5.0
+      "intermediate_tp": 480.00
     },
     "stop_loss_rules": {
-      "technical_sl": 375.00,
-      "fundamental_melt_down": "2nm 进度重大延误或主要客户转向竞争对手",
-      "macro_kill_switch": "地缘政治重大冲突导致出口中断"
+      "hard_stop": 360.00,
+      "trailing_stop_lock": 375.00,
+      "macro_kill_switch": "Major geopolitical disruption in Taiwan Strait"
     }
   },
   "risk_metrics": {
-    "purity_score": 0.92,
-    "concentration_risk": "MEDIUM (Foundry Monopoly)",
-    "valuation_anchor": "PE 21x (2026 Prediction)"
+    "purity_score": 0.95,
+    "capex_risk": "HIGH (2nm expansion)",
+    "valuation_anchor": "PE 20.5 (Current) -> 25.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
   },
-  "last_updated": "2026-04-26T13:05:00Z"
+  "last_updated": "2026-05-01T13:55:00Z"
 }

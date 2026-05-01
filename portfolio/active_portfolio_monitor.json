@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-05-01T13:45:00Z",
+  "last_sync": "2026-05-01T13:55:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -57,6 +57,14 @@
       "pnl_pct": 0.359,
       "status": "STRATEGY_CONFIRMED_ACCUMULATING_STOP_401_BUY_395"
     },
+    "TSM": {
+      "weight": 0.05,
+      "target_weight": 0.05,
+      "cost_basis": 380.0,
+      "current_price": 395.46,
+      "pnl_pct": 0.0407,
+      "status": "CORE_PILLAR_HOLDING"
+    },
     "NVDA": {
       "weight": 0.008,
       "target_weight": 0.03,
@@ -64,14 +72,6 @@
       "current_price": 208.27,
       "pnl_pct": 0.183,
       "status": "ACCUMULATING_TRAILING_STOP_192"
-    },
-    "TSM": {
-      "weight": 0.008,
-      "target_weight": 0.03,
-      "cost_basis": 332.0,
-      "current_price": 402.46,
-      "pnl_pct": 0.212,
-      "status": "STRATEGY_CONFIRMED_ACCUMULATING_TRAILING_STOP_375"
     },
     "VRT": {
       "weight": 0.006,
@@ -107,46 +107,21 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T13:55:00Z",
+      "ticker": "TSM",
+      "level": "GREEN",
+      "trigger": "STRATEGY_UPGRADE: Weight increased to 5.0% (Core Pillar). Trailing Stop raised to $375.",
+      "action": "Synchronized 5.0% holding with cost 380. Monitoring 2nm yield benchmarks."
+    },
+    {
       "timestamp": "2026-05-01T13:45:00Z",
       "ticker": "BABA",
       "level": "RED",
       "trigger": "STRATEGIC_LIQUIDATION_FINALIZED: Phased exit + Post-earnings forced exit (@2026-05-14) + $113 Hard Stop.",
       "action": "Protocol locked. No further chances after 5/14 earnings window."
-    },
-    {
-      "timestamp": "2026-05-01T13:35:00Z",
-      "ticker": "BABA",
-      "level": "YELLOW",
-      "trigger": "STRATEGIC_LIQUIDATION: Plan locked for phased exit. Targets: $142.5, $152, $165.",
-      "action": "Synchronized 6.0% weight. Issued 3-stage limit sell protocol."
     }
   ],
   "execution_commands": [
-    {
-      "ticker": "BABA",
-      "delta": -0.06,
-      "tranches": [
-        {
-          "weight": 0.02,
-          "type": "LIMIT",
-          "price": 142.50,
-          "reason": "BREAK_EVEN_EXIT_T1"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT",
-          "price": 152.00,
-          "reason": "RESISTANCE_EXIT_T2"
-        },
-        {
-          "weight": 0.02,
-          "type": "LIMIT",
-          "price": 165.00,
-          "reason": "MAX_REBOUND_EXIT_T3"
-        }
-      ],
-      "validation_sum": -0.06
-    },
     {
       "ticker": "GOOGL",
       "delta": 0.013,
