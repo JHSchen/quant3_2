@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-04-26T13:05:00Z",
+  "last_sync": "2026-05-01T13:15:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -19,11 +19,12 @@
       "status": "EVENT_DRIVEN_MONITORING_PIVOT"
     },
     "MU": {
-      "weight": 0.03,
-      "cost_basis": 404.0,
-      "current_price": 524.56,
-      "pnl_pct": 0.298,
-      "status": "TRIM_EXECUTED_HOLD_TO_TP2"
+      "weight": 0.0,
+      "target_weight": 0.03,
+      "cost_basis": 0.0,
+      "current_price": 517.16,
+      "pnl_pct": 0.0,
+      "status": "RE_ESTABLISHING_CORE"
     },
     "WM": {
       "weight": 0.037,
@@ -31,20 +32,6 @@
       "current_price": 229.53,
       "pnl_pct": 0.02,
       "status": "ACTIVE_MONITORING"
-    }
-    },
-    "alerts_log": [
-    {
-      "timestamp": "2026-04-28T08:42:00Z",
-      "ticker": "AMZN",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Trailing Stop set at 250.00. AWS vertical silicon thesis verified.",
-      "action": "Maintain 4.8% weight. Monitor $200B Capex execution risk."
-    },
-    {
-      "timestamp": "2026-04-28T08:35:00Z",
-      "pnl_pct": -0.052,
-      "status": "EVENT_DRIVEN_MONITORING_AUTONOMY"
     },
     "CEG": {
       "weight": 0.029,
@@ -119,6 +106,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T13:10:00Z",
+      "ticker": "MU",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Position re-entry at $517.16 after $485 stop triggered. HBM4 thesis reaffirmed.",
+      "action": "Issued 1.5% Market Buy and 1.5% Limit Buy @ $505. Target 3.0% core."
+    },
+    {
       "timestamp": "2026-04-29T06:05:00Z",
       "ticker": "NUCLEAR_SECTOR",
       "level": "GREEN",
@@ -138,51 +132,27 @@
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Trailing Stop raised to 485.00. Memflation thesis intact.",
       "action": "Maintain 3.0% weight. Monitor 1-gamma yield stability."
-    },
-    {
-      "timestamp": "2026-04-28T05:40:00Z",
-      "ticker": "02513",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Zhipu AI (02513.HK) protocol locked. Holding 830 shares.",
-      "action": "Set Trailing Stop @ 720.00. No further add at current levels."
-    },
-    {
-      "timestamp": "2026-04-26T13:15:00Z",
-      "ticker": "VRT",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Liquid cooling backlog conversion and Blackwell synergy locked.",
-      "action": "Set Limit Add 0.7% @ 315.00."
-    },
-    {
-      "timestamp": "2026-04-26T13:05:00Z",
-      "ticker": "TSM",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: 2nm dominance and AI foundry re-rating protocol locked.",
-      "action": "Set Limit Add 1.2% @ 395.00. Set Trailing Stop @ 375.00."
-    },
-    {
-      "timestamp": "2026-04-26T13:05:00Z",
-      "ticker": "PORTFOLIO",
-      "level": "GREEN",
-      "trigger": "TAKE_PROFIT_EXECUTED: AMZN (1.3%) and MU (2.0%) profits locked.",
-      "action": "Updated weights and trailing stops for winners."
-    },
-    {
-      "timestamp": "2026-04-26T12:55:00Z",
-      "ticker": "BABA",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on AI Cloud growth & Spinoffs.",
-      "action": "Set Target Weight 3.0%. Issue Trim command for 2.9% weight."
-    },
-    {
-      "timestamp": "2026-04-26T12:45:00Z",
-      "ticker": "TSLA",
-      "level": "YELLOW",
-      "trigger": "STRATEGY_SHIFT: Transitioned to Event-Driven Monitoring. Focus on Robotaxi safety & HW3 upgrades.",
-      "action": "Disable Technical Hard-Stop @ 378. Monitor Dallas/Houston pilot data."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "MU",
+      "delta": 0.03,
+      "tranches": [
+        {
+          "weight": 0.015,
+          "type": "MARKET",
+          "reason": "CORE_RE_ESTABLISHMENT_T1"
+        },
+        {
+          "weight": 0.015,
+          "type": "LIMIT",
+          "price": 505.0,
+          "reason": "ACCUMULATION_ON_RETEST_SUPPORT"
+        }
+      ],
+      "validation_sum": 0.03
+    },
     {
       "ticker": "BABA",
       "delta": -0.029,
@@ -233,22 +203,6 @@
         }
       ],
       "validation_sum": 0.012
-    },
-    {
-      "ticker": "VRT",
-      "delta": 0.007,
-      "tranches": [
-        {
-          "weight": 0.007,
-          "type": "LIMIT",
-          "price": 315.0,
-          "reason": "ACCUMULATION_T1"
-        }
-      ],
-      "validation_sum": 0.007
-    }
-  ]
-}_sum": 0.012
     },
     {
       "ticker": "VRT",
