@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-05-01T13:15:00Z",
+  "last_sync": "2026-05-01T13:20:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "GREEN/YELLOW alerts automatically trigger Execution Agent logic. Re-analysis required on major event detection.",
   "portfolio": {
@@ -43,10 +43,11 @@
     },
     "GOOGL": {
       "weight": 0.027,
+      "target_weight": 0.04,
       "cost_basis": 255.0,
-      "current_price": 344.4,
-      "pnl_pct": 0.351,
-      "status": "ACTIVE_MONITORING_TRAILING_STOP_327"
+      "current_price": 384.8,
+      "pnl_pct": 0.509,
+      "status": "RE_ACCUMULATING_AFTER_EARNINGS"
     },
     "AVGO": {
       "weight": 0.025,
@@ -106,6 +107,13 @@
   },
   "alerts_log": [
     {
+      "timestamp": "2026-05-01T13:20:00Z",
+      "ticker": "GOOGL",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Q1 earnings surprise (Search +19%, Cloud +63%). TPU v8 vertical integration locked.",
+      "action": "Issued 0.6% Market Add and 0.7% Limit Add @ $372. Target 4.0% weight."
+    },
+    {
       "timestamp": "2026-05-01T13:10:00Z",
       "ticker": "MU",
       "level": "GREEN",
@@ -118,23 +126,27 @@
       "level": "GREEN",
       "trigger": "STRATEGY_CONFIRMED: Positions established for 003816.SZ (1%) and 601985.SS (1%).",
       "action": "Updated active monitor and protocols. Delta to target: +1% and +3%."
-    },
-    {
-      "timestamp": "2026-04-28T11:45:00Z",
-      "ticker": "AVGO",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Trailing Stop @ 401.00. Replaced $408 buy with $395 limit buy for 2.5% delta.",
-      "action": "Maintain 2.5% core. Re-accumulate below stop level to optimize cost basis."
-    },
-    {
-      "timestamp": "2026-04-28T08:35:00Z",
-      "ticker": "MU",
-      "level": "GREEN",
-      "trigger": "STRATEGY_CONFIRMED: Trailing Stop raised to 485.00. Memflation thesis intact.",
-      "action": "Maintain 3.0% weight. Monitor 1-gamma yield stability."
     }
   ],
   "execution_commands": [
+    {
+      "ticker": "GOOGL",
+      "delta": 0.013,
+      "tranches": [
+        {
+          "weight": 0.006,
+          "type": "MARKET",
+          "reason": "EARNINGS_CONFIRMATION_ADD"
+        },
+        {
+          "weight": 0.007,
+          "type": "LIMIT",
+          "price": 372.0,
+          "reason": "POST_EARNINGS_GAPS_REFILL_ZONE"
+        }
+      ],
+      "validation_sum": 0.013
+    },
     {
       "ticker": "MU",
       "delta": 0.03,

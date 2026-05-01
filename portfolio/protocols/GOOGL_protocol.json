@@ -1,26 +1,45 @@
 {
   "ticker": "GOOGL",
   "name": "Alphabet (Google)",
-  "status": "PROFIT_TAKING_TRIM_EXECUTED",
-  "last_updated": "2026-04-24T16:15:00Z",
-  "strategy": {
-    "topology_core": "AI Monetization (Gemini 3) vs Capex Overload ($180B) + DOJ Remedy Risk",
-    "current_price_reference": 343.25,
-    "entry_range": [255, 270],
-    "target_weight": 0.04,
-    "take_profit_target": [380, 420],
-    "trailing_stop_loss": 325.0,
-    "hard_stop_loss": 310.0,
-    "purity_filter_status": "PASS (Cloud/AI Synergy 48% Growth)",
-    "kill_switch_conditions": [
-      "DOJ forced structural breakup of Chrome/Android",
-      "Q1 Operating Margin compression > 300bps",
-      "Cloud growth falls below 35%"
-    ]
+  "status": "RE_ACCUMULATING_AFTER_EARNINGS",
+  "protocol_version": "2026.5.1-TPUv8-CORE",
+  "strategy_snapshot": {
+    "topology": "Vertical AI Integration (TPU v8) -> Search Resilience -> Cloud Hyper-growth",
+    "primary_vector": "Internal Silicon Moat (30% Inference Cost Reduction) + Gemini 1.5/2.0 Ecosystem",
+    "fragile_point": "Capex Overload ($190B) impacting FCF vs DOJ Anti-trust remedies",
+    "core_thesis": "Alphabet has successfully de-risked the 'AI disruption to search' narrative, proving monetization parity in AI Mode while dominating enterprise AI infrastructure."
   },
-  "monitor_nodes": {
-    "Capex_Efficiency": "Track ROI on $180B AI infrastructure investment",
-    "SGE_CTR": "Monitor search ads click-through rate in AI Mode",
-    "Reg_Appeal": "Follow DOJ remedies appeal progress (May 2026 hearing)"
-  }
+  "execution_protocol": {
+    "initial_state": {
+      "current_weight": 0.027,
+      "cost_basis": 255.00,
+      "current_price_baseline": 384.80,
+      "floating_pnl_pct": 0.509
+    },
+    "target_parameters": {
+      "target_weight_limit": 0.04,
+      "position_delta": 0.013
+    },
+    "deployment_plan": [
+      {"size": 0.006, "type": "MARKET", "price": 384.80, "reason": "EARNINGS_CONFIRMATION_ADD"},
+      {"size": 0.007, "type": "LIMIT", "price": 372.00, "reason": "POST_EARNINGS_GAPS_REFILL_ZONE"}
+    ],
+    "take_profit_rules": {
+      "fundamental_tp": 410.00,
+      "secondary_tp": 450.00,
+      "trailing_stop_pct": 0.08
+    },
+    "stop_loss_rules": {
+      "hard_stop": 310.00,
+      "trailing_stop_lock": 340.00,
+      "macro_kill_switch": "Search revenue growth falls below 12% or Cloud growth falls below 40%"
+    }
+  },
+  "risk_metrics": {
+    "purity_score": 0.65,
+    "capex_risk": "VERY HIGH ($190B/2026)",
+    "valuation_anchor": "PE 28.4 (Trailing) -> 24.5 (Forward 2026)",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
+  },
+  "last_updated": "2026-05-01T13:20:00Z"
 }
