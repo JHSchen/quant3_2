@@ -1,45 +1,35 @@
 {
   "ticker": "BABA",
   "name": "Alibaba Group Holding Limited",
-  "status": "EVENT_DRIVEN_MONITORING_PIVOT",
-  "last_updated": "2026-04-26T12:55:00Z",
+  "status": "STRATEGIC_LIQUIDATION",
+  "protocol_version": "2026.5.1-EXIT-PLAN",
   "strategy_snapshot": {
-    "topology": "存量核心电商提供现金流，增量云/AI 决定估值弹性，非核心资产剥离释放母公司折价。",
-    "primary_vector": "通义千问 (Qwen) 企业级渗透率、云业务利润爆发、持续高额回购。",
-    "fragile_point": "国内电商份额持续流失至拼多多/抖音、地缘政治导致的先进制程芯片限制、云价格战加剧。"
+    "topology": "Cloud/AI Transition vs E-commerce Erosion",
+    "primary_vector": "Technical Rebound (Pre-Earnings) + $19B Buyback Support",
+    "fragile_point": "Negative FCF burn & Huawei chip conversion cost",
+    "core_thesis": "The stock is a value trap with structural headwinds. Objective is a phased exit during technical strength to reallocate capital to High-Purity AI nodes."
   },
-  "monitoring_protocol": {
-    "core_event_matrix": [
-      {
-        "event": "云智能集团 (Cloud) 增长转折",
-        "threshold": "单季营收增速突破 20% 或 AI 相关业务贡献占比超过 15%",
-        "action": "ACCUMULATE (Target Weight 5-8%)"
-      },
-      {
-        "event": "非核心资产剥离 (Spinoff)",
-        "threshold": "阿里影业、大文娱或盒马宣布具体的 IPO/独立融资时间表",
-        "action": "RE_RATING_BULLISH"
-      },
-      {
-        "event": "电商份额 (Market Share)",
-        "threshold": "天猫/淘宝双十一或关键季度 GMV 增速持续低于行业平均 5 个百分点以上",
-        "action": "REBUILD_TOPOLOGY (Reduce Weight to <2%)"
-      },
-      {
-        "event": "资本分配 (Buyback)",
-        "threshold": "单季回购金额低于 $20 亿或宣布股息削减",
-        "action": "EXIT_PROTOCOL (Kill Switch)"
-      }
+  "execution_protocol": {
+    "initial_state": {
+      "current_weight": 0.06,
+      "cost_basis": 143.00,
+      "current_price_baseline": 131.88,
+      "floating_pnl_pct": -0.0778
+    },
+    "liquidation_plan": [
+      {"size": 0.02, "type": "LIMIT", "price": 142.50, "reason": "BREAK_EVEN_EXIT_T1"},
+      {"size": 0.02, "type": "LIMIT", "price": 152.00, "reason": "RESISTANCE_EXIT_T2"},
+      {"size": 0.02, "type": "LIMIT", "price": 165.00, "reason": "MAX_REBOUND_EXIT_T3"}
     ],
-    "price_anchors": {
-      "informational_support": 115.00,
-      "informational_resistance": 165.00,
-      "note": "Valuation is currently historical low; event catalysts are prioritized over technical patterns."
+    "stop_loss_rules": {
+      "hard_stop": 113.00,
+      "comment": "Complete exit if support at $113 fails, regardless of rebound thesis."
     }
   },
-  "risk_parameters": {
-    "volatility_tolerance": "HIGH",
-    "fundamental_melt_down": "核心电商业务利润出现结构性萎缩（同比下滑 > 20%）",
-    "macro_kill_switch": "中美概股协议执行出现重大逆转或港股市场流动性枯竭"
-  }
+  "risk_metrics": {
+    "purity_score": 0.12,
+    "fcf_risk": "HIGH (Negative RMB 21.8B)",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
+  },
+  "last_updated": "2026-05-01T13:35:00Z"
 }
