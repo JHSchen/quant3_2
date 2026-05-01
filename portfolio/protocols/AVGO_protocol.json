@@ -1,43 +1,42 @@
 {
   "ticker": "AVGO",
   "name": "Broadcom Inc.",
-  "status": "STRATEGY_CONFIRMED_ACCUMULATING_STOP_401_BUY_395",
+  "status": "ACCUMULATING_STEADY_GROWTH",
+  "protocol_version": "2026.5.1-ASIC-DOMINANCE",
   "strategy_snapshot": {
-    "topology": "AI Compute Clusters -> Backend/Frontend Networking (Tomahawk/Jericho) -> Custom ASIC (XPUs) -> VMWare Cloud Foundation",
-    "primary_vector": "Custom ASIC Dominance (Google TPU, Meta MTIA) + VMWare FCF Accretion",
-    "fragile_point": "Hyperscaler in-house silicon disintermediation vs VMWare churn rate",
-    "core_thesis": "Broadcom acts as the 'Interconnect Tax' collector; networking complexity scales non-linearly with cluster size."
+    "topology": "AI Interconnect Tax + Custom ASIC (XPUs) + VMWare Subscription Engine",
+    "primary_vector": "Non-linear networking complexity growth in 100k+ GPU clusters + VCF margin accretion",
+    "fragile_point": "VMware customer churn due to aggressive pricing vs Hyperscaler logic internalisation",
+    "core_thesis": "Broadcom controls the critical connectivity and custom silicon path for AI. It is the only firm with multi-generational ASIC visibility through 2029."
   },
   "execution_protocol": {
     "initial_state": {
       "current_weight": 0.025,
       "cost_basis": 311.00,
-      "current_price_baseline": 418.20,
-      "floating_pnl_pct": 0.359
+      "current_price_baseline": 420.75,
+      "floating_pnl_pct": 0.3529
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.025
+      "position_delta": 0.00
     },
     "deployment_plan": [
-      {"size": 0.025, "type": "trailing_stop", "distance_pct": 0.041, "comment": "Core position protected at $401"},
-      {"size": 0.025, "type": "limit_buy", "price": 395.00, "comment": "Re-accumulation below stop cascade"}
+      {"size": 0.025, "type": "trailing_stop", "distance_pct": 0.045, "comment": "Raised stop to $402 to lock in major gains."}
     ],
     "take_profit_rules": {
       "fundamental_tp": 520.00,
-      "trailing_stop_pct": 5.0
+      "secondary_tp": 580.00
     },
     "stop_loss_rules": {
-      "technical_sl": 401.00,
-      "fundamental_melt_down": "Loss of major ASIC customer or VMWare operating margins < 50%",
-      "macro_kill_switch": "Hyperscaler Capex growth < 10%"
+      "hard_stop": 380.00,
+      "trailing_stop_lock": 402.00,
+      "macro_kill_switch": "Hyperscaler Capex guidance cut > 15% or major ASIC partner cancellation"
     }
   },
   "risk_metrics": {
     "purity_score": 0.88,
-    "concentration_risk": "MEDIUM (Semiconductor Cycle)",
-    "valuation_anchor": "Free Cash Flow Yield > 4%",
-    "adversary_checkpoint": "APPROVED (2026-04-28)"
+    "valuation_anchor": "FCF Yield 4.2%",
+    "adversary_checkpoint": "APPROVED (2026-05-01)"
   },
-  "last_updated": "2026-04-28T11:45:00Z"
+  "last_updated": "2026-05-01T14:05:00Z"
 }
