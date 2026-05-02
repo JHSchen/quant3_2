@@ -58,9 +58,16 @@ When a user provides an investment target or strategy to analyze, follow these p
 - **Verdict**: `PROCEED` or `REBUILD_TOPOLOGY`.
 - **Output**: Use `<thinking>` and `<speaking>`.
 
+### Phase 2.5: Logical Overlap Audit (Orchestrator)
+**CRITICAL: Mandatory gating check before Risk Assessment.**
+- **Action**: Orchestrator compares the candidate's Root Drivers (Nodes) with the existing portfolio.
+- **Audit Rule**: If the root logic already exists, the Orchestrator forces a "New vs. Existing" justification.
+- **Goal**: Prevent "Pseudo-diversification" by ensuring every new position adds unique marginal value or structural divergence.
+
 ### Phase 3: Convergence & Risk Assessment (Risk Agent)
 *If Verdict is `REBUILD`, return to Phase 1 with the attacks as constraints (max 3 times). Otherwise, act as Risk Agent.*
 - Receive merged `<speaking>` from Strategy and Adversary.
+- **Beta-Decay Analysis**: Deconstruct 12-month expected return into Alpha (logic-driven) vs. Beta (priced-in trend). Mandatory trigger for position cap reduction if Beta > 70%.
 - **Price-in Analysis**: How much of the logic is already in the stock price?
 - **Purity Filter**: AI Incremental Profit / Total Revenue (Threshold: >15% for Davis Double).
 - **Dilution Risk**: Check cash flow, debt, and inventory risks.
@@ -107,7 +114,7 @@ For detailed specifications of each role, refer to:
 - `agents/orchestrator.md`: Flow management and conflict resolution.
 - `agents/strategy_agent.md`: Topology deconstruction and path matrices.
 - `agents/adversary_agent.md`: Logical deconstruction and ruthless questioning.
-- `agents/risk_agent.md`: Pricing, purity filters, and trading protocols.
+- `agents/risk_agent.md`: Pricing, Beta-Decay Analysis (Alpha-Beta), purity filters, and trading protocols.
 - `agents/monitor_agent.md`: Post-execution monitoring (optional extension).
 - `agents/execution_agent.md`: Trading parameter translation (optional extension).
 

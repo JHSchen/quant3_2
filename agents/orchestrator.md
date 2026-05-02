@@ -74,6 +74,23 @@ def convergence_check(adversary_output, iteration_count):
 - **若Strategy重构后Adversary转为PROCEED**：正常进入Risk Agent
 - **若出现部分拓扑成立、部分被推翻**：标注"局部重构"，保留成立部分
 
+### 4. 逻辑丛集审计（Logic-Cluster Auditor）
+
+在 Strategy/Adversary 辩论收敛后，且在进入 Risk Agent 之前，Orchestrator 必须执行此审计：
+
+```python
+def logic_cluster_audit(candidate_nodes, active_portfolio):
+    overlaps = find_root_driver_overlaps(candidate_nodes, active_portfolio)
+    if overlaps:
+        return f"AUDIT_ALERT: 发现逻辑重叠 [{overlaps}]。必须明确说明：为什么不直接加大现有同类仓位，而要新开一个？"
+    return "AUDIT_PASS"
+```
+
+**审计准则**：
+- **目的**：防止"伪分散"交易，避免单一论断在组合中被无限放大。
+- **动作**：若存在重叠，Orchestrator 必须在合成最终报告前，强制要求 Risk Agent 或自行补充对"新开仓增益"的解释（如：估值更低、弹性更大、技术路径互补）。
+- **红线**：禁止无理由的逻辑复制。
+
 ### 5. 最终报告合成与确认门控 (Phase 6)
 
 将三方输出合成为用户可读的最终报告。

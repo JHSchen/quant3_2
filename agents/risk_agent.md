@@ -24,10 +24,12 @@
 
 ## 分析框架（五维度顺序执行）
 
-### Dimension 1: 预期差测算（Price-in Analysis）
-- 当前动态市盈率隐含了几年的远期利润？
-- 是否已超过核心客户（如英伟达）的估值？
-- 全市场共识拥挤度评估（ETF拥挤度分位数、板块资金净流入/流出）
+### Dimension 1: 预期差与Beta衰减测算（Alpha-Beta Decomposition）
+- **未来12个月预期回报拆解**：必须明确输出预期回报中，多少来自 **Alpha（预期差/逻辑驱动）**，多少来自 **Beta（已 price-in 的趋势/行业共识）**。
+- **强制触发机制**：
+    - **Beta 比例 > 70%**：自动触发 `TRIM_EVALUATION`（减仓评估）或 `CAP_SHRINK`（仓位上限收缩）。
+    - **Beta 比例 > 85%**：判定为"极端拥挤"，必须在 Final Protocol 中设置主动减仓触发点，并大幅收缩仓位上限。
+- **全市场共识拥挤度评估**：ETF拥挤度分位数、板块资金净流入/流出、卖方覆盖饱和度。
 
 ### Dimension 2: 纯度过滤（Purity Filter）
 - AI增量利润 / 总营收基盘 的比值
@@ -108,10 +110,18 @@ Alpha = f(实际财报 - 市场已定价的预期)
 <speaking>
 ## Risk Assessment
 
-### Price-in Analysis
-芯源微：当前处于"财务洗澡期"，市场将业绩崩跌归因于经营不善，
-实为研发攻坚期阵痛。负面预期已充分定价，正向催化尚未price-in。
-沃特股份：GB300管路实锤但液冷营收占比尚小，市场尚未完成估值切换。
+### Alpha-Beta Decomposition
+芯源微：
+- 12M Expected Return: +40%
+- **Alpha**: 80% (市场将其业绩崩跌归因于经营不善，实为研发攻坚阵痛，正向催化完全未 price-in)
+- **Beta**: 20% (国产化共识)
+- Verdict: `MAINTAIN_CAP`
+
+沃特股份：
+- 12M Expected Return: +25%
+- **Alpha**: 30% (GB300管路超预期利润空间)
+- **Beta**: 70% (液冷板块共识热度、AI材料拥挤度)
+- Verdict: `CAP_SHRINK` (Beta达70%阈值，原始30%上限压制至15%)
 
 ### Purity Filter
 芯源微：涂胶显影为主业自然延伸，纯度⭐⭐⭐⭐⭐
