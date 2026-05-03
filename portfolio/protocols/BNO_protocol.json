@@ -1,0 +1,14 @@
+{
+  "ticker": "BNO.US",
+  "name": "United States Brent Oil Fund",
+  "strategy_type": "GEOPOLITICAL_HEDGE",
+  "topology": "Energy-Inflation-Tech Valuation correlation",
+  "hedge_ratio": "Target 5% to hedge 60% Tech exposure risk",
+  "risk_parameters": {
+    "entry_logic": "Tactical hedge against supply chain/Middle East disruption",
+    "stop_loss": 42.0,
+    "take_profit_signal": "Brent > $95 OR VIX > 25 (Peak Fear)",
+    "kill_switch": "Global recession confirmed by manufacturing PMI < 45"
+  },
+  "operational_rule": "Do not hold as a core long-term asset due to roll-yield decay."
+}

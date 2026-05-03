@@ -1,0 +1,18 @@
+{
+  "ticker": "1879.HK",
+  "name": "曦智科技 (Lightelligence Proxy)",
+  "strategy_type": "DEEP_TECH_DISRUPTION",
+  "topology": "Silicon Photonics Computing Paradigm",
+  "logic_split": {
+    "core_holding_pct": 0.20,
+    "trading_tranche_pct": 0.80,
+    "rationale": "2:8 ratio to balance physical disruption bet with AI sentiment volatility."
+  },
+  "risk_parameters": {
+    "stop_loss": 480.0,
+    "take_profit_target_1": 600.0,
+    "take_profit_target_2": 750.0,
+    "kill_switch": "Mainstream GPU solves power-wall via traditional 3D stacking."
+  },
+  "execution_notes": "Profit-taking triggered by NVDA/TSM IV peaks or volume exhaustion in CPO sector."
+}

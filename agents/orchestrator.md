@@ -74,29 +74,40 @@ def convergence_check(adversary_output, iteration_count):
 - **若Strategy重构后Adversary转为PROCEED**：正常进入Risk Agent
 - **若出现部分拓扑成立、部分被推翻**：标注"局部重构"，保留成立部分
 
-### 4. 逻辑丛集审计（Logic-Cluster Auditor）
+### 4. 逻辑重叠审计 (Phase 0.5/2.5)
 
-在 Strategy/Adversary 辩论收敛后，且在进入 Risk Agent 之前，Orchestrator 必须执行此审计：
+在 Strategy Agent 输出拓扑后，Orchestrator 必须立即执行此审计：
 
 ```python
-def logic_cluster_audit(candidate_nodes, active_portfolio):
+def logic_overlap_audit(candidate_nodes, active_portfolio):
     overlaps = find_root_driver_overlaps(candidate_nodes, active_portfolio)
     if overlaps:
-        return f"AUDIT_ALERT: 发现逻辑重叠 [{overlaps}]。必须明确说明：为什么不直接加大现有同类仓位，而要新开一个？"
+        return f"AUDIT_ALERT: 发现逻辑重叠 [{overlaps}]。必须明确说明：该标的是否提供了存量头寸无法提供的‘边际安全感’或‘弹性增量’？"
     return "AUDIT_PASS"
 ```
 
-**审计准则**：
-- **目的**：防止"伪分散"交易，避免单一论断在组合中被无限放大。
-- **动作**：若存在重叠，Orchestrator 必须在合成最终报告前，强制要求 Risk Agent 或自行补充对"新开仓增益"的解释（如：估值更低、弹性更大、技术路径互补）。
-- **红线**：禁止无理由的逻辑复制。
+### 5. 准入审计评分表 (Phase 6: Audit Scorecard)
 
-### 5. 最终报告合成与确认门控 (Phase 6)
+在合成最终报告前，Orchestrator 必须根据各 Agent 输出计算 **Audit Score (0-100)**：
 
-将三方输出合成为用户可读的最终报告。
+| 维度 | 评分标准 | 权重 |
+|------|----------|------|
+| **Purity (纯度)** | AI/创新利润占比 > 15% (20-30分), 5-15% (10分), < 5% (0分) | 30% |
+| **Adversary Survival** | 无致命逻辑坍缩点 (30分), 存在可控风险 (15分), 结构性缺陷 (0分) | 30% |
+| **Beta Decay** | Alpha 驱动 > 70% (20分), 50-70% (10分), < 50% (0分) | 20% |
+| **Margin of Safety** | 估值处于 3 年分位 < 20% (20分), 20-50% (10分), > 50% (0分) | 20% |
+
+**AUDIT_MODE 门控规则**：
+- **Score ≥ 75**: `PROCEED_TO_EXECUTION`
+- **Score < 75**: `REJECT_OR_MONITOR_ONLY` (禁止 Phase 7 持久化，除非用户强制覆盖)
+
+### 6. 最终报告合成与确认门控 (Phase 6)
+
+将三方输出合成为用户可读的最终报告，并强制包含 **[Audit Scorecard]**。
 **关键规则**：Orchestrator 必须在报告末尾明确询问用户是否确认。
 
-### 6. 状态持久化与原子同步 (Phase 7)
+### 7. 状态持久化与原子同步 (Phase 7)
+
 
 **触发条件**：用户回复 "确认"、"Confirm"、"Proceed" 或类似肯定表达。
 
