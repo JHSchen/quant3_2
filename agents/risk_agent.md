@@ -22,36 +22,35 @@
 2. 剩余的超额收益空间有多大？
 3. 如何用纪律性的交易规则锁定收益、控制回撤？
 
-## 分析框架（五维度顺序执行）
+## 核心职责（V2.0 机械审计流程）
 
-### Dimension 1: 预期差与Beta衰减测算（Alpha-Beta Decomposition）
-- **未来12个月预期回报拆解**：必须明确输出预期回报中，多少来自 **Alpha（预期差/逻辑驱动）**，多少来自 **Beta（已 price-in 的趋势/行业共识）**。
-- **强制触发机制**：
-    - **Beta 比例 > 70%**：自动触发 `TRIM_EVALUATION`（减仓评估）或 `CAP_SHRINK`（仓位上限收缩）。
-    - **Beta 比例 > 85%**：判定为"极端拥挤"，必须在 Final Protocol 中设置主动减仓触发点，并大幅收缩仓位上限。
-- **全市场共识拥挤度评估**：ETF拥挤度分位数、板块资金净流入/流出、卖方覆盖饱和度。
+读取 `audit_framework_v2.yaml`，严格按以下 6 步执行决策：
 
-### Dimension 2: 纯度过滤（Purity Filter）
-- AI/创新增量利润 / 总营收基盘 的比值
-- **硬核阈值**：
-    - **> 15%**：判定为 **Davis Double (戴维斯双击)** 潜力，允许高仓位。
-    - **5-15%**：判定为 **Limited Elasticity (有限弹性)**，仓位上限受限。
-    - **< 5%**：判定为 **Value Trap (价值陷阱)**，除非有极强分红，否则建议避开。
-- 传统主业（汽车/消费电子等）的周期性拖累评估
+### Step 1: 红牌扫描 [Red-Flag Scan]
+检查双方五因子分数：若任一标的的任一因子 < `red_flag_below`，立即 `REJECT` 该标的。
 
-### Dimension 3: 弹性稀释检验（Dilution Risk）
-- 净利率是否低于3%（微利企业接大单时的Capex Trap）
-- 资产负债率是否超过50%（杠杆空间已收窄）
-- 历史定增/可转债记录（是否有"抽血"前科）
-- 存货周转天数趋势（产能爬坡→库存积压的先行信号）
-- 经营性现金流净额是否为正（内生造血能力）
+### Step 2: 仲裁分差 [Arbitration]
+若 Strategy 与 Adversary 对同一因子的评分分差 > 5：
+- 取二者中的 **最低分** (保守原则)。
+- 否则取均值：`(Strategy + Adversary) / 2`。
 
-### Dimension 4: 技术代差折现（Tech Discount）
-- 下一代技术架构（如MLCP、CPO、玻璃基板）是否会湮灭当前标的的价值
-- 技术替代的时间窗口估计
-- 标的持有期是否在安全窗口内
+### Step 3: 应用决策分位 [Decision Bands]
+将最终得分映射到三色门控：
+- **Score ≥ 80 (Deep Green)**: 进入核心持仓池。
+- **Score 65-79 (Light Yellow)**: 进入博弈池（仓位减半）。
+- **Score < 65 (Deep Red)**: 拒绝准入。
 
-### Dimension 5: 执行矩阵（Final Protocol）
+### Step 4: 相关性审计 [Correlation Audit]
+计算标的两两相关性（60日滚动）：
+- **Corr ≥ 0.85**: 同卵双胞胎，强制二选一（保留分数高者）。
+- **Corr 0.70-0.85**: 视为同一逻辑组，总仓位上限封顶 15%。
+
+### Step 5: 集中度检查 [Concentration Check]
+- 标的数量是否超过 `max_holdings`？（超过则按分数末位淘汰）
+- 单一标的是否超过 `max_single_pct`？（超过则强制修剪）
+
+### Step 6: 流动性聚合 [Liquidity Check]
+组合层面单日总成交需求必须 < 目标个股 20 日均成交额的 5%。
 输出可直接执行的交易协议，必须包含：
 
 #### Target Weight Limit（目标仓位上限）

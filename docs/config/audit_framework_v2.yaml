@@ -1,0 +1,63 @@
+# ============================================================
+# 投资组合审计框架 V2.0 (Source of Truth)
+# ============================================================
+
+version: "2.0"
+last_updated: "2026-05-03"
+
+portfolio:
+  base_currency: CNY
+  total_capital: 300000
+  reserve_cash_min_pct: 0.10
+  active_window_months: 3
+
+correlation_audit:
+  rolling_window_days: 60
+  bands:
+    - {min: 0.85, action: merge_or_choose, note: "同卵双胞胎，必须二选一"}
+    - {min: 0.70, action: cap_combined,    note: "总仓位封顶 15%"}
+    - {min: 0.00, action: independent,     note: "视为独立表达"}
+
+position_sizing:
+  min_meaningful_pct: 0.05
+  by_window:
+    months_3:
+      max_holdings: 12
+      max_single_pct: 0.12
+
+scoring:
+  scale_per_factor: 20
+  total_max: 100
+  factors:
+    logic_purity:
+      red_flag_below: 5
+      weight: 0.3
+    catalyst_certainty:
+      red_flag_below: 5
+      weight: 0.3
+    valuation_buffer:
+      red_flag_below: 5
+      weight: 0.2
+    liquidity:
+      red_flag_below: 5
+      weight: 0.1
+    bear_case_strength:
+      red_flag_below: 0
+      weight: 0.1
+
+  decision_bands:
+    deep_green:
+      total_min: 80
+      all_factors_min: 10
+      action: "CORE_PILLAR"
+    light_yellow:
+      total_min: 65
+      all_factors_min: 5
+      action: "SPECULATIVE_OPTION"
+    deep_red:
+      total_max: 64
+      action: "REJECT"
+
+audit_cadence:
+  full_rescore: monthly
+  red_flag_scan: daily
