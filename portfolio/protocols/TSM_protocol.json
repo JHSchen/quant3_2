@@ -1,43 +1,43 @@
 {
   "ticker": "TSM",
   "name": "Taiwan Semiconductor Manufacturing Company",
-  "status": "CORE_PILLAR_HOLDING",
-  "protocol_version": "2026.5.1-2NM-DOMINANCE",
+  "status": "CORE_STEADY_STATE",
+  "protocol_version": "2026.5.5-NORMALIZED-EXPOSURE",
   "strategy_snapshot": {
     "topology": "Global AI Compute Settlement Node -> 2nm Monopoly + CoWoS Bottleneck Control",
     "primary_vector": "Yield-driven Margin Expansion (2nm) + Advanced Packaging Premium",
-    "fragile_point": "Overseas Fab OpEx dilution vs Geopolitical supply chain risk",
-    "core_thesis": "TSM is the only node in the AI stack that cannot be bypassed. 5% weight reflects its status as the 'physical backstop' of the portfolio."
+    "fragile_point": "Overseas Fab OpEx dilution vs 2nm GAA Yield Scaling",
+    "core_thesis": "Position has been normalized to the 5.0% protocol limit. Strategy focuses on 2nm GAA yield ramp and CoWoS capacity expansion while maintaining principal protection at $385."
   },
   "execution_protocol": {
     "initial_state": {
       "current_weight": 0.05,
       "cost_basis": 380.00,
-      "current_price_baseline": 395.46,
-      "floating_pnl_pct": 0.0407
+      "current_price_baseline": 400.82,
+      "floating_pnl_pct": 0.0548
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.00
+      "position_delta": -0.022
     },
     "deployment_plan": [
-      {"size": 0.05, "type": "trailing_stop", "distance_pct": 0.05, "comment": "Set trailing stop at $375 to protect principal."}
+      {"size": 0.022, "type": "TRIM_EXECUTED", "price": 400.82, "reason": "RISK_NORMALIZATION_TO_5_PCT_LIMIT"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 550.00,
-      "intermediate_tp": 480.00
+      "tactical_trim_target": 480.00
     },
     "stop_loss_rules": {
       "hard_stop": 360.00,
-      "trailing_stop_lock": 375.00,
-      "macro_kill_switch": "Major geopolitical disruption in Taiwan Strait"
+      "principal_protection_floor": 385.00,
+      "macro_kill_switch": "Major geopolitical disruption in Taiwan Strait or 2nm yield < 65%"
     }
   },
   "risk_metrics": {
     "purity_score": 0.95,
-    "capex_risk": "HIGH (2nm expansion)",
-    "valuation_anchor": "PE 20.5 (Current) -> 25.0 (Target)",
-    "adversary_checkpoint": "APPROVED (2026-05-01)"
+    "capex_risk": "HIGH (2nm GAA expansion)",
+    "valuation_anchor": "PE 20.7 (Current) -> 25.0 (Target)",
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-01T13:55:00Z"
+  "last_updated": "2026-05-05T13:50:00Z"
 }
