@@ -1,36 +1,43 @@
 {
   "ticker": "CEG",
   "name": "Constellation Energy",
-  "status": "STRATEGY_CONFIRMED_HOLD_FOR_TP",
+  "status": "REGULATORY_GATING_HOLD",
+  "protocol_version": "2026.5.5-WATER-RIGHTS-GATING",
   "strategy_snapshot": {
     "topology": "AI 数据中心 24/7 碳中和电力核心节点，核电重估标杆。",
     "primary_vector": "Crane (三哩岛) 重启及微软 PPA 协议溢价、Calpine 资产整合。",
-    "fragile_point": "PJM 电网接入延时至 2030 年带来的确定性折价及监管不确定性。"
+    "fragile_point": "Susquehanna River Basin Commission 水权裁决 (2026年6月) 及地方政治阻力。"
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.029,
+      "current_weight": 0.03,
       "cost_basis": 289.0,
-      "current_price_baseline": 313.53
+      "current_price_baseline": 320.0,
+      "floating_pnl_pct": 0.1072
     },
     "target_parameters": {
       "target_weight_limit": 0.04,
-      "position_delta": 0.011
+      "position_delta": 0.01
     },
+    "deployment_plan": [
+      {"size": 0.03, "type": "HOLD", "reason": "STRATEGIC_OBSERVATION_POST_HEARING"},
+      {"size": 0.01, "type": "LIMIT", "price": 310.0, "reason": "GATED_BY_JUNE_WATER_DECISION"}
+    ],
     "take_profit_rules": {
-      "tp1": 320.00,
-      "tp2_final": 350.00
+      "tp1": 350.00,
+      "tp2_final": 385.00
     },
     "stop_loss_rules": {
-      "trailing_stop": 295.00,
-      "fundamental_melt_down": "核能重启贷款遭监管撤销或主要科技客户取消 PPA 协议",
-      "macro_kill_switch": "联邦能源监管政策重大逆转"
+      "hard_stop": 275.00,
+      "principal_protection_floor": 295.00,
+      "macro_kill_switch": "NRC licensing delay beyond 2027 or formal water rights rejection"
     }
   },
   "risk_metrics": {
     "purity_score": 0.78,
-    "concentration_risk": "MEDIUM (Nuclear Policy)",
-    "valuation_anchor": "EPS Guidance $11-$12"
+    "concentration_risk": "MEDIUM (Local Regulatory)",
+    "valuation_anchor": "PE 23.5 (Current) -> 30.0 (AI Infrastructure Target)",
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-04-26T13:15:00Z"
+  "last_updated": "2026-05-05T14:10:00Z"
 }
