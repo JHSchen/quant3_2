@@ -1,8 +1,8 @@
 {
   "ticker": "MU",
   "name": "Micron Technology",
-  "status": "RE_ESTABLISHING_CORE",
-  "protocol_version": "2026.5.1-HBM4-REENTRY",
+  "status": "FGO_FORCED_ENTRY",
+  "protocol_version": "2026.5.5-FGO-GAPUP",
   "strategy_snapshot": {
     "topology": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
     "primary_vector": "Wafer-Area Penalty + 1-gamma Node Power Efficiency",
@@ -11,27 +11,27 @@
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.0,
-      "cost_basis": 0.0,
-      "current_price_baseline": 517.16,
+      "current_weight": 0.025,
+      "cost_basis": 603.0,
+      "current_price_baseline": 603.0,
       "floating_pnl_pct": 0.0
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.03
+      "position_delta": 0.025
     },
     "deployment_plan": [
-      {"size": 0.015, "type": "MARKET", "price": 517.16, "reason": "CORE_RE_ESTABLISHMENT_T1"},
-      {"size": 0.015, "type": "LIMIT", "price": 505.00, "reason": "ACCUMULATION_ON_RETEST_SUPPORT"}
+      {"size": 0.025, "type": "MARKET", "price": 603.0, "reason": "FGO_MANDATORY_SEED_EXECUTED_PREMARKET"},
+      {"size": 0.025, "type": "LIMIT", "price": 580.0, "reason": "DYNAMIC_FILL_ON_VOLATILITY"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 675.00,
-      "moonshot_tp": 990.00,
-      "trailing_stop_pct": 0.08
+      "moonshot_tp": 1000.00,
+      "trailing_stop_pct": 0.05
     },
     "stop_loss_rules": {
-      "fundamental_floor": 393.00,
-      "hard_stop": 475.00,
+      "fundamental_floor": 510.00,
+      "hard_stop": 540.00,
       "macro_kill_switch": "DRAM spot prices decline > 15% in a single month"
     }
   },
@@ -39,7 +39,7 @@
     "purity_score": 0.52,
     "capex_risk": "HIGH ($25B/2026)",
     "valuation_anchor": "PE 5.2 (Current) -> 15.0 (Forward 2027)",
-    "adversary_checkpoint": "APPROVED (2026-05-01)"
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-01T13:10:00Z"
+  "last_updated": "2026-05-05T12:35:00Z"
 }
