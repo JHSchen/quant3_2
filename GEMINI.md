@@ -83,6 +83,7 @@ When a user provides an investment target or strategy to analyze, follow these p
 
 ### Phase 5: Execution Planning (Execution Agent)
 *Act as the Execution Agent.*
+- **FGO Protocol Check**: Before generating tranches, MUST consult `docs/reports/workflow_rationales/ANTI_ANCHORING_PROTOCOL.md` to determine if a Market Order override is required due to fundamental velocity or structural gaps.
 - **Generate Tranches**: If Approved (or if Absolute Override is active), calculate the exact order parameters based on Delta.
 - **Delta < 0 (Trim) Constraints**: Ensure mandatory Second-Derivative check (growth metric acceleration) is performed to choose between Trailing Stop vs. Limit Trim.
 - **Absolute Override**: If `floating_pnl_pct < stop_loss_threshold`, immediately bypass Adversary Gating and Second-Derivative checks to issue a **stop-market** execution plan.
