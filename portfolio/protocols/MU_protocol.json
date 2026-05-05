@@ -1,45 +1,45 @@
 {
   "ticker": "MU",
   "name": "Micron Technology",
-  "status": "FGO_FORCED_ENTRY",
-  "protocol_version": "2026.5.5-FGO-GAPUP",
+  "status": "CATCHUP_FORCED_ENTRY",
+  "protocol_version": "2026.5.5-MU-CATCHUP",
   "strategy_snapshot": {
     "topology": "AI Data Center Demand -> HBM4 Sold Out -> DRAM Pricing Power (Memflation)",
     "primary_vector": "Wafer-Area Penalty + 1-gamma Node Power Efficiency",
-    "fragile_point": "1-gamma yield stability vs Samsung/SK Hynix HBM4 catch-up",
-    "core_thesis": "Structural memory undersupply driven by HBM wafer consumption decoupling MU from legacy cycles."
+    "fragile_point": "Execution delay vs $700 fundamental target momentum",
+    "core_thesis": "Initial FGO entry was missed; catch-up protocol activated at $631.27 to ensure baseline participation in the HBM4 structural shortage cycle."
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.025,
-      "cost_basis": 603.0,
-      "current_price_baseline": 603.0,
+      "current_weight": 0.015,
+      "cost_basis": 631.27,
+      "current_price_baseline": 631.27,
       "floating_pnl_pct": 0.0
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.025
+      "position_delta": 0.035
     },
     "deployment_plan": [
-      {"size": 0.025, "type": "MARKET", "price": 603.0, "reason": "FGO_MANDATORY_SEED_EXECUTED_PREMARKET"},
-      {"size": 0.025, "type": "LIMIT", "price": 580.0, "reason": "DYNAMIC_FILL_ON_VOLATILITY"}
+      {"size": 0.015, "type": "MARKET_EXECUTED", "price": 631.27, "reason": "FGO_SECONDARY_CATCHUP_MANDATORY_SEED"},
+      {"size": 0.015, "type": "LIMIT", "price": 609.50, "reason": "INTRADAY_OPEN_SUPPORT_RETEST"},
+      {"size": 0.020, "type": "LIMIT", "price": 605.50, "reason": "INTRADAY_LOW_SUPPORT_VOLATILITY"}
     ],
     "take_profit_rules": {
-      "fundamental_tp": 675.00,
+      "fundamental_tp": 700.00,
       "moonshot_tp": 1000.00,
       "trailing_stop_pct": 0.05
     },
     "stop_loss_rules": {
-      "fundamental_floor": 510.00,
-      "hard_stop": 540.00,
+      "hard_stop": 570.00,
       "macro_kill_switch": "DRAM spot prices decline > 15% in a single month"
     }
   },
   "risk_metrics": {
     "purity_score": 0.52,
     "capex_risk": "HIGH ($25B/2026)",
-    "valuation_anchor": "PE 5.2 (Current) -> 15.0 (Forward 2027)",
+    "valuation_anchor": "PE 6.2 (Current) -> 15.0 (Forward 2027)",
     "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-05T12:35:00Z"
+  "last_updated": "2026-05-05T14:00:00Z"
 }

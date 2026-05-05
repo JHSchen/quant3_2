@@ -16,9 +16,16 @@
     "2714.HK": { "weight": 0.04, "cost_basis": 42.1, "quantity": 200, "status": "PIG_CYCLE_BTM" },
     "2675.HK": { "weight": 0.06, "cost_basis": 54.71, "quantity": 400, "status": "MEDTECH_B_ROUND" },
     "1879.HK": { "weight": 0.10, "cost_basis": 566.4, "quantity": 45, "status": "DISRUPTION_BET_2_8_SPLIT" },
-    "MU.US": { "weight": 0.025, "cost_basis": 603.0, "quantity": 0, "status": "FGO_SEED_EXECUTING" }
+    "MU.US": { "weight": 0.015, "cost_basis": 631.27, "quantity": 0, "status": "FGO_CATCHUP_EXECUTED" }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-05-05T14:00:00Z",
+      "ticker": "MU.US",
+      "level": "RED",
+      "trigger": "FGO_EXECUTION_FAILURE: Missed $609 open. Catch-up protocol triggered.",
+      "action": "Market order for 1.5% executed at $631.27. Limits set at $609.5/$605.5."
+    },
     {
       "timestamp": "2026-05-05T13:50:00Z",
       "ticker": "TSM.US",
