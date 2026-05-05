@@ -1,27 +1,27 @@
 {
   "ticker": "AMZN",
   "name": "Amazon.com, Inc.",
-  "status": "HEAVY_WEIGHT_HOLDING",
-  "protocol_version": "2026.5.1-TEN-PERCENT-MOAT",
+  "status": "CORE_STEADY_STATE",
+  "protocol_version": "2026.5.5-TRIM-FCF-SAFETY",
   "strategy_snapshot": {
     "topology": "AWS AI Acceleration + Custom Silicon (Trainium 3) + Robotics Logistics",
     "primary_vector": "Vertical AI Integration (Silicon-to-Service) -> Margin Expansion",
     "fragile_point": "$200B Capex Execution Risk & DOJ Antitrust Pressure",
-    "core_thesis": "AWS's 28% growth inflection validates the GenAI re-rating. 10% weight is justified by deep vertical integration."
+    "core_thesis": "AWS's 28% growth inflection validates the GenAI re-rating. 10% weight is the maximum structural conviction limit."
   },
   "execution_protocol": {
     "initial_state": {
       "current_weight": 0.10,
-      "cost_basis": 223.00,
-      "current_price_baseline": 265.06,
-      "floating_pnl_pct": 0.1886
+      "cost_basis": 223.78,
+      "current_price_baseline": 272.05,
+      "floating_pnl_pct": 0.2157
     },
     "target_parameters": {
       "target_weight_limit": 0.10,
-      "position_delta": 0.00
+      "position_delta": -0.05
     },
     "deployment_plan": [
-      {"size": 0.10, "type": "trailing_stop", "distance_pct": 0.026, "comment": "Hard lock profit at $258 to protect 15% gain"}
+      {"size": 0.05, "type": "TRIM_EXECUTED", "price": 272.05, "reason": "REDUCING_TO_CONVICTION_CAP_DUE_TO_FCF_RISK"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 315.00,
@@ -29,7 +29,7 @@
     },
     "stop_loss_rules": {
       "hard_stop": 245.00,
-      "trailing_stop_lock": 258.00,
+      "trailing_stop_lock": 265.00,
       "macro_kill_switch": "AWS growth < 20% or DOJ forced split order"
     }
   },
@@ -37,7 +37,7 @@
     "purity_score": 0.15,
     "capex_risk": "EXTREME ($200B/2026)",
     "valuation_anchor": "PE 27.0 (Current) -> 35.0 (Bull Target)",
-    "adversary_checkpoint": "APPROVED (2026-05-01)"
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-01T13:30:00Z"
+  "last_updated": "2026-05-05T12:50:00Z"
 }

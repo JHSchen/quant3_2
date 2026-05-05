@@ -10,7 +10,7 @@
     "CEG.US": { "weight": 0.06, "cost_basis": 289.3, "quantity": 5, "status": "ENERGY_FOR_AI" },
     "BABA.US": { "weight": 0.05, "cost_basis": 143.48, "quantity": 35, "status": "STRATEGIC_LIQUIDATION" },
     "AVGO.US": { "weight": 0.10, "cost_basis": 372.96, "quantity": 9, "status": "CORE_PILLAR" },
-    "AMZN.US": { "weight": 0.15, "cost_basis": 223.78, "quantity": 25, "status": "HEAVY_WEIGHT_GROWTH" },
+    "AMZN.US": { "weight": 0.10, "cost_basis": 223.78, "quantity": 17, "status": "CORE_PILLAR" },
     "BNO.US": { "weight": 0.03, "cost_basis": 46.99, "quantity": 10, "status": "GEOPOLITICAL_HEDGE_PROTOCOL_ACTIVE" },
     "9992.HK": { "weight": 0.07, "cost_basis": 159.0, "quantity": 100, "status": "GLOBAL_IP_EXPANSION" },
     "2714.HK": { "weight": 0.04, "cost_basis": 42.1, "quantity": 200, "status": "PIG_CYCLE_BTM" },
@@ -19,6 +19,13 @@
     "MU.US": { "weight": 0.025, "cost_basis": 603.0, "quantity": 0, "status": "FGO_SEED_EXECUTING" }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-05-05T12:50:00Z",
+      "ticker": "AMZN.US",
+      "level": "BLUE",
+      "trigger": "STRATEGY_CONFIRMED: Trimmed 5% weight to return to 10% conviction cap.",
+      "action": "Execution of 2.5% market trim and 2.5% limit trim completed."
+    },
     {
       "timestamp": "2026-05-05T12:35:00Z",
       "ticker": "MU.US",
