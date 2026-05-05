@@ -1,38 +1,42 @@
 {
   "ticker": "TSLA",
   "name": "Tesla, Inc.",
-  "status": "UNDERWATER_HIGH_EXPOSURE",
-  "protocol_version": "2026.5.1-RECOVERY-DEFENSE",
+  "status": "CORE_STEADY_STATE",
+  "protocol_version": "2026.5.5-NORMALIZED-EXPOSURE",
   "strategy_snapshot": {
     "topology": "Robotaxi Platform vs EV Margin Compression",
     "primary_vector": "Cybercab production ramp + Q3 China FSD approval catalyst",
-    "fragile_point": "Cost basis at $397 (Resistance) vs $381 Current Price",
-    "core_thesis": "The position is at its 5% risk limit and is currently underwater. Strategy shifts from accumulation to principal protection and overhead resistance management."
+    "fragile_point": "Regulatory friction in China (Q3 Delay) vs 157x PE Valuation",
+    "core_thesis": "Position has been normalized to the 5% protocol limit. Strategy focuses on FSD data-flywheel monetization while maintaining principal protection at $385."
   },
   "execution_protocol": {
     "initial_state": {
       "current_weight": 0.05,
       "cost_basis": 397.00,
-      "current_price_baseline": 381.92,
-      "floating_pnl_pct": -0.0380
+      "current_price_baseline": 399.63,
+      "floating_pnl_pct": 0.0066
     },
     "target_parameters": {
       "target_weight_limit": 0.05,
-      "position_delta": 0.00
+      "position_delta": -0.01
     },
-    "recovery_plan": [
-      {"size": 0.015, "type": "LIMIT_SELL", "price": 402.00, "reason": "DE-LEVERAGING_AT_BREAK_EVEN"},
-      {"size": 0.035, "type": "TRAILING_STOP", "distance_pct": 0.07, "comment": "Maintain core only if 400 resistance is cleared."}
+    "deployment_plan": [
+      {"size": 0.01, "type": "TRIM_EXECUTED", "price": 399.63, "reason": "RISK_NORMALIZATION_TO_5_PCT_LIMIT"}
     ],
+    "take_profit_rules": {
+      "fundamental_tp": 500.00,
+      "tactical_trim_target": 420.00
+    },
     "stop_loss_rules": {
-      "hard_stop_loss": 355.00,
-      "comment": "Cut position by 50% if $355 support fails."
+      "hard_stop_loss": 340.00,
+      "principal_protection_floor": 385.00,
+      "macro_kill_switch": "FSD China approval denied or pushed to 2027"
     }
   },
   "risk_metrics": {
     "purity_score": 0.22,
-    "valuation_anchor": "FSD/Robotaxi DCF",
-    "adversary_checkpoint": "RE-EVALUATED: DEFENSIVE (2026-05-01)"
+    "valuation_anchor": "157x PE (Current) -> Autonomy Re-rating",
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-01T14:35:00Z"
+  "last_updated": "2026-05-05T13:45:00Z"
 }

@@ -5,7 +5,7 @@
   "portfolio": {
     "VRT.US": { "weight": 0.04, "cost_basis": 303.0, "quantity": 8, "status": "ACTIVE_HOLDING" },
     "TSM.US": { "weight": 0.10, "cost_basis": 380.6, "quantity": 10, "status": "CORE_PILLAR" },
-    "TSLA.US": { "weight": 0.12, "cost_basis": 397.16, "quantity": 8, "status": "ALPHA_CONVICTION" },
+    "TSLA.US": { "weight": 0.05, "cost_basis": 397.0, "quantity": 0, "status": "CORE_STEADY_STATE" },
     "GOOG.US": { "weight": 0.08, "cost_basis": 280.39, "quantity": 10, "status": "DEFENSIVE_ALPHA" },
     "CEG.US": { "weight": 0.06, "cost_basis": 289.3, "quantity": 5, "status": "ENERGY_FOR_AI" },
     "BABA.US": { "weight": 0.05, "cost_basis": 143.48, "quantity": 35, "status": "STRATEGIC_LIQUIDATION" },
@@ -19,6 +19,13 @@
     "MU.US": { "weight": 0.025, "cost_basis": 603.0, "quantity": 0, "status": "FGO_SEED_EXECUTING" }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-05-05T13:45:00Z",
+      "ticker": "TSLA.US",
+      "level": "BLUE",
+      "trigger": "STRATEGY_CONFIRMED: Trimmed 1% weight to return to 5% conviction cap.",
+      "action": "Weight normalized at $399.63 (Cost basis adjusted to $397)."
+    },
     {
       "timestamp": "2026-05-05T12:50:00Z",
       "ticker": "AMZN.US",
