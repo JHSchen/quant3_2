@@ -1,28 +1,27 @@
 {
   "ticker": "GOOGL",
   "name": "Alphabet (Google)",
-  "status": "RE_ACCUMULATING_AFTER_EARNINGS",
-  "protocol_version": "2026.5.1-TPUv8-CORE",
+  "status": "CORE_STEADY_STATE",
+  "protocol_version": "2026.5.5-NORMALIZED-EXPOSURE",
   "strategy_snapshot": {
     "topology": "Vertical AI Integration (TPU v8) -> Search Resilience -> Cloud Hyper-growth",
-    "primary_vector": "Internal Silicon Moat (30% Inference Cost Reduction) + Gemini 1.5/2.0 Ecosystem",
-    "fragile_point": "Capex Overload ($190B) impacting FCF vs DOJ Anti-trust remedies",
-    "core_thesis": "Alphabet has successfully de-risked the 'AI disruption to search' narrative, proving monetization parity in AI Mode while dominating enterprise AI infrastructure."
+    "primary_vector": "Internal Silicon Moat (30% Inference Cost Reduction) + Gemini 3.1 Ecosystem",
+    "fragile_point": "DOJ Anti-trust remedies (Chrome/Android divestiture risk) vs $190B Capex lag",
+    "core_thesis": "Position has been normalized to the 4.0% protocol limit. Strategy focuses on Cloud AI acceleration and Waymo monetization while maintaining principal protection via a $340 trailing stop."
   },
   "execution_protocol": {
     "initial_state": {
-      "current_weight": 0.027,
-      "cost_basis": 255.00,
-      "current_price_baseline": 384.80,
-      "floating_pnl_pct": 0.509
+      "current_weight": 0.04,
+      "cost_basis": 280.00,
+      "current_price_baseline": 387.98,
+      "floating_pnl_pct": 0.3856
     },
     "target_parameters": {
       "target_weight_limit": 0.04,
-      "position_delta": 0.013
+      "position_delta": -0.04
     },
     "deployment_plan": [
-      {"size": 0.006, "type": "MARKET", "price": 384.80, "reason": "EARNINGS_CONFIRMATION_ADD"},
-      {"size": 0.007, "type": "LIMIT", "price": 372.00, "reason": "POST_EARNINGS_GAPS_REFILL_ZONE"}
+      {"size": 0.04, "type": "TRIM_EXECUTED", "price": 387.98, "reason": "RISK_NORMALIZATION_TO_4_PCT_LIMIT"}
     ],
     "take_profit_rules": {
       "fundamental_tp": 410.00,
@@ -32,14 +31,14 @@
     "stop_loss_rules": {
       "hard_stop": 310.00,
       "trailing_stop_lock": 340.00,
-      "macro_kill_switch": "Search revenue growth falls below 12% or Cloud growth falls below 40%"
+      "macro_kill_switch": "Search revenue growth < 12% or DOJ forced split order"
     }
   },
   "risk_metrics": {
     "purity_score": 0.65,
     "capex_risk": "VERY HIGH ($190B/2026)",
-    "valuation_anchor": "PE 28.4 (Trailing) -> 24.5 (Forward 2026)",
-    "adversary_checkpoint": "APPROVED (2026-05-01)"
+    "valuation_anchor": "PE 27.0 (Current) -> 24.5 (Forward 2026)",
+    "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-01T13:20:00Z"
+  "last_updated": "2026-05-05T14:15:00Z"
 }
