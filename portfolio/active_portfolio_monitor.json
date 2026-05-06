@@ -1,5 +1,5 @@
 {
-  "last_sync": "2026-05-03T10:00:00Z",
+  "last_sync": "2026-05-06T07:00:00Z",
   "monitoring_frequency": "Intraday (High Volatility)",
   "system_rules": "2:8 Split active for 1879.HK. Strategic Liquidation of BABA prioritized.",
   "portfolio": {
@@ -16,9 +16,18 @@
     "2714.HK": { "weight": 0.04, "cost_basis": 42.1, "quantity": 200, "status": "PIG_CYCLE_BTM" },
     "2675.HK": { "weight": 0.06, "cost_basis": 54.71, "quantity": 400, "status": "MEDTECH_B_ROUND" },
     "1879.HK": { "weight": 0.10, "cost_basis": 566.4, "quantity": 45, "status": "DISRUPTION_BET_2_8_SPLIT" },
-    "MU.US": { "weight": 0.015, "cost_basis": 631.27, "quantity": 0, "status": "FGO_CATCHUP_EXECUTED" }
+    "MU.US": { "weight": 0.015, "cost_basis": 631.27, "quantity": 0, "status": "FGO_CATCHUP_EXECUTED" },
+    "601985.SS": { "weight": 0.01, "cost_basis": 8.90, "quantity": 1000, "status": "ACTIVE_HOLDING" },
+    "003816.SZ": { "weight": 0.01, "cost_basis": 4.45, "quantity": 2000, "status": "ACTIVE_HOLDING" }
   },
   "alerts_log": [
+    {
+      "timestamp": "2026-05-06T07:00:00Z",
+      "ticker": "A-SHARE-SYNC",
+      "level": "GREEN",
+      "trigger": "STRATEGY_CONFIRMED: Synchronized Nuclear holdings and updated 600487 status.",
+      "action": "Updated 601985.SS and 003816.SZ to monitor. 600487 set to MISSED_ENTRY."
+    },
     {
       "timestamp": "2026-05-05T14:15:00Z",
       "ticker": "GOOG.US",

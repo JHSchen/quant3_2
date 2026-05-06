@@ -21,6 +21,6 @@
     "stop_loss": 48.00,
     "kill_switch": "Overseas growth < 30% in Q2 OR Major Western market sea cable ban"
   },
-  "status": "STRATEGY_CONFIRMED_PENDING_ENTRY",
-  "last_audit": "2026-04-20T07:15:00Z"
+  "status": "MISSED_ENTRY_OVEREXTENDED",
+  "last_audit": "2026-05-06T07:00:00Z"
 }
