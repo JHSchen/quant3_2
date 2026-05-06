@@ -30,7 +30,7 @@
     },
     "stop_loss_rules": {
       "hard_stop": 310.00,
-      "trailing_stop_lock": 340.00,
+      "trailing_stop_lock": 365.00,
       "macro_kill_switch": "Search revenue growth < 12% or DOJ forced split order"
     }
   },
@@ -40,5 +40,5 @@
     "valuation_anchor": "PE 27.0 (Current) -> 24.5 (Forward 2026)",
     "adversary_checkpoint": "APPROVED (2026-05-05)"
   },
-  "last_updated": "2026-05-05T14:15:00Z"
+  "last_updated": "2026-05-06T07:15:00Z"
 }
